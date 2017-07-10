@@ -1,0 +1,16 @@
+{
+  "name": "indiedojo",
+  "version": "0.0.1",
+  "description": "Indie Dojo ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maciej Nowakowski & Sacha Greif",
+  "license": "ISC",
+  "dependencies": {
+    "gatsby": "^1.0.7",
+    "gatsby-link": "^1.0.9",
+    "gatsby-plugin-styled-components": "^1.0.1"
+  }
+}
