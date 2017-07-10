@@ -5,10 +5,11 @@ import { Menu } from "./Menu";
 
 const HeaderWrapper = styled.div`
   display: flex;
-  height: 60px;
+  height: ${props => props.theme.header.height};
   justify-content: space-between;
   align-items: center;
   background: rgba(0,0,0, 1);
+  padding: 0 ${props => props.theme.margins.lg};
 `;
 
 export const Header = () => (

@@ -6,7 +6,7 @@ const MenuWrapper = styled.ul`
 `;
 
 const Item = styled.li`
-  color: blue;
+  color: ${props => props.theme.colors.tomato};
 `
 
 export const Menu = () =>
