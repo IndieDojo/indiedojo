@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Cell } from "/imports/ui/grid/Grid";
 import { Link } from "gatsby-link";
 
 export const Title = styled.h1`
@@ -11,11 +10,21 @@ export const Title = styled.h1`
   margin-right: ${props =>
   !!props.marginRight ? props.theme.margins[props.marginRight] : 0};
   display: ${props => props.inline ? "inline-block" : "block"};
-  font-weight: ${props => props.bold ? props.theme.weights.bold : props.theme.weight.normal}
-  font-family: ${props => "'Poppins', arial"};
+  font-weight: ${props => {
+    if (props.black) return props.theme.weights.black;
+    if (props.superbold ) return props.theme.weights.superbold;
+    if (props.bold) return props.theme.weights.bold;
+    return props.theme.weights.normal;
+  }};
+  font-family: ${props => "'Raleway', arial"};
   font-size: ${props => props.theme.fontSizes.nm};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
 `;
+
+export const XxxlTitle = Title.extend`
+  font-size: ${props => props.theme.fontSizes.xxxl};
+`;
+
 
 export const XxlTitle = Title.extend`
   font-size: ${props => props.theme.fontSizes.xxl};
@@ -43,6 +52,7 @@ export const SmTitle = Title.extend`
 `;
 
 export const H1 = Title;
+export const H1Xxxl = XxxlTitle;
 export const H1Xxl = XxlTitle;
 export const H1Xl = XlTitle;
 export const H1Lg = LgTitle;

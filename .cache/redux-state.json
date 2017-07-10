@@ -218,12 +218,12 @@
       "siteMetadata": {},
       "port": "8000",
       "host": "localhost",
-      "buildTime": "2017-07-10T08:13:48.951Z",
+      "buildTime": "2017-07-10T12:50:37.137Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "dff0eaada25f561a80bbc84c9d72d18e",
+        "contentDigest": "a8d81e58bb884861d5a53c24981e0cab",
         "type": "Site",
         "owner": "internal-data-bridge"
       }

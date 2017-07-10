@@ -1,23 +1,24 @@
 import React, { Component } from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { Header } from "../components/header/Header.js";
-import { injectGlobal } from "styled-components";
+import { injectGlobal, ThemeProvider } from "styled-components";
+import { FluidContainer, Container } from '../components/grid/Grid'
+import { Header } from "../components/header/Header";
 import { getTheme } from "../components/Theme";
+import {H1} from '../components/components/Base'
+
+import Jumbo from "../components/home/Jumbo";
+import WhatIsIt from '../components/home/WhatIsIt';
+import Learning from '../components/home/Learning';
 
 // Sets global css
 injectGlobal`
   @font-face {
-    font-family: 'Poppins', arial;
-    src: url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+    src: url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
   }
 
   body, html, * {
     margin: 0;
+    font-family: 'Raleway';
   }
-`;
-
-const Title = styled.h1`
-  color: tomato;
 `;
 
 // Some css theme params depend on window width.
@@ -28,7 +29,10 @@ class Index extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.onWindowResize);
-    this.setState({windowWidth: window.innerWidth});
+    this.setState({
+      windowWidth: window.innerWidth,
+      isMobile: window.innerWidth <=600
+    });
   }
 
   componentWillUnmount() {
@@ -36,15 +40,21 @@ class Index extends Component {
   }
 
   onWindowResize = () => {
-    this.setState({windowWidth: window.innerWidth});
+    this.setState({
+      windowWidth: window.innerWidth,
+      isMobile: window.innerWidth <= 600
+    });
   };
 
   render() {
     return (
       <ThemeProvider theme={getTheme(this.state.windowWidth)}>
         <div>
-          <Header />
-          <Title>Hey</Title>
+          <FluidContainer>
+            <Jumbo isMobile={this.state.isMobile} windowWidth={this.state.windowWidth}/>
+            <WhatIsIt />
+            <Learning />
+          </FluidContainer>
         </div>
       </ThemeProvider>
     );

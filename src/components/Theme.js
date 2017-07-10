@@ -9,7 +9,9 @@ const screenSizes = {
 
 const weights = {
   normal: "400",
-  bold: "700"
+  bold: "700",
+  superbold: "800",
+  black: "900"
 };
 
 const colors = {
@@ -19,9 +21,10 @@ const colors = {
   accentHover: '',
   success: '#45AD43',
   text: "rgba(0,0,0,0.8)",
-  lightText: "rgba(0,0,0,0.55)",
+  light: "rgba(0,0,0,0.55)",
   link: "#3077b6",
   transparent: "rgba(255,255,255,0)",
+  white: "rgba(255, 255, 255, 1)",
   inactive: "rgba(0,0,0,0.2)"
 };
 
@@ -40,6 +43,7 @@ const getFontSizes = (windowWidth) => {
   if (windowWidth < screenSizes.sm) {
     // multiplier 1.2
     return {
+      xxxl: '2.5rem',
       xxl: '2.1rem',
       xl: '1.75rem',
       lg: '1.45rem',
@@ -53,6 +57,7 @@ const getFontSizes = (windowWidth) => {
   if ( windowWidth >= screenSizes.sm && windowWidth < screenSizes.md) {
     // multiplier 1.25
     return {
+      xxxl: '3.5rem',
       xxl: '2.8rem',
       xl: '2.25rem',
       lg: '1.8rem',
@@ -64,6 +69,7 @@ const getFontSizes = (windowWidth) => {
   } else {
     // 1.33 multiplier
     return {
+      xxxl: '5.2rem',
       xxl: '3.9rem',
       xl: '2.9rem',
       lg: '2.2rem',
@@ -89,6 +95,7 @@ export const getTheme = (windowWidth) => ({
   colors,
   margins,
   radius,
+  weights,
   fontSizes: getFontSizes(windowWidth),
   header: {
     height: windowWidth <= screenSizes.sm ? "50px" : "80px",
