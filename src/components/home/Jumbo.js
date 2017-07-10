@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Title, H1Xxxl, H2Md, H3Md } from '../components/Base';
-
+import { WithPadding, Title, H1Xxxl, H2Md, H3Md, Button } from '../components/Base';
+import { BookingButton } from '../components/BookingButton'
 
 const JumboWrapper = styled.div`
+  padding: ${props => props.theme.margins.xl} 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 100%;
-  height: 50vh;
-  border-bottom: 4px solid black;
-  border-top: 4px solid black;
+  min-height: 60vh;
+  border-bottom: 5px solid black;
+  border-top: 8px solid black;
 }`
 
 const DatesWrapper = styled.div`
@@ -30,7 +31,14 @@ const Date = styled.div`
     border-right: 2px solid ${props => props.theme.colors.light};
   }
 `
-const Logo = Title.extend`
+const Logo = styled.div`
+  height: 80px;
+  width: 80px;
+  background-image: url('	https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/indie-dojo-logo-200x200.jpg');
+  background-size: contain;
+`
+
+const LogoText = Title.extend`
   font-size: 2.5rem;
   letter-spacing: -0.10rem;
 
@@ -44,18 +52,22 @@ const Logo = Title.extend`
   }
 `
 
+
 const Jumbo = props =>
   <JumboWrapper {...props}>
-    <Logo margin='0' lineHeight='1.25' black>Indie Dojo</Logo>
+    <Logo/>
+    <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
     <H2Md margin='xxl' bold>One week camp for indie hackers</H2Md>
     <DatesWrapper>
       <Date isMobile={props.isMobile}>
-        <H3Md color='text'>Kyoto</H3Md>
+        <H3Md color='text' bold>Kyoto</H3Md>
         <H3Md color='text'>6-11 November</H3Md>
+        <BookingButton href='https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking'>Book</BookingButton>
       </Date>
       <Date isMobile={props.isMobile}>
-        <H3Md color='text'>Bali</H3Md>
-        <H3Md color='text'>4-12 December</H3Md>
+        <H3Md color='text' bold>Bali</H3Md>
+        <H3Md color='text'>4-9 December</H3Md>
+        <BookingButton href='https://www.codecamps.com/courses/o8X4WmtnC3hMMKovu/booking'>Book</BookingButton>
       </Date>
     </DatesWrapper>
   </JumboWrapper>

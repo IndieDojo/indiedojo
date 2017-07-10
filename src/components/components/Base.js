@@ -127,7 +127,7 @@ export const ImageRoundSmall = styled(ImageRound)`
 `;
 
 export const WithPadding = styled.div`
-  padding: 0 ${props => !!props.padding ? props.theme.margins[props.padding] : props.theme.margins.lg};
+  padding: ${props => !!props.padding ? props.theme.margins[props.padding] : props.theme.margins.lg} 0;
 `;
 
 export const Background = styled.div`
@@ -221,16 +221,13 @@ export const LinkTo = (
   </LinkStyled>
 );
 
-
-
 export const ReadMore = styled.a`
   font-size: ${props => props.theme.fontSizes.nm};
-  font-family: ${props => props.theme.fontFamily.serif};
-  color: ${props => props.theme.colors.primaryDark};
+  color: black;
   line-height: 4rem;
   text-decoration: ${props => props.noDecoration ? 'none' : 'underline'};
   cursor: pointer;
   &:hover {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.link};
   }
 `;

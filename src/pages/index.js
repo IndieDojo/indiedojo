@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { injectGlobal, ThemeProvider } from "styled-components";
-import { FluidContainer, Container } from '../components/grid/Grid'
+import { FluidContainer, Container, Row, Cell } from '../components/grid/Grid'
 import { Header } from "../components/header/Header";
 import { getTheme } from "../components/Theme";
 import {H1} from '../components/components/Base'
 
 import Jumbo from "../components/home/Jumbo";
-import WhatIsIt from '../components/home/WhatIsIt';
-import Learning from '../components/home/Learning';
+import WhatIsIt from "../components/home/WhatIsIt";
+import Info from "../components/home/Info";
+import WhatYouWillLearn from '../components/home/WhatYouWillLearn';
 
 // Sets global css
 injectGlobal`
@@ -15,9 +16,9 @@ injectGlobal`
     src: url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
   }
 
-  body, html, * {
+  body, html, *, li {
     margin: 0;
-    font-family: 'Raleway';
+    font-family: 'Raleway', arial;
   }
 `;
 
@@ -53,8 +54,8 @@ class Index extends Component {
           <FluidContainer>
             <Jumbo isMobile={this.state.isMobile} windowWidth={this.state.windowWidth}/>
             <WhatIsIt />
-            <Learning />
           </FluidContainer>
+          <Info isMobile={this.state.isMobile}/>
         </div>
       </ThemeProvider>
     );
