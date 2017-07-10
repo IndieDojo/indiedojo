@@ -11,7 +11,7 @@ const JumboWrapper = styled.div`
   align-items: center;
   min-width: 100%;
   min-height: 60vh;
-  border-bottom: 5px solid black;
+  border-bottom: 1px solid black;
   border-top: 8px solid black;
 }`
 

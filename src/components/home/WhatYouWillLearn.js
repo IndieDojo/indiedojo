@@ -6,8 +6,8 @@ import styled from 'styled-components';
 const items = [
   "Validate your idea, iterate and find a product market fit,",
   "Define your MVP and build a prototype,",
-  "Brand your product, design it,",
-  "The web works and how to build your MVP,",
+  "Brand your product and design it,",
+  "Build your MVP,",
   "Onboard users and let the world discover your product."
 ]
 
