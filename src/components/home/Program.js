@@ -29,6 +29,7 @@ const HeaderCell = styled.div`
   padding: ${props => props.theme.margins.md};
   cursor: ${props => props.active ? "normal" : "pointer"};
   transition: all 0.2s ease-out;
+  overflow: hidden;
   &:hover {
     background: ${props =>
       props.active ? props.mainColor : props.theme.colors.veryLightHover};
@@ -70,8 +71,21 @@ const TimeBlockWrapper = styled.div`
       case "lecture":
         return props.mainColor;
       case "workshop":
+        return props.theme.colors.lightGrey;
       case "break":
-        return 'light';
+        return props.theme.colors.veryLightGrey;
+      default:
+        return props.theme.colors.light;
+    }
+  }};
+  border-right: 7px solid ${props => {
+    switch (props.type) {
+      case "lecture":
+        return props.mainColor;
+      case "workshop":
+        return props.theme.colors.lightGrey;
+      case "break":
+        return props.theme.colors.veryLightGrey;
       default:
         return props.theme.colors.light;
     }
@@ -92,6 +106,8 @@ const TimeCell = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 const TimeBlockHeader = styled.div`
@@ -192,13 +208,16 @@ class CourseProgram extends Component {
     const secondColor = "light";
 
     return (
-      <FluidContainer>
-        <Container>
+      <FluidContainer className='fluid-container'>
+        <Container className='container'>
           <WithPadding padding="xl">
-
-            <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
-              Program
-            </H1Xl>
+            <Row className='row'>
+              <Cell xs={12} center className='cell'>
+                <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
+                  Program
+                </H1Xl>
+              </Cell>
+            </Row>
 
             <Header
               headers={this.getHeaders(program)}

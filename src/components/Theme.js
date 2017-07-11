@@ -2,15 +2,23 @@ const gutterWidth = 1; // rem
 const outerMargin = 2; // rem
 
 const breakPoints = {
-  sm: '600',
-  md: '900',
-  lg: '1200'
+  xs: '30',
+  sm: '48',
+  md: '64',
+  lg: '75'
 };
 
 const screenSizes = {
-  sm: 600,
-  md: 900,
-  lg: 1200
+  xs: `${breakPoints.xs}em`,
+  sm: `${breakPoints.sm}em`,
+  md: `${breakPoints.md}em`,
+  lg: `${breakPoints.lg}em`
+}
+
+const containers = {
+  sm: `${breakPoints.sm - 2 * gutterWidth}em`,
+  md: `${breakPoints.md - 2 * gutterWidth}em`,
+  lg: `${breakPoints.lg - 2 * gutterWidth}em`
 }
 
 const weights = {
@@ -28,13 +36,16 @@ const colors = {
   success: '#45AD43',
   text: "rgba(0,0,0,0.8)",
   light: "rgba(0,0,0,0.55)",
-  veryLight: "rgba(0,0,0, 0.05)",
-  veryLightHover: "rgba(0,0,0,0.15)",
+
   link: "#3077b6",
   transparent: "rgba(255,255,255,0)",
   transparentWhite: "rgba(255,255,255, 0.9)",
   white: "rgba(255, 255, 255, 1)",
   black: "rgba(0,0,0,1)",
+  lightGrey: "rgba(0,0,0,0.5)",
+  veryLightGrey: "rgba(0,0,0,0.2)",
+  veryLight: "rgba(0,0,0, 0.05)",
+  veryLightHover: "rgba(0,0,0,0.15)",
   inactive: "rgba(0,0,0,0.2)"
 };
 
@@ -103,15 +114,11 @@ const radius = {
 export const getTheme = (windowWidth) => ({
   gutterWidth: `${gutterWidth}rem`,
   outerMargin: `${outerMargin}rem`,
-  gutterCompensation: `${(-gutterWidth) / 2}rem`,
+  gutterCompensation: `${(gutterWidth) / 2 * -1}rem`,
   halfGutterWidth: `${gutterWidth / 2}rem`,
-  screenSm: `${breakPoints.sm}px`,
-  screenMd: `${breakPoints.md}px`,
-  screenLg: `${breakPoints.lg}px`,
-  containerSm:`${ breakPoints.sm - 2 * gutterWidth}px`,
-  containerMd: `${breakPoints.md - 2 * gutterWidth}px`,
-  containerLg: `${breakPoints.lg - 2 * gutterWidth}px`,
-  screenSizes,
+  breakPoints: breakPoints,
+  screenSizes: screenSizes,
+  containers: containers,
   colors,
   margins,
   radius,
