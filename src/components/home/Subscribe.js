@@ -95,7 +95,7 @@ class Subscribe extends Component {
         }
       };
 
-      console.log(`subsriber`, subsriber);
+      console.log(`subsriber`, subscriber);
 
       // createSubscriber.call({ subscriber }, (error, result ) => {
       //   if (error) {
@@ -123,7 +123,7 @@ class Subscribe extends Component {
               : <Row>
                   <Cell xs={12} center>
                     <H1Md color="text" lineHeight="2" superbold>
-                      Join online chat and watch online
+                      Join online chat and watch the event online
                     </H1Md>
 
                   </Cell>

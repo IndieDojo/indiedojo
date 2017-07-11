@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { WithPadding, Title, H1Xxxl, H2Lg, H3Md, Button } from '../components/Base';
-import { BookingButton } from '../components/BookingButton'
+import { Title, H2Lg } from '../components/Base';
+import Booking from './Booking'
 
 const JumboWrapper = styled.div`
   padding: ${props => props.theme.margins.xl} 0;
@@ -14,22 +14,6 @@ const JumboWrapper = styled.div`
   border-top: 8px solid black;
 }`
 
-const DatesWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
-
-const Date = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 ${props => props.isMobile ? props.theme.margins.lg : props.theme.margins.xl};
-  &:first-of-type {
-    border-right: 2px solid ${props => props.theme.colors.light};
-  }
-`
 const Logo = styled.div`
   height: 120px;
   width: 120px;
@@ -55,22 +39,11 @@ const LogoText = Title.extend`
 
 
 const Jumbo = props =>
-  <JumboWrapper {...props}>
+  <JumboWrapper>
     <Logo/>
     <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
     <H2Lg margin='xxl' bold>A one week bootcamp for indie hackers</H2Lg>
-    <DatesWrapper>
-      <Date isMobile={props.isMobile}>
-        <H3Md color='text' bold>Kyoto</H3Md>
-        <H3Md color='text'>13-18 November</H3Md>
-        <BookingButton href='https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking'>Book</BookingButton>
-      </Date>
-      <Date isMobile={props.isMobile}>
-        <H3Md color='text' bold>Bali</H3Md>
-        <H3Md color='text'>4-9 December</H3Md>
-        <BookingButton href='https://www.codecamps.com/courses/o8X4WmtnC3hMMKovu/booking'>Book</BookingButton>
-      </Date>
-    </DatesWrapper>
+    <Booking isMobile={props.isMobile}/>
   </JumboWrapper>
 
 export default Jumbo
