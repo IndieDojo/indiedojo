@@ -16,7 +16,7 @@ export const Title = styled.h1`
     if (props.bold) return props.theme.weights.bold;
     return props.theme.weights.normal;
   }};
-  font-family: ${props => "'Raleway', arial"};
+  font-family: 'Raleway', arial;
   font-size: ${props => props.theme.fontSizes.nm};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
 `;

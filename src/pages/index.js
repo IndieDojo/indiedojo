@@ -8,11 +8,13 @@ import {H1} from '../components/components/Base'
 import Jumbo from "../components/home/Jumbo";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
+import Program from "../components/home/Program"
 import WhatYouWillLearn from '../components/home/WhatYouWillLearn';
 
 // Sets global css
 injectGlobal`
   @font-face {
+    font-family: 'Raleway', arial;
     src: url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
   }
 
@@ -56,6 +58,7 @@ class Index extends Component {
             <WhatIsIt />
           </FluidContainer>
           <Info isMobile={this.state.isMobile}/>
+          <Program isMobile={this.state.isMobile}/>
         </div>
       </ThemeProvider>
     );

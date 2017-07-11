@@ -1,7 +1,7 @@
-const program = [
+export const program = [
   {
     day: "Monday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Finding a need",
         type: 'lecture',
@@ -24,7 +24,7 @@ const program = [
       },
       {
         title: "Talk to your customers",
-        type: 'workshop'
+        type: 'workshop',
         time: '12:15-13:15'
       },
       {
@@ -46,7 +46,7 @@ const program = [
   },
   {
     day: "Tuesday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Prototyping Tools",
         type: 'lecture',
@@ -68,15 +68,15 @@ const program = [
         time: '14:00-15:30'
       },
       {
-        title: "Talk to your customers and interate on your idea,
-        type: 'workshop'
+        title: "Talk to your customers and interate on your idea",
+        type: 'workshop',
         time: '15:30-19:00'
       }
     ]
   },
   {
     day: "Wednesday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Web design",
         description: "Learn all the ingredients that make your website look and feel professional. - How to design you logo - How to create a color palette for your brand - Typography - creating font pairs, sizing - Vertical spacing",
@@ -95,13 +95,13 @@ const program = [
       },
       {
         title: "Website design",
-        description: "Learn how to make your customers stay on your website and take the action you want them to take. - Call to action - Subscription - Using assets (photos, illustrations)",
+        description: "Learn how to make your customers...",
         type: 'lecture',
         time: '11:00-11:45'
       },
       {
         title: "Planning your website",
-        type: 'workshop'
+        type: 'workshop',
         time: '11:45-13:00'
       },
       {
@@ -130,10 +130,10 @@ const program = [
   },
   {
     day: "Thursday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Web applications",
-        description: "There are many path to build a website. You will learn which technology will suit your needs best. - How internet works - Building blocks: HTML/CSS/JS - Databases - Static websites - Vulcan - Wordpress - Component-driven development - Integrations (Shopify, Squarespace)",
+        description: "There are many path to build a website. You will learn which technology will suit your needs best. - How internet works - Building timeBlocks: HTML/CSS/JS - Databases - Static websites - Vulcan - Wordpress - Component-driven development - Integrations (Shopify, Squarespace)",
         type: 'lecture',
         time: '9:00-10:00'
       },
@@ -156,7 +156,7 @@ const program = [
       },
       {
         title: "Working with developer",
-        type: 'lecture'
+        type: 'lecture',
         time: '14:45-15:30'
       },
       {
@@ -178,7 +178,7 @@ const program = [
   },
   {
     day: "Friday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Building a good landing page",
         description: "Landing pages types - A/B testing - Onboarding users",
@@ -203,7 +203,7 @@ const program = [
       },
       {
         title: "Plan your communication funnels",
-        type: 'workshop'
+        type: 'workshop',
         time: '11:45-13:00'
       },
       {
@@ -226,7 +226,7 @@ const program = [
   },
   {
     day: "Saturday",
-    blocks: [
+    timeBlocks: [
       {
         title: "Prepare to launch",
         type: 'lecture',

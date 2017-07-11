@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FluidContainer, ContainerSmall } from '../grid/Grid'
-import { WithPadding, H1Md, H2Md, Text, Button } from '../components/Base';
+import { WithPadding, H1Lg, H2Md, Text, Button } from '../components/Base';
 import styled from 'styled-components';
 
 const items = [
@@ -24,7 +24,7 @@ const Item = styled.li`
 
 const IsItForMe = () =>
   <WithPadding padding='xxl'>
-    <H1Md color='text' margin='md' superbold>You will learn how to:</H1Md>
+    <H1Lg color='text' margin='md' superbold>You will learn how to:</H1Lg>
     <List>
       { items.map( (item, index) => <Item key={index}>{item}</Item>)}
     </List>

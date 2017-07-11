@@ -7,6 +7,7 @@ export const FluidContainer = styled.div`
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 ${props => props.theme.halfGutterWidth};
+  width: ${props => props.theme.screenSm};
   @media only screen and (min-width: ${props => props.theme.screenSm}) {
     width: ${props => props.theme.containerSm};
   }

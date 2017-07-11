@@ -32,10 +32,11 @@ const Date = styled.div`
   }
 `
 const Logo = styled.div`
-  height: 80px;
-  width: 80px;
+  height: 200px;
+  width: 200px;
   background-image: url('	https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/indie-dojo-logo-200x200.jpg');
   background-size: contain;
+  margin-bottom: ${props => props.theme.margins.lg};
 `
 
 const LogoText = Title.extend`
@@ -57,7 +58,7 @@ const Jumbo = props =>
   <JumboWrapper {...props}>
     <Logo/>
     <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
-    <H2Md margin='xxl' bold>One week camp for indie hackers</H2Md>
+    <H2Md margin='xxl' bold>One week bootcamp for indie hackers</H2Md>
     <DatesWrapper>
       <Date isMobile={props.isMobile}>
         <H3Md color='text' bold>Kyoto</H3Md>

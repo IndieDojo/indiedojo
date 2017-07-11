@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { FluidContainer, Container, Row, Cell } from "/imports/ui/grid/Grid";
+import styled from "styled-components";
+import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
 import {
   Background,
   WithPadding,
@@ -9,11 +10,9 @@ import {
   P,
   MdText,
   FloatRight
-} from "/imports/ui/Components";
-import styled from "styled-components";
-import { getFormattedDateDay, getFormattedDaysOfWeek } from "../helpers/date";
+} from "../components/Base";
 
-
+import { program } from "./detailedProgram";
 
 const ProgramWrapper = styled.div`
   display: flex;
@@ -21,43 +20,29 @@ const ProgramWrapper = styled.div`
   justify-content: center;
 `;
 
-const Icon = styled.i`
-  color: ${props => props.theme.colors.primaryDark};
-  transform: ${props => props.active ? "none" : "rotate(180deg)"};
-  transform-origin: 50% 35%;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
-  padding-right: ${props => props.theme.margins.md};
-  padding-left: ${props => props.theme.margins.md};
-`;
-
 const HeaderCell = styled.div`
   flex-grow: 1;
   text-align: center;
   background: ${props =>
-  props.active
-    ? props.mainColor
-    : props.theme.colors.superLightGrey};
-  border-bottom: ${props => props.isMobile ? '1px solid white' : '0'};
+  props.active ? props.mainColor : props.theme.colors.veryLight};
+  border-bottom: ${props => props.isMobile ? "1px solid white" : "0"};
   padding: ${props => props.theme.margins.md};
   cursor: ${props => props.active ? "normal" : "pointer"};
   transition: all 0.2s ease-out;
   &:hover {
     background: ${props =>
-      props.active
-        ? props.mainColor
-        : props.theme.colors.darkensuperLightGrey};
+      props.active ? props.mainColor : props.theme.colors.veryLightHover};
   }
 `;
 
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: ${props => props.isMobile ? "column" : "row wrap"};
-  background: ${props => props.theme.colors.superLightGrey};
+  background: ${props => props.theme.colors.transparent};
 `;
 
 const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
-  <HeaderWrapper className="heade-wrapper" isMobile={isMobile}>
+  <HeaderWrapper isMobile={isMobile}>
     {headers.map((header, index) => (
       <HeaderCell
         key={index}
@@ -69,17 +54,10 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
       >
         <H3Nm
           lineHeight="1"
-          color={index === activeIndex ? "transparent" : "primaryDark"}
-          margin="sm"
+          color={index === activeIndex ? "white" : "mainColor"}
           bold
         >
-          {header.line1}
-        </H3Nm>
-        <H3Nm
-          lineHeight="1"
-          color={index === activeIndex ? "transparent" : "primaryDark"}
-        >
-          {header.line2}
+          {header}
         </H3Nm>
       </HeaderCell>
     ))}
@@ -88,33 +66,24 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
 
 const TimeBlockWrapper = styled.div`
   border-left: 7px solid ${props => {
-  switch (props.type) {
-    case "lecture":
-      return props.mainColor;
-    case "workshop":
-    case "lab":
-      return props.secondColor;
-    case "fun":
-      return props.theme.colors.accentPrimary;
-    default:
-      return props.theme.colors.lightGrey;
-  }
-}};
+    switch (props.type) {
+      case "lecture":
+        return props.mainColor;
+      case "workshop":
+      case "break":
+        return 'light';
+      default:
+        return props.theme.colors.light;
+    }
+  }};
   background: ${props =>
-  props.active ? props.theme.colors.superLightGrey : "transparent"}
-  color: ${props => props.theme.colors.grey};
+    props.active ? props.theme.colors.veryLight : "transparent"}
+  color: ${props => props.theme.colors.text};
   transition: all 0.2s ease-out;
   cursor: ${props => props.withDescription ? "pointer" : ""};
   &:hover {
-    background: ${props => props.theme.colors.superLightGrey};
+    background: ${props => props.theme.colors.veryLightHover};
   }
-`;
-
-const TimeBlockHeader = styled.div`
-  display: flex;
-  padding-top: ${props => props.theme.margins.md};
-  padding-bottom: ${props => props.theme.margins.md};
-  justify-content: space-between;
 `;
 
 const TimeCell = styled.div`
@@ -123,6 +92,13 @@ const TimeCell = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+`;
+
+const TimeBlockHeader = styled.div`
+  display: flex;
+  padding-top: ${props => props.theme.margins.md};
+  padding-bottom: ${props => props.theme.margins.md};
+  justify-content: space-between;
 `;
 
 class TimeBlock extends Component {
@@ -139,20 +115,16 @@ class TimeBlock extends Component {
 
     return (
       <TimeBlockWrapper
-        data-id={timeBlock._id}
         onClick={!!timeBlock.description ? this.onClick : null}
         type={timeBlock.type}
         active={this.state.active}
         withDescription={!!timeBlock.description}
         mainColor={mainColor}
-        secondColor={secondColor}
       >
         <Row>
           <Cell xs={3}>
-            <TimeCell isMobile={isMobile} className="time-cell">
-              <H3Nm color='lightText'>{timeBlock.startTime}</H3Nm>
-              {!isMobile && <H3Nm paddingLeft={isMobile ? "0" : "sm"} color='lightText'>-</H3Nm>}
-              <H3Nm paddingLeft={isMobile ? "0" : "sm"} color='lightText'>{timeBlock.endTime}</H3Nm>
+            <TimeCell isMobile={isMobile}>
+              <H3Nm color='text'>{timeBlock.time}</H3Nm>
             </TimeCell>
           </Cell>
 
@@ -160,24 +132,17 @@ class TimeBlock extends Component {
             <Row>
               <Cell xs={12}>
                 <TimeBlockHeader>
-                  <H3Nm color='primaryDark' margin='0' bold>
+                  <H3Nm color='text' margin='0' bold>
                     {timeBlock.title}
                   </H3Nm>
-                  {!!timeBlock.description &&
-                    timeBlock.description !== "" &&
-                    <Icon
-                      className="fa fa-chevron-up"
-                      color="grey"
-                      active={this.state.active}
-                    />}
                 </TimeBlockHeader>
               </Cell>
-              {this.state.active &&
+              {/* {this.state.active &&
                 <Cell xs={12}>
                   <WithPadding paddingRight='md' paddingBottom='md' paddingLeft='0' paddingTop='0'>
                     <P margin="md">{timeBlock.description}</P>
                   </WithPadding>
-                </Cell>}
+                </Cell>} */}
             </Row>
 
           </Cell>
@@ -189,15 +154,15 @@ class TimeBlock extends Component {
   }
 }
 
-const DayBlockWrapper = styled.div`
 
+const DayBlockWrapper = styled.div`
 `;
 
-const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
+const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => console.log('dayBlock', dayBlock) || (
   <DayBlockWrapper>
-    {dayBlock.timeBlocks.map(timeBlock => (
+    {dayBlock.timeBlocks.map( ( timeBlock, index ) => (
       <TimeBlock
-        key={timeBlock._id}
+        key={index}
         timeBlock={timeBlock}
         isMobile={isMobile}
         mainColor={mainColor}
@@ -207,30 +172,14 @@ const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
   </DayBlockWrapper>
 );
 
+
 class CourseProgram extends Component {
   state = {
     activeIndex: 0
   };
 
-  getHeaders = () => {
-    const { program, firstDay } = this.props;
-
-    let currentDay = firstDay;
-
-    return this.props.program.dayBlocks.map(block => ({
-      line1: getFormattedDateDay({
-        startDate: new Date(block.startDate),
-        endDate: !!block.endDate
-          ? new Date(block.endDate)
-          : new Date(block.startDate)
-      }),
-      line2: getFormattedDaysOfWeek({
-        startDate: new Date(block.startDate),
-        endDate: !!block.endDate
-          ? new Date(block.endDate)
-          : new Date(block.startDate)
-      })
-    }));
+  getHeaders = (program) => {
+    return program.map( item => item.day )
   };
 
   onHeaderTabClick = e => {
@@ -238,53 +187,37 @@ class CourseProgram extends Component {
   };
 
   render() {
-    const { program, isMobile, mainColor, secondColor } = this.props;
+    const { isMobile } = this.props;
+    const mainColor = "black";
+    const secondColor = "light";
+
     return (
-      <Background color="white">
-        <WithPadding padding={isMobile ? "xl" : "xxxl"}>
-          <FluidContainer>
-            <Container>
+      <FluidContainer>
+        <Container>
+          <WithPadding padding="xl">
 
-              <ProgramWrapper>
+            <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
+              Program
+            </H1Xl>
 
-                <Row>
-                  <Cell xs={12} center>
-                    <H1Xl
-                      color="primaryDark"
-                      lineHeight="1"
-                      margin={isMobile ? "lg" : "xl"}
-                      bold
-                      serif
-                    >
-                      Program
-                    </H1Xl>
-                  </Cell>
-                </Row>
+            <Header
+              headers={this.getHeaders(program)}
+              activeIndex={this.state.activeIndex}
+              onClick={this.onHeaderTabClick}
+              isMobile={isMobile}
+              mainColor={mainColor}
+            />
 
-                <Header
-                  headers={this.getHeaders()}
-                  activeIndex={this.state.activeIndex}
-                  onClick={this.onHeaderTabClick}
-                  isMobile={isMobile}
-                  mainColor={mainColor}
-                  secondColor={secondColor}
-                />
+            <DayBlock
+              dayBlock={program[this.state.activeIndex]}
+              isMobile={isMobile}
+              mainColor={mainColor}
+              secondColor={secondColor}
+            />
 
-                {/* LIST OF TIMEBLOCKS */}
-                {!!program.dayBlocks &&
-                  !!program.dayBlocks.length &&
-                  <DayBlock
-                    dayBlock={program.dayBlocks[this.state.activeIndex]}
-                    isMobile={isMobile}
-                    mainColor={mainColor}
-                    secondColor={secondColor}
-                  />}
-              </ProgramWrapper>
-
-            </Container>
-          </FluidContainer>
-        </WithPadding>
-      </Background>
+          </WithPadding>
+        </Container>
+      </FluidContainer>
     );
   }
 }
