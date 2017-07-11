@@ -7,7 +7,8 @@ import {
   MdTitle,
   H1Xl,
   H3Nm,
-  P,
+  H3Sm,
+  Text,
   MdText,
   FloatRight
 } from "../components/Base";
@@ -95,6 +96,7 @@ const TimeBlockWrapper = styled.div`
   color: ${props => props.theme.colors.text};
   transition: all 0.2s ease-out;
   cursor: ${props => props.withDescription ? "pointer" : ""};
+  padding-bottom: ${props => props.active ? props.theme.margins.lg : '0'};
   &:hover {
     background: ${props => props.theme.colors.veryLightHover};
   }
@@ -126,6 +128,20 @@ class TimeBlock extends Component {
     this.setState({ active: !this.state.active });
   };
 
+  onMouseEnter = e => {
+    this.setState({ active: true})
+  }
+
+  onMouseLeave = e => {
+    this.setState({ active: false})
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (nextProps !== this.props ) {
+      this.setState({ active: false });
+    }
+  }
+
   render() {
     const { timeBlock, isMobile, mainColor, secondColor } = this.props;
 
@@ -140,7 +156,7 @@ class TimeBlock extends Component {
         <Row>
           <Cell xs={3}>
             <TimeCell isMobile={isMobile}>
-              <H3Nm color='text'>{timeBlock.time}</H3Nm>
+              <H3Sm color='text'>{timeBlock.time}</H3Sm>
             </TimeCell>
           </Cell>
 
@@ -153,12 +169,11 @@ class TimeBlock extends Component {
                   </H3Nm>
                 </TimeBlockHeader>
               </Cell>
-              {/* {this.state.active &&
+              {this.state.active &&
                 <Cell xs={12}>
-                  <WithPadding paddingRight='md' paddingBottom='md' paddingLeft='0' paddingTop='0'>
-                    <P margin="md">{timeBlock.description}</P>
-                  </WithPadding>
-                </Cell>} */}
+                  <Text>{timeBlock.description}</Text>
+                </Cell>
+              }
             </Row>
 
           </Cell>
@@ -174,7 +189,7 @@ class TimeBlock extends Component {
 const DayBlockWrapper = styled.div`
 `;
 
-const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => console.log('dayBlock', dayBlock) || (
+const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
   <DayBlockWrapper>
     {dayBlock.timeBlocks.map( ( timeBlock, index ) => (
       <TimeBlock
@@ -182,7 +197,6 @@ const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => console.log
         timeBlock={timeBlock}
         isMobile={isMobile}
         mainColor={mainColor}
-        secondColor={secondColor}
       />
     ))}
   </DayBlockWrapper>
@@ -231,7 +245,6 @@ class CourseProgram extends Component {
               dayBlock={program[this.state.activeIndex]}
               isMobile={isMobile}
               mainColor={mainColor}
-              secondColor={secondColor}
             />
 
           </WithPadding>

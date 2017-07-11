@@ -61,7 +61,7 @@ const margins = {
 };
 
 const getFontSizes = (windowWidth) => {
-  if (windowWidth < screenSizes.sm) {
+  if (windowWidth < breakPoints.sm*16) {
     // multiplier 1.2
     return {
       xxxl: '2.5rem',
@@ -69,13 +69,13 @@ const getFontSizes = (windowWidth) => {
       xl: '1.75rem',
       lg: '1.45rem',
       md: "1.2rem",
-      nm: '1rem',
+      nm: '100%',
       sm: "0.94rem",
       xs: "0.71rem"
     }
   }
 
-  if ( windowWidth >= screenSizes.sm && windowWidth < screenSizes.md) {
+  if ( windowWidth >= breakPoints.sm*16 && windowWidth < breakPoints.md*16) {
     // multiplier 1.25
     return {
       xxxl: '3.5rem',
@@ -96,7 +96,7 @@ const getFontSizes = (windowWidth) => {
       lg: '2.2rem',
       md: "1.66rem",
       nm: '1.25rem',
-      sm: "0.94rem",
+      sm: "1rem",
       xs: "0.71rem"
     }
   }

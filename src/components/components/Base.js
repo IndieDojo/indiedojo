@@ -85,13 +85,14 @@ export const H4Nm = NmTitle.withComponent("h4");
 export const H4Sm = SmTitle.withComponent("h4");
 
 export const Text = styled.p`
-  font-family: ${props => "'Poppins', arial"};
   display: ${props => props.inlineBlock ? "inline-block" : "inline"};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
   font-size: ${props => !!props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.nm};
   font-weight: ${props => props.bold ? props.theme.weights.bold : props.theme.weights.normal};
   color: ${props =>
     props.color ? props.theme.colors[props.color] : props.theme.colors.text};
+  padding-top: ${props => !!props.paddingTop ? props.theme.margins[props.paddingTop] : props.theme.margins.md};
+  padding-bottom: ${props => !!props.paddingBottom ? props.theme.margins[props.paddingBottom] : props.theme.margins.md};
 `;
 
 

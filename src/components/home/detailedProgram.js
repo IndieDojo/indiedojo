@@ -1,4 +1,4 @@
-export const program = [
+export let program = [
   {
     day: "Monday",
     timeBlocks: [

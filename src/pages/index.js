@@ -21,6 +21,7 @@ injectGlobal`
   body, html, *, li {
     margin: 0;
     font-family: 'Raleway', arial;
+    font-size: 16px;
   }
 `;
 
