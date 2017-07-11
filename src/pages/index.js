@@ -10,6 +10,7 @@ import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
 import Program from "../components/home/Program"
 import WhatYouWillLearn from '../components/home/WhatYouWillLearn';
+import Trainers from '../components/home/Trainers'
 
 // Sets global css
 injectGlobal`
@@ -60,6 +61,7 @@ class Index extends Component {
           </FluidContainer>
           <Info isMobile={this.state.isMobile}/>
           <Program isMobile={this.state.isMobile}/>
+          <Trainers isMobile={this.state.isMobile}/>
         </div>
       </ThemeProvider>
     );

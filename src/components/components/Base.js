@@ -93,6 +93,15 @@ export const Text = styled.p`
     props.color ? props.theme.colors[props.color] : props.theme.colors.text};
   padding-top: ${props => !!props.paddingTop ? props.theme.margins[props.paddingTop] : props.theme.margins.md};
   padding-bottom: ${props => !!props.paddingBottom ? props.theme.margins[props.paddingBottom] : props.theme.margins.md};
+
+  Link {
+    font-size: ${props => !!props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.nm} !important;
+    color: ${props => !!props.theme.colors.primary} !important;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 

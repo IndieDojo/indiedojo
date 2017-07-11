@@ -69,7 +69,7 @@ const getFontSizes = (windowWidth) => {
       xl: '1.75rem',
       lg: '1.45rem',
       md: "1.2rem",
-      nm: '100%',
+      nm: '1rem',
       sm: "0.94rem",
       xs: "0.71rem"
     }
