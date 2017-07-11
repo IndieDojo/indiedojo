@@ -26,12 +26,12 @@ const ValidationErrors = ({ errors }) => (
         marginTop="lg"
       >
         <Row>
-          <Cell xs={12}>
+          <Cell xs={12} center>
             <H2 color="accent" bold>Ups, there are some errors.</H2>
           </Cell>
 
           {errors.map(error => (
-            <Cell xs={12} key={error}>
+            <Cell xs={12} key={error} center>
               <ErrorMessage>{error}</ErrorMessage>
             </Cell>
           ))}

@@ -16,7 +16,7 @@ const Item = styled.div`
   padding: 0 ${props => props.isMobile ? props.theme.margins.md : props.theme.margins.xl};
 `
 
-const Info = ({isMobile}) => console.log(`isMobile`, isMobile) || (
+const Info = ({isMobile}) => (
   <Panel isMobile={isMobile}>
     <Item background='black' isMobile={isMobile}>
       <IsItForMe />

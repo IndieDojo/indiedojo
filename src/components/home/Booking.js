@@ -18,7 +18,7 @@ const Date = styled.div`
   padding: 0 ${props =>
   props.isMobile ? props.theme.margins.lg : props.theme.margins.xl};
   &:first-of-type {
-    border-right: 2px solid ${props => props.theme.colors.light};
+    ${''/* border-right: 2px solid ${props => props.theme.colors.light}; */}
   }
 `;
 

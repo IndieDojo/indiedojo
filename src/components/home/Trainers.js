@@ -7,7 +7,7 @@ const ProfileImage = styled.div`
   display: inline-block;
   width: ${props => props.isMobile ? '50vw' : '200px'};
   height: ${props => props.isMobile ? '50vw' : '200px'};
-  background-image: url(https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg);
+  background-image: url("${props => props.imgUrl}");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -23,7 +23,7 @@ const Link = styled.a`
   font-size: 1em;
   transition: color 0.1s ease-in;
   &:hover {
-    color: ${props => props.theme.colors.light};
+    color: ${props => props.theme.colors.primary};
   }
   @media only screen and (min-width: 48em ) {
     font-size: 1.15rem;
@@ -66,8 +66,8 @@ const JulianBio = () =>
 const MaciejBio = () =>
   <Bio>
     <Text>
-      Maciej is a founder, engineer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
-      Japan. He is an author of Vulcan.js full-stack app framework, co-authored Discover Meteor book and created the biggest survey on the State of Javascript.
+      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <Link href='https://www.codecamps.com'>in Flip Flops</Link> and and works on his own
+      projects. In his previous life, he's been a trader working in a city.
     </Text>
   </Bio>
 
@@ -79,7 +79,7 @@ const Trainers = ({isMobile}) => (
           <Row>
             <Cell xs={12} center>
               <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
-                Organisers
+                Our team
               </H1Xl>
             </Cell>
             <Cell xs={12} sm={6} center>
@@ -89,13 +89,13 @@ const Trainers = ({isMobile}) => (
             </Cell>
 
             <Cell xs={12} sm={6} center>
-              <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/_julian.jpg' isMobile={isMobile}/>
+              <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/julian.jpg' isMobile={isMobile}/>
               <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
               <JulianBio />
             </Cell>
             <Cell xs={12} sm={6} smOffset={3} center>
               <WithPadding padding='xl'>
-                <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/_julian.jpg' isMobile={isMobile}/>
+                <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>
                 <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
                 <MaciejBio />
               </WithPadding>

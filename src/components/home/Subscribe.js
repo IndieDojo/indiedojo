@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1Md, H2Md, Button, Text } from "../components/Base";
+import { WithPadding, H1Md, H2Md,H3Md,  Button, Text } from "../components/Base";
 import StyledInput from "../components/Forms";
 import ValidationErrors from "../components/ValidationErrors";
 
@@ -30,8 +30,12 @@ export const SubscribeButton = styled.button`
 
 const SubscribedCard = styled.div`
   width: 100%;
-  box-shadow: 0 40px 50px -30px rgba(0,0,0,0.25);
+  background: ${props => props.theme.colors.veryLightGrey};
+  padding: ${props => props.theme.margins.lg};
+  border-radius: ${ props => props.theme.radius.md};
+  border: 5px solid black;
 `;
+
 const Form = styled.form`
   display: flex;
   flex-direction: ${props => props.isMobile ? "column" : "row"};
@@ -40,10 +44,10 @@ const Form = styled.form`
 const JustSubscribed = () => (
   <Row>
     <Cell xs={12} sm={8} smOffset={4} md={6} mdOffset={3} center>
-      <SubscribedCard background="success" padding="lg" radius="md">
-        <MdText color="transparent">
-          Thanks for subscribing! We promise to send only awesome stuff.
-        </MdText>
+      <SubscribedCard>
+        <H3Md bold>
+          Thanks for subscribing!
+        </H3Md>
       </SubscribedCard>
     </Cell>
   </Row>
@@ -95,6 +99,8 @@ class Subscribe extends Component {
         }
       };
 
+      this.setState({ justSubscribed: true, email: '',  name: ''});
+
       console.log(`subsriber`, subscriber);
 
       // createSubscriber.call({ subscriber }, (error, result ) => {
@@ -123,7 +129,7 @@ class Subscribe extends Component {
               : <Row>
                   <Cell xs={12} center>
                     <H1Md color="text" lineHeight="2" superbold>
-                      Join online chat and watch the event online
+                      Join our online chat and watch the event online
                     </H1Md>
 
                   </Cell>

@@ -1,19 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "component": "/Users/maciejnowakowski/code/indiedojo/.cache/dev-404-page.js",
       "path": "/dev-404-page/",
-      "componentChunkName": "page-component---cache-dev-404-page-js",
-      "jsonName": "dev-404-page.json",
-      "internalComponentName": "ComponentDev404Page",
-      "context": {},
-      "pluginCreator___NODE": "Plugin dev-404-page",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "b3a550ddd8133c1fce2aabc38de5c518",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -216,14 +210,12 @@
     },
     "Site": {
       "siteMetadata": {},
-      "port": "8000",
-      "host": "localhost",
-      "buildTime": "2017-07-11T12:45:49.880Z",
+      "buildTime": "2017-07-11T21:04:40.607Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "6385c1a9f22ee91c53565a379d7c75a5",
+        "contentDigest": "8a24a12ba72fa2a20b2d13a22f90556f",
         "type": "Site",
         "owner": "internal-data-bridge"
       }

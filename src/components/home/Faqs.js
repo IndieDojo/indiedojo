@@ -6,7 +6,7 @@ import { WithPadding, H1Xl, H2Md, Text } from "../components/Base";
 const faqs = [
   {
     question: "Why do you organise the bootcamp in two places (Kyoto and Bali)?",
-    answer: "One of the most important apspects when launching a project is A/B testing. We don't know which place you prefer. So, we decided to A/B test it."
+    answer: "One of the most important apspects when launching a project is A/B testing. We don't know which place you prefer. That's why we A/B test it."
   },
   {
     question: "Will I learn to code?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "How many people will attend a bootcamp?",
-    answer: "We aim for 20 people."
+    answer: "We limited the number of places to only 20. This size guarantees best integration and still..."
   },
 ];
 
