@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { WithPadding, Title, H1Xxxl, H2Md, H3Md, Button } from '../components/Base';
+import { WithPadding, Title, H1Xxxl, H2Lg, H3Md, Button } from '../components/Base';
 import { BookingButton } from '../components/BookingButton'
 
 const JumboWrapper = styled.div`
@@ -11,7 +11,6 @@ const JumboWrapper = styled.div`
   align-items: center;
   min-width: 100%;
   min-height: 60vh;
-  border-bottom: 1px solid black;
   border-top: 8px solid black;
 }`
 
@@ -32,10 +31,11 @@ const Date = styled.div`
   }
 `
 const Logo = styled.div`
-  height: 200px;
-  width: 200px;
-  background-image: url('	https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/indie-dojo-logo-200x200.jpg');
+  height: 120px;
+  width: 120px;
+  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/indie-dojo-logo-light-grey.jpg');
   background-size: contain;
+  background-repeat: no-repeat;
   margin-bottom: ${props => props.theme.margins.lg};
 `
 
@@ -58,11 +58,11 @@ const Jumbo = props =>
   <JumboWrapper {...props}>
     <Logo/>
     <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
-    <H2Md margin='xxl' bold>One week bootcamp for indie hackers</H2Md>
+    <H2Lg margin='xxl' bold>A one week bootcamp for indie hackers</H2Lg>
     <DatesWrapper>
       <Date isMobile={props.isMobile}>
         <H3Md color='text' bold>Kyoto</H3Md>
-        <H3Md color='text'>6-11 November</H3Md>
+        <H3Md color='text'>13-18 November</H3Md>
         <BookingButton href='https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking'>Book</BookingButton>
       </Date>
       <Date isMobile={props.isMobile}>

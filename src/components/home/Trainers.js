@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container, Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, H1Md, H2, Text } from '../components/Base'
+import { WithPadding, Background, H1Xl, H1Md, H2, Text } from '../components/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -18,11 +18,12 @@ const ProfileImage = styled.div`
 `
 
 const Link = styled.a`
-  color: #00BDEB;
-  text-decoration: none;
+  color: black;
+  font-weight: bold;
   font-size: 1em;
+  transition: color 0.1s ease-in;
   &:hover {
-    text-decoration: underline;
+    color: ${props => props.theme.colors.light};
   }
   @media only screen and (min-width: 48em ) {
     font-size: 1.15rem;
@@ -57,7 +58,15 @@ const SachaBio = () =>
 const JulianBio = () =>
   <Bio>
     <Text>
-      Julian is a developer, designer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
+      Julian is a founder, engineer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
+      Japan. He is an author of Vulcan.js full-stack app framework, co-authored Discover Meteor book and created the biggest survey on the State of Javascript.
+    </Text>
+  </Bio>
+
+const MaciejBio = () =>
+  <Bio>
+    <Text>
+      Maciej is a founder, engineer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
       Japan. He is an author of Vulcan.js full-stack app framework, co-authored Discover Meteor book and created the biggest survey on the State of Javascript.
     </Text>
   </Bio>
@@ -68,6 +77,11 @@ const Trainers = ({isMobile}) => (
       <Container>
         <WithPadding padding='xxl'>
           <Row>
+            <Cell xs={12} center>
+              <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
+                Organisers
+              </H1Xl>
+            </Cell>
             <Cell xs={12} sm={6} center>
               <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg' isMobile={isMobile}/>
               <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
@@ -78,6 +92,13 @@ const Trainers = ({isMobile}) => (
               <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/_julian.jpg' isMobile={isMobile}/>
               <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
               <JulianBio />
+            </Cell>
+            <Cell xs={12} sm={6} smOffset={3} center>
+              <WithPadding padding='xl'>
+                <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/_julian.jpg' isMobile={isMobile}/>
+                <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
+                <MaciejBio />
+              </WithPadding>
             </Cell>
           </Row>
         </WithPadding>

@@ -11,6 +11,8 @@ import Info from "../components/home/Info";
 import Program from "../components/home/Program"
 import WhatYouWillLearn from '../components/home/WhatYouWillLearn';
 import Trainers from '../components/home/Trainers'
+import Faqs from '../components/home/Faqs'
+import Subscribe from '../components/home/Subscribe'
 
 // Sets global css
 injectGlobal`
@@ -41,7 +43,7 @@ class Index extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize");
+    window.removeEventListener("resize", this.onWindowResize);
   }
 
   onWindowResize = () => {
@@ -57,11 +59,14 @@ class Index extends Component {
         <div>
           <FluidContainer>
             <Jumbo isMobile={this.state.isMobile} windowWidth={this.state.windowWidth}/>
+            <Subscribe isMobile={this.state.isMobile}/>
             <WhatIsIt />
           </FluidContainer>
           <Info isMobile={this.state.isMobile}/>
           <Program isMobile={this.state.isMobile}/>
           <Trainers isMobile={this.state.isMobile}/>
+          <Subscribe isMobile={this.state.isMobile}/>
+          <Faqs isMobile={this.state.isMobile} />
         </div>
       </ThemeProvider>
     );

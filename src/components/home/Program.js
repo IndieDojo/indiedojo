@@ -171,7 +171,9 @@ class TimeBlock extends Component {
               </Cell>
               {this.state.active &&
                 <Cell xs={12}>
-                  <Text>{timeBlock.description}</Text>
+                  <DescriptionWrapper>
+                    <Text>{timeBlock.description}</Text>
+                  </DescriptionWrapper>
                 </Cell>
               }
             </Row>
@@ -188,6 +190,10 @@ class TimeBlock extends Component {
 
 const DayBlockWrapper = styled.div`
 `;
+
+const DescriptionWrapper = styled.div`
+  padding-right: ${props => props.theme.margins.md};
+`
 
 const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
   <DayBlockWrapper>
@@ -222,11 +228,11 @@ class CourseProgram extends Component {
     const secondColor = "light";
 
     return (
-      <FluidContainer className='fluid-container'>
-        <Container className='container'>
+      <FluidContainer>
+        <Container>
           <WithPadding padding="xl">
-            <Row className='row'>
-              <Cell xs={12} center className='cell'>
+            <Row>
+              <Cell xs={12} center>
                 <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
                   Program
                 </H1Xl>

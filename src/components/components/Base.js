@@ -241,3 +241,26 @@ export const ReadMore = styled.a`
     color: ${props => props.theme.colors.link};
   }
 `;
+
+export const Card = styled.div`
+  display: block;
+  background: ${props =>
+  props.background
+    ? props.theme.colors[props.background]
+    : "rgba(255,255,255, 0)"};
+  padding: ${props => props.padding ? props.theme.margins[props.padding] : 0};
+  margin-top: ${props =>
+  props.marginTop ? props.theme.margins[props.marginTop] : 0};
+  margin-bottom: ${props =>
+  props.marginBottom ? props.theme.margins[props.marginBottom] : 0};
+  border-radius: ${props =>
+  !!props.radius ? props.theme.radius[props.radius] : 0};
+  box-shadow: ${props => !!props.shadow ? `0 3px 10px rgba(0,0,0,0.14)` : 0};
+  border-radius: ${props => {
+    if (!!props.radius) {
+      return props.theme.radius[props.radius];
+    } else {
+      return 0;
+    }
+  }};
+`;

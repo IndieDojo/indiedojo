@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 export const BookingButton = styled.a`
   margin-top: ${props => props.theme.margins.xl};
-  display: inline-block;
-  padding: ${props => props.theme.margins.md} ${props => props.theme.margins.lg};
+  padding: 0 ${props => props.theme.margins.xl};
+  box-sizing: border-box;
+  height: 60px;
+  line-height: 50px;
   border-radius: ${props => props.theme.radius.md};
   color: ${props => props.theme.colors.accent};
   font-size: ${props => props.theme.fontSizes.md};
