@@ -12,6 +12,7 @@ const items = [
 
 const List = styled.ul`
   list-style: disc;
+  padding-left: ${props => props.theme.margins.lg};
 `;
 
 const Item = styled.li`

@@ -14,6 +14,7 @@ import Trainers from "../components/home/Trainers";
 import Faqs from "../components/home/Faqs";
 import Subscribe from "../components/home/Subscribe";
 import Booking from "../components/home/Booking";
+import '../components/main.css'
 
 // Sets global css
 injectGlobal`

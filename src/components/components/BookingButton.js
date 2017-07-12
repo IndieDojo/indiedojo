@@ -10,6 +10,7 @@ export const BookingButton = styled.a`
   border-radius: ${props => props.theme.radius.md};
   color: ${props => props.theme.colors.accent};
   font-size: ${props => props.theme.fontSizes.md};
+  font-weight: ${props => props.theme.weights.bold};
   border: 5px solid ${props => props.theme.colors.accent};
   text-decoration: none;
   cursor: pointer;

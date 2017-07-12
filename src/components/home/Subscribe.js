@@ -17,6 +17,7 @@ export const SubscribeButton = styled.button`
   border: 5px solid ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.black};
   font-size: ${props => props.theme.fontSizes.md};
+  font-weight: ${props => props.theme.weights.bold};
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
@@ -128,7 +129,7 @@ class Subscribe extends Component {
               ? this.renderJustSubscribed()
               : <Row>
                   <Cell xs={12} center>
-                    <H1Md color="text" lineHeight="2" superbold>
+                    <H1Md color="text" lineHeight="1.5" margin='md' center superbold>
                       Join our online chat and watch the event online
                     </H1Md>
 
@@ -153,7 +154,7 @@ class Subscribe extends Component {
                       />
 
                       <SubscribeButton onClick={this.onSubscribe} type="submit">
-                        Subscribe
+                        Join
                       </SubscribeButton>
                     </Form>
 

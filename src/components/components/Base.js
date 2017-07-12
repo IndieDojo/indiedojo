@@ -19,6 +19,7 @@ export const Title = styled.h1`
   font-family: 'Raleway', arial;
   font-size: ${props => props.theme.fontSizes.nm};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
+  text-align: ${props => props.center ? 'center' : 'auto'};
 `;
 
 export const XxxlTitle = Title.extend`

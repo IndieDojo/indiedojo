@@ -57,6 +57,7 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
         <H3Sm
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
+          margin='sm'
           bold
         >
           {header.day}
@@ -134,14 +135,6 @@ class TimeBlock extends Component {
   onClick = e => {
     this.setState({ active: !this.state.active });
   };
-
-  onMouseEnter = e => {
-    this.setState({ active: true})
-  }
-
-  onMouseLeave = e => {
-    this.setState({ active: false})
-  }
 
   componentWillUpdate(nextProps, nextState) {
     if (nextProps !== this.props ) {

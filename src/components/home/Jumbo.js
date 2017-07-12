@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { FluidContainer, Container } from '../grid/Grid'
 import { Title, H2Lg } from '../components/Base';
 import Booking from './Booking'
 
 const JumboWrapper = styled.div`
-  padding: ${props => props.theme.margins.xl} 0;
+  padding: ${props => props.theme.margins.xl} ${props => props.theme.margins.sm};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +34,7 @@ const LogoText = Title.extend`
   }
   @media (min-width: 900px) {
     font-size: 5.2rem;
-    letter-spacing: -0.3rem;
+    letter-spacing: -0.2rem;
   }
 `
 
@@ -41,9 +42,8 @@ const LogoText = Title.extend`
 const Jumbo = props =>
   <JumboWrapper>
     <Logo/>
-    <LogoText margin='0' lineHeight='1.25' black>IndieDojo</LogoText>
-    <H2Lg margin='xxl' bold>A one week bootcamp for indie hackers</H2Lg>
+    <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
+    <H2Lg margin='xxl' bold center>A one week bootcamp for indie hackers</H2Lg>
     <Booking isMobile={props.isMobile}/>
   </JumboWrapper>
-
 export default Jumbo

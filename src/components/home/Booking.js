@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BookingButton } from "../components/BookingButton";
-import { H3Md } from "../components/Base";
+import { H3Md, H3Nm } from "../components/Base";
 
 const DatesWrapper = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Booking = ({ isMobile }) => (
   <DatesWrapper className='dates-wrapper'>
     <Date isMobile={isMobile}>
       <H3Md color="text" bold>Kyoto</H3Md>
-      <H3Md color="text">13-18 November</H3Md>
+      <H3Nm color="text">13-18 November</H3Nm>
       <BookingButton
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
@@ -35,7 +35,7 @@ const Booking = ({ isMobile }) => (
     </Date>
     <Date isMobile={isMobile}>
       <H3Md color="text" bold>Bali</H3Md>
-      <H3Md color="text">4-9 December</H3Md>
+      <H3Nm color="text">4-9 December</H3Nm>
       <BookingButton
         href="https://www.codecamps.com/courses/o8X4WmtnC3hMMKovu/booking"
       >
