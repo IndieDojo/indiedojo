@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { injectGlobal, ThemeProvider } from "styled-components";
+
 import { FluidContainer, Container, Row, Cell } from "../components/grid/Grid";
 import { Header } from "../components/header/Header";
 import { getTheme } from "../components/Theme";
@@ -14,6 +15,7 @@ import Trainers from "../components/home/Trainers";
 import Faqs from "../components/home/Faqs";
 import Subscribe from "../components/home/Subscribe";
 import Booking from "../components/home/Booking";
+import WebsiteHead from '../components/home/WebsiteHead'
 import '../components/main.css'
 
 // Sets global css
@@ -59,6 +61,7 @@ class Index extends Component {
     return (
       <ThemeProvider theme={getTheme(this.state.windowWidth)}>
         <div>
+          <WebsiteHead />
           <FluidContainer>
             <Jumbo
               isMobile={this.state.isMobile}
