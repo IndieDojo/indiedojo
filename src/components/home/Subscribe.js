@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1Md, H2Md,H3Md,  Button, Text } from "../components/Base";
+import {
+  WithPadding,
+  H1Md,
+  H2Md,
+  H3Md,
+  Button,
+  Text
+} from "../components/Base";
 import StyledInput from "../components/Forms";
 import ValidationErrors from "../components/ValidationErrors";
 
@@ -33,7 +40,7 @@ const SubscribedCard = styled.div`
   width: 100%;
   background: ${props => props.theme.colors.veryLightGrey};
   padding: ${props => props.theme.margins.lg};
-  border-radius: ${ props => props.theme.radius.md};
+  border-radius: ${props => props.theme.radius.md};
   border: 5px solid black;
 `;
 
@@ -100,17 +107,22 @@ class Subscribe extends Component {
         }
       };
 
-      this.setState({ justSubscribed: true, email: '',  name: ''});
+      var request = new Request('https://us10.api.mailchimp.com/3.0/lists/14ef1c90fa/members', {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(subscriber),
+      	headers: new Headers({
+      		'Content-Type': 'application/json; charset=utf-8',
+          'Authorization': "Basic " + window.btoa("any:eacdd37f6f46f9b29099964ffa6387cd-us10")
+      	})
+      });
 
-      console.log(`subsriber`, subscriber);
+      this.setState({ justSubscribed: true, email: "", name: "" });
 
-      // createSubscriber.call({ subscriber }, (error, result ) => {
-      //   if (error) {
-      //     console.log(error);
-      //   } else {
-      //     this.setState({ justSubscribed: true, email: "", name: "" });
-      //   }
-      // })
+      fetch(request)
+        .then( res => res.json())
+        .then( data => console.log(data))
+        .then( () => this.setState({ justSubscribed: true, email: "", name: "" }) )
     }
   };
 
@@ -129,7 +141,13 @@ class Subscribe extends Component {
               ? this.renderJustSubscribed()
               : <Row>
                   <Cell xs={12} center>
-                    <H1Md color="text" lineHeight="1.5" margin='md' center superbold>
+                    <H1Md
+                      color="text"
+                      lineHeight="1.5"
+                      margin="md"
+                      center
+                      superbold
+                    >
                       Join our online chat and watch the event online
                     </H1Md>
 
