@@ -41,7 +41,7 @@ const LogoText = Title.extend`
 const Jumbo = props =>
   <JumboWrapper>
     <Logo/>
-    <LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>
+    <LogoText margin='0' lineHeight='1.25' black>IndieDojo</LogoText>
     <H2Lg margin='xxl' bold>A one week bootcamp for indie hackers</H2Lg>
     <Booking isMobile={props.isMobile}/>
   </JumboWrapper>

@@ -1,6 +1,7 @@
 export let program = [
   {
     day: "Monday",
+    topic: "Finding an Idea",
     timeBlocks: [
       {
         title: "Finding a need",
@@ -46,6 +47,7 @@ export let program = [
   },
   {
     day: "Tuesday",
+    topic: "Prototyping & Validation",
     timeBlocks: [
       {
         title: "Prototyping Tools",
@@ -76,6 +78,7 @@ export let program = [
   },
   {
     day: "Wednesday",
+    topic: "Design",
     timeBlocks: [
       {
         title: "Web design",
@@ -130,6 +133,7 @@ export let program = [
   },
   {
     day: "Thursday",
+    topic: "Coding",
     timeBlocks: [
       {
         title: "Web applications",
@@ -178,6 +182,7 @@ export let program = [
   },
   {
     day: "Friday",
+    topic: "Marketing",
     timeBlocks: [
       {
         title: "Building a good landing page",
@@ -226,6 +231,7 @@ export let program = [
   },
   {
     day: "Saturday",
+    topic: "Launch Day",
     timeBlocks: [
       {
         title: "Prepare to launch",

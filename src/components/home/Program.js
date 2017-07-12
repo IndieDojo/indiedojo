@@ -54,12 +54,19 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
         mainColor={mainColor}
         isMobile={isMobile}
       >
+        <H3Sm
+          lineHeight="1"
+          color={index === activeIndex ? "white" : "mainColor"}
+          bold
+        >
+          {header.day}
+        </H3Sm>
         <H3Nm
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
           bold
         >
-          {header}
+          {header.topic}
         </H3Nm>
       </HeaderCell>
     ))}
@@ -215,7 +222,7 @@ class CourseProgram extends Component {
   };
 
   getHeaders = (program) => {
-    return program.map( item => item.day )
+    return program.map( item => ({day: item.day, topic: item.topic}) )
   };
 
   onHeaderTabClick = e => {
