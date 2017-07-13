@@ -5,10 +5,6 @@ import { WithPadding, H1Xl, H2Md, Text } from "../components/Base";
 
 const faqs = [
   {
-    question: "Why do you organise the bootcamp in two places (Kyoto and Bali)?",
-    answer: "One of the most important apspects when launching a project is A/B testing. We don't know which place you prefer. That's why we A/B test it."
-  },
-  {
     question: "Will I learn to code?",
     answer: "No. This is not a coding bootcamp, and a single week (much less a single day!) is not enough time to learn to code. Instead, we’ll try and guide you in the right direction if you do want to learn to code, and give you pointers on how to work with developers if you’d rather not. "
   },
