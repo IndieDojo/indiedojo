@@ -102,7 +102,6 @@ class Index extends Component {
             </Container>
           </FluidContainer>
 
-          <Subscribe isMobile={this.state.isMobile} />
           <Faqs isMobile={this.state.isMobile} />
         </div>
       </ThemeProvider>

@@ -1,18 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
-import {
-  Background,
-  WithPadding,
-  Title,
-  Subtitle,
-  H3Sm,
-  Text,
-  MdText,
-  FloatRight
-} from "../components/Base";
-
-import { BookingButton } from '../components/BookingButton'
+import { Row, Cell } from "../grid/Grid";
+import { WithPadding, Title, Subtitle, Text } from "../components/Base";
+import { BookingButton } from "../components/BookingButton";
 import { program } from "./detailedProgram";
 
 const ProgramButton = BookingButton.extend`
@@ -22,7 +12,7 @@ const ProgramButton = BookingButton.extend`
     background: ${props => props.theme.colors.black};
     color: ${props => props.theme.colors.transparentWhite};
   }
-`
+`;
 
 const ProgramWrapper = styled.div`
   display: flex;
@@ -42,7 +32,11 @@ const HeaderCell = styled.div`
   overflow: hidden;
   &:hover {
     background: ${props =>
-      props.active ? props.mainColor : props.theme.colors.veryLightHover};
+      {
+        if (!props.isProgramVisible ) return props.theme.colors.veryLight;
+        return props.active ? props.mainColor : props.theme.colors.veryLightHover
+      }
+    };
   }
 `;
 
@@ -52,7 +46,7 @@ const HeaderWrapper = styled.div`
   background: ${props => props.theme.colors.transparent};
 `;
 
-const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
+const Header = ({ headers, activeIndex, onClick, isMobile, mainColor, isProgramVisible }) => (
   <HeaderWrapper isMobile={isMobile}>
     {headers.map((header, index) => (
       <HeaderCell
@@ -62,17 +56,18 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
         onClick={onClick}
         mainColor={mainColor}
         isMobile={isMobile}
+        isProgramVisible={isProgramVisible}
       >
         <Subtitle
-          size='nm'
+          size="nm"
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
-          margin='md'
+          margin="md"
         >
           {header.day}
         </Subtitle>
         <Subtitle
-          size='nm'
+          size="nm"
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
           bold
@@ -86,35 +81,35 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
 
 const TimeBlockWrapper = styled.div`
   border-left: 7px solid ${props => {
-    switch (props.type) {
-      case "lecture":
-        return props.mainColor;
-      case "workshop":
-        return props.theme.colors.lightGrey;
-      case "break":
-        return props.theme.colors.veryLightGrey;
-      default:
-        return props.theme.colors.light;
-    }
-  }};
+  switch (props.type) {
+    case "lecture":
+      return props.mainColor;
+    case "workshop":
+      return props.theme.colors.lightGrey;
+    case "break":
+      return props.theme.colors.veryLightGrey;
+    default:
+      return props.theme.colors.light;
+  }
+}};
   border-right: 7px solid ${props => {
-    switch (props.type) {
-      case "lecture":
-        return props.mainColor;
-      case "workshop":
-        return props.theme.colors.lightGrey;
-      case "break":
-        return props.theme.colors.veryLightGrey;
-      default:
-        return props.theme.colors.light;
-    }
-  }};
+  switch (props.type) {
+    case "lecture":
+      return props.mainColor;
+    case "workshop":
+      return props.theme.colors.lightGrey;
+    case "break":
+      return props.theme.colors.veryLightGrey;
+    default:
+      return props.theme.colors.light;
+  }
+}};
   background: ${props =>
-    props.active ? props.theme.colors.veryLight : "transparent"}
+  props.active ? props.theme.colors.veryLight : "transparent"}
   color: ${props => props.theme.colors.text};
   transition: all 0.2s ease-out;
   cursor: ${props => props.withDescription ? "pointer" : ""};
-  padding-bottom: ${props => props.active ? props.theme.margins.lg : '0'};
+  padding-bottom: ${props => props.active ? props.theme.margins.lg : "0"};
   &:hover {
     background: ${props => props.theme.colors.veryLightHover};
   }
@@ -137,6 +132,10 @@ const TimeBlockHeader = styled.div`
   justify-content: space-between;
 `;
 
+const DescriptionWrapper = styled.div`
+  padding-right: ${props => props.theme.margins.md};
+`;
+
 class TimeBlock extends Component {
   state = {
     active: false
@@ -147,7 +146,7 @@ class TimeBlock extends Component {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    if (nextProps !== this.props ) {
+    if (nextProps !== this.props) {
       this.setState({ active: false });
     }
   }
@@ -166,7 +165,7 @@ class TimeBlock extends Component {
         <Row>
           <Cell xs={3}>
             <TimeCell isMobile={isMobile}>
-              <Subtitle size='sm' color='text'>{timeBlock.time}</Subtitle>
+              <Subtitle size="sm" color="text">{timeBlock.time}</Subtitle>
             </TimeCell>
           </Cell>
 
@@ -174,7 +173,7 @@ class TimeBlock extends Component {
             <Row>
               <Cell xs={12}>
                 <TimeBlockHeader>
-                  <Subtitle size='nm' color='text' margin='0' bold>
+                  <Subtitle size="nm" color="text" margin="0" bold>
                     {timeBlock.title}
                   </Subtitle>
                 </TimeBlockHeader>
@@ -184,8 +183,7 @@ class TimeBlock extends Component {
                   <DescriptionWrapper>
                     <Text>{timeBlock.description}</Text>
                   </DescriptionWrapper>
-                </Cell>
-              }
+                </Cell>}
             </Row>
 
           </Cell>
@@ -197,17 +195,12 @@ class TimeBlock extends Component {
   }
 }
 
-
 const DayBlockWrapper = styled.div`
 `;
 
-const DescriptionWrapper = styled.div`
-  padding-right: ${props => props.theme.margins.md};
-`
-
 const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
   <DayBlockWrapper>
-    {dayBlock.timeBlocks.map( ( timeBlock, index ) => (
+    {dayBlock.timeBlocks.map((timeBlock, index) => (
       <TimeBlock
         key={index}
         timeBlock={timeBlock}
@@ -218,15 +211,14 @@ const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
   </DayBlockWrapper>
 );
 
-
 class CourseProgram extends Component {
   state = {
     activeIndex: 0,
     isProgramVisible: false
   };
 
-  getHeaders = (program) => {
-    return program.map( item => ({day: item.day, topic: item.topic}) )
+  getHeaders = program => {
+    return program.map(item => ({ day: item.day, topic: item.topic }));
   };
 
   onHeaderTabClick = e => {
@@ -234,44 +226,44 @@ class CourseProgram extends Component {
   };
 
   onProgramButtonClick = e => {
-    this.setState({isProgramVisible: this.state.isProgramVisible ? false : true });
-  }
+    this.setState({
+      isProgramVisible: this.state.isProgramVisible ? false : true
+    });
+  };
 
   render() {
     const { isMobile } = this.props;
     const mainColor = "black";
-    const secondColor = "light";
 
     return (
+      <WithPadding padding="xl">
+        <Row>
+          <Cell xs={12} center>
+            <Title margin={isMobile ? "lg" : "xl"} bold center>
+              Program
+            </Title>
+          </Cell>
+        </Row>
 
-          <WithPadding padding="xl">
-            <Row>
-              <Cell xs={12} center>
-                <Title margin={isMobile ? "lg" : "xl"} bold center>
-                  Program
-                </Title>
-              </Cell>
-            </Row>
+        <Header
+          headers={this.getHeaders(program)}
+          activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
+          onClick={this.state.isProgramVisible ? this.onHeaderTabClick : null}
+          isMobile={isMobile}
+          isProgramVisible={this.state.isProgramVisible}
+          mainColor={mainColor}
+        />
 
-            <Header
-              headers={this.getHeaders(program)}
-              activeIndex={this.state.activeIndex}
-              onClick={this.onHeaderTabClick}
-              isMobile={isMobile}
-              mainColor={mainColor}
-            />
-
-            { this.state.isProgramVisible &&
-              <DayBlock
-                dayBlock={program[this.state.activeIndex]}
-                isMobile={isMobile}
-                mainColor={mainColor}
-              />}
-            <ProgramButton onClick={this.onProgramButtonClick}>{this.state.isProgramVisible ? "Hide program" : "Show full program"}</ProgramButton>
-
-
-          </WithPadding>
-
+        {this.state.isProgramVisible &&
+          <DayBlock
+            dayBlock={program[this.state.activeIndex]}
+            isMobile={isMobile}
+            mainColor={mainColor}
+          />}
+        <ProgramButton onClick={this.onProgramButtonClick}>
+          {this.state.isProgramVisible ? "Hide program" : "Show full program"}
+        </ProgramButton>
+      </WithPadding>
     );
   }
 }

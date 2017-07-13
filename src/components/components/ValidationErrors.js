@@ -27,7 +27,7 @@ const ValidationErrors = ({ errors }) => (
       >
         <Row>
           <Cell xs={12} center>
-            <H2 color="accent" bold>Ups, there are some errors.</H2>
+            <Subtitle size='nm' color="accent" bold>Ups, there are some errors.</Subtitle>
           </Cell>
 
           {errors.map(error => (

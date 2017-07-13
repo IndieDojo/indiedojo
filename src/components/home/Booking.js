@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BookingButton } from "../components/BookingButton";
-import { H3Md, H3Nm } from "../components/Base";
+import { Subtitle } from "../components/Base";
 
 const DatesWrapper = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const Date = styled.div`
 const Booking = ({ light, isMobile }) => (
   <DatesWrapper className='dates-wrapper'>
     <Date isMobile={isMobile}>
-      <H3Md color={light ? 'transparentWhite' : 'text' }>Kyoto, 13-18 November</H3Md>
+      <Subtitle color={light ? 'transparentWhite' : 'text' }>Kyoto, 13-18 November</Subtitle>
       <BookingButton
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
