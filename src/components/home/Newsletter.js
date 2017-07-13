@@ -16,22 +16,27 @@ const NewsletterWrapper = styled.div`
 const NewsletterHeading = H2Lg.extend`
   text-align: center;
   margin-bottom: 10px;
+  max-width: 400px;
 `
 
 const NewsletterIntro = H3Nm.extend`
   text-align: center;
   margin-bottom: 20px;
+  max-width: 400px;
+  font-size: 18px;
 `
 
 const NewsletterForm = styled.form`
   border: 1px solid #333;
   display: inline-block;
   margin-bottom: 40px;
+  max-width: 400px;
 `
 
 const NewsletterField = styled.input`
   border: 0;
   border-right: 1px solid #333;
+  font-size: 18px;
   padding: 10px;
 `
 
@@ -39,6 +44,7 @@ const NewsletterButton = styled.input`
   border: 0;
   background: #eee;
   padding: 10px;
+  font-size: 18px;
   cursor: pointer;
 `
 
@@ -92,7 +98,7 @@ const Newsletter = props =>
               onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}
               className="button"
               type="submit"
-              value="Sign Up & Get My eBook"
+              value="Sign Up"
               name="subscribe"
               id="mc-embedded-subscribe"
               className="button"
