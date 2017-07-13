@@ -6,6 +6,16 @@ import { WithPadding, H1 } from "../components/Base";
 import { Lightbulb, Megaphone, Cog, Palette } from "../components/Icons";
 
 const TopicsWrapper = styled.div`
+
+`
+
+const TopicsHeading = styled.h2`
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+`
+
+const Topics = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,43 +44,46 @@ const Newsletter = props =>
   <FluidContainer>
     <Container>
       <WithPadding padding='xxl'>
+        <TopicsHeading>What You'll Learn</TopicsHeading>
         <TopicsWrapper>
-          <Topic>
-            <Lightbulb/>
-            <TopicHeading>Idea</TopicHeading>
-            <TopicList>
-              <li>Find a need</li>
-              <li>Define a MVP</li>
-              <li>Validate your idea</li>
-            </TopicList>
-          </Topic>
-          <Topic>
-            <Palette/>
-            <TopicHeading>Design</TopicHeading>
-            <TopicList>
-              <li>Build a prototype</li>
-              <li>Create a brand</li>
-              <li>Learn the basics of UX</li>
-            </TopicList>
-          </Topic>
-          <Topic>
-            <Cog/>
-            <TopicHeading>Coding</TopicHeading>
-            <TopicList>
-              <li>Evaluate technologies</li>
-              <li>Reuse existing resources</li>
-              <li>Understand the basics</li>
-            </TopicList>
-          </Topic>
-          <Topic>
-            <Megaphone/>
-            <TopicHeading>Marketing</TopicHeading>
-            <TopicList>
-              <li>Find an audience</li>
-              <li>Set up marketing channels</li>
-              <li>Create a launch plan</li>
-            </TopicList>
-          </Topic>
+          <Topics>
+            <Topic>
+              <Lightbulb/>
+              <TopicHeading>Idea</TopicHeading>
+              <TopicList>
+                <li>Find a need</li>
+                <li>Define a MVP</li>
+                <li>Validate your idea</li>
+              </TopicList>
+            </Topic>
+            <Topic>
+              <Palette/>
+              <TopicHeading>Design</TopicHeading>
+              <TopicList>
+                <li>Build a prototype</li>
+                <li>Create a brand</li>
+                <li>Learn the basics of UX</li>
+              </TopicList>
+            </Topic>
+            <Topic>
+              <Cog/>
+              <TopicHeading>Coding</TopicHeading>
+              <TopicList>
+                <li>Evaluate technologies</li>
+                <li>Reuse existing resources</li>
+                <li>Understand the basics</li>
+              </TopicList>
+            </Topic>
+            <Topic>
+              <Megaphone/>
+              <TopicHeading>Marketing</TopicHeading>
+              <TopicList>
+                <li>Find an audience</li>
+                <li>Set up marketing channels</li>
+                <li>Create a launch plan</li>
+              </TopicList>
+            </Topic>
+          </Topics>
         </TopicsWrapper>
       </WithPadding>
     </Container>
