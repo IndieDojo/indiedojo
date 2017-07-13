@@ -35,6 +35,10 @@ import { Link } from "gatsby-link";
 //
 //   WithPadding - div to add same padding at the top and bottom of the element
 //     properties: padding (values: 0, sm, nm, md, lg, xl, xxl, xxxl)
+//
+//   LinkTo - a tag,
+//     properties:
+//       inherit: Boolean, inherits font size;
 
 
 export const MainTitle = styled.h1`
@@ -101,4 +105,19 @@ export const Background = styled.div`
   !!props.color
     ? props.theme.colors[props.color]
     : props.theme.colors.transparent};
+`;
+
+export const LinkTo = styled.a`
+  color: ${props => props.theme.colors.link};
+  font-size: ${props => props.inherit ? 'inherit' : '1em'};
+  transition: color 0.1s ease-in;
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+  }
+  @media only screen and (min-width: 48em ) {
+    font-size: ${props => props.inherit ? 'inherit' : '1.15em'};
+  }
+  @media only screen and (min-width: 64em ) {
+    font-size: ${props => props.inherit ? 'inherit' : '1.25em'};
+  }
 `;

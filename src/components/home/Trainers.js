@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, Title, Subtitle, Text } from '../components/Base'
+import { WithPadding, Background, Title, Subtitle, Text, LinkTo } from '../components/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -15,22 +15,6 @@ const ProfileImage = styled.div`
   border: 10px solid ${props => props.theme.colors.white};
   -webkit-filter: grayscale(100%);
   filter: gray;
-`
-
-const Link = styled.a`
-  color: black;
-  font-weight: bold;
-  font-size: 1em;
-  transition: color 0.1s ease-in;
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-  }
-  @media only screen and (min-width: 48em ) {
-    font-size: 1.15rem;
-  }
-  @media only screen and (min-width: 64em ) {
-    font-size: 1.25
-  }
 `
 
 const TrainerInfo = ({name, title}) =>
@@ -50,8 +34,8 @@ const SachaBio = () =>
   <Bio>
     <Text>
       Sacha is a developer, designer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
-      Japan. He is an author of <Link href='http://vulcanjs.org/'>Vulcan.js</Link> full-stack app framework,
-      co-authored <Link href='https://www.discovermeteor.com/'>Discover Meteor</Link> book and created the biggest survey on the <Link href='http://stateofjs.com/'>State of Javascript</Link>.
+      Japan. He is an author of <LinkTo href='http://vulcanjs.org/'>Vulcan.js</LinkTo> full-stack app framework,
+      co-authored <LinkTo href='https://www.discovermeteor.com/'>Discover Meteor</LinkTo> book and created the biggest survey on the <LinkTo href='http://stateofjs.com/'>State of Javascript</LinkTo>.
     </Text>
   </Bio>
 
@@ -66,7 +50,7 @@ const JulianBio = () =>
 const MaciejBio = () =>
   <Bio>
     <Text>
-      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <Link href='https://www.codecamps.com'>in Flip Flops</Link> and and works on his own
+      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <LinkTo href='https://www.codecamps.com'>in Flip Flops</LinkTo> and and works on his own
       projects. In his previous life, he's been a trader working in a city.
     </Text>
   </Bio>

@@ -18,6 +18,7 @@ import Faqs from "../components/home/Faqs";
 import Subscribe from "../components/home/Subscribe";
 import Booking from "../components/home/Booking";
 import BookingBlock from "../components/home/BookingBlock";
+import Footer from "../components/home/Footer";
 
 import WebsiteHead from '../components/home/WebsiteHead'
 import '../components/main.css'
@@ -97,11 +98,14 @@ class Index extends Component {
               <Trainers isMobile={this.state.isMobile} />
               <BookingBlock isMobile={this.state.isMobile} />
             </Container>
+
+            <ContainerSmall>
+              <Faqs isMobile={this.state.isMobile} />
+            </ContainerSmall>
+
           </FluidContainer>
 
-          <ContainerSmall>
-            <Faqs isMobile={this.state.isMobile} />
-          </ContainerSmall>
+          <Footer />
 
         </div>
       </ThemeProvider>

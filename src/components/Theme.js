@@ -37,10 +37,11 @@ const colors = {
   text: "rgba(0,0,0,0.8)",
   light: "rgba(0,0,0,0.55)",
 
-  link: "#3077b6",
+  link: "#00BDEB",
   transparent: "rgba(255,255,255,0)",
   transparentWhite: "rgba(255,255,255, 0.9)",
   transparentWhite75: "rgba(255,255,255, 0.75)",
+  transparentWhite50: "rgba(255,255,255, 0.5)",
   white: "rgba(255, 255, 255, 1)",
   black: "rgba(0,0,0,1)",
   lightGrey: "rgba(0,0,0,0.5)",
