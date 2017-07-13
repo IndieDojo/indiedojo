@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css?Zilla+Slab:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700,700i');
 
 *,html,body,h1, h2, h3,p, img, div, ul, li {
   font-family: 'Zilla Slab', helvetica, sans-serif;
@@ -6,4 +6,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-*/

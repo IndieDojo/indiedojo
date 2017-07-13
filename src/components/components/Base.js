@@ -112,6 +112,11 @@ export const LinkTo = styled.a`
   font-size: ${props => props.inherit ? 'inherit' : '1em'};
   transition: color 0.1s ease-in;
   text-decoration: none;
+  cursor: pointer;
+  &:visited {
+    text-decoration: none;
+    color: ${props => props.theme.colors.link};
+  }
   &:hover {
     color: ${props => props.theme.colors.primary};
     text-decoration: underline;
