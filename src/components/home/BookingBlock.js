@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Booking from "./Booking";
 import { WithPadding, Background, Title } from "../components/Base";
 
-const BookingBlock = ({ light, isMobile }) => (
+const BookingBlock = ({ light }) => (
   <Background>
     <WithPadding padding='xl'>
-      <Title margin={isMobile ? "lg" : "xl"} bold center>
+      <Title margin='md' bold center>
         Join us in Kyoto
       </Title>
       <Booking />

@@ -243,26 +243,28 @@ class CourseProgram extends Component {
               Program
             </Title>
           </Cell>
-        </Row>
 
-        <Header
-          headers={this.getHeaders(program)}
-          activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-          onClick={this.state.isProgramVisible ? this.onHeaderTabClick : null}
-          isMobile={isMobile}
-          isProgramVisible={this.state.isProgramVisible}
-          mainColor={mainColor}
-        />
-
-        {this.state.isProgramVisible &&
-          <DayBlock
-            dayBlock={program[this.state.activeIndex]}
+          <Cell xs={12} center>
+          <Header
+            headers={this.getHeaders(program)}
+            activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
+            onClick={this.state.isProgramVisible ? this.onHeaderTabClick : null}
             isMobile={isMobile}
+            isProgramVisible={this.state.isProgramVisible}
             mainColor={mainColor}
-          />}
-        <ProgramButton onClick={this.onProgramButtonClick}>
-          {this.state.isProgramVisible ? "Hide program" : "Show full program"}
-        </ProgramButton>
+          />
+
+          {this.state.isProgramVisible &&
+            <DayBlock
+              dayBlock={program[this.state.activeIndex]}
+              isMobile={isMobile}
+              mainColor={mainColor}
+            />}
+          <ProgramButton onClick={this.onProgramButtonClick}>
+            {this.state.isProgramVisible ? "Hide program" : "Show full program"}
+          </ProgramButton>
+          </Cell>
+        </Row>
       </WithPadding>
     );
   }

@@ -90,7 +90,7 @@ const Jumbo = ({isMobile}) =>
     <LandingMessageWrapper>
       <Logo isMobile={isMobile}/>
       <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
-      <WithPadding padding='xl'>
+      <WithPadding padding='sm'>
         <Booking light isMobile={isMobile}/>
       </WithPadding>
     </LandingMessageWrapper>

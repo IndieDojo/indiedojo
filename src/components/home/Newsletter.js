@@ -79,7 +79,7 @@ const BookImage = styled.img`
 const Newsletter = ({isMobile}) =>
   <WithPadding padding='xxl'>
     <NewsletterWrapper>
-      <Title margin={isMobile ? "lg" : "xl"} bold center>
+      <Title margin='sm' bold center>
         Can't Join This Time?
       </Title>
 

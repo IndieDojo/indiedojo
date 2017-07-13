@@ -2,6 +2,41 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby-link";
 
+// Base Components:
+//
+//   Title components:
+//     MainTitle - h1
+//     Title - h2
+//     Subtitle - h3
+//
+//   MainTitle, Title, Subtitle properties:
+//     color: any color from Theme, eg. <Title color='primary'>...</Title>
+//     margin: adds margin at the bottom of the title (values: 0, sm, nm, md, lg, xl, xxl, xxxl)
+//     marginRight: same as margin
+//     inline: Boolean, if added Title gets inline-block property
+//     bold: Boolean, adds font-weight 700
+//     superBold: Boolean, adds font-weight 800
+//     black: Boolean, adds font-weight 900
+//     size: font-size(values: xs, sm, nm, md, lg, xl, xxl, xxxl )
+//     lineHeight: changes line height, default: 1.25;
+//     center: Boolean, centers text
+//     uppercase: Boolean
+//     capitalize: Boolean
+//
+//   Text properties (p)
+//     inlineBlock: Boolean, displays as inline-block
+//     lineHeight: changes lineHeight, eg. '1.25', default: '1.5'
+//     fontSize: font-size(values: xs, sm, nm, md, lg, xl, xxl, xxxl )
+//     bold: Boolean
+//     paddingBottom, paddingTop: (values: 0, sm, nm, md, lg, xl, xxl, xxxl)
+//
+//   Background - div to change the... background color,
+//     properties: color (any from the Theme)
+//
+//   WithPadding - div to add same padding at the top and bottom of the element
+//     properties: padding (values: 0, sm, nm, md, lg, xl, xxl, xxxl)
+
+
 export const MainTitle = styled.h1`
   color: ${props =>
   props.color ? props.theme.colors[props.color] : props.theme.colors.text};
@@ -51,18 +86,6 @@ export const Text = styled.p`
   !!props.paddingBottom
     ? props.theme.margins[props.paddingBottom]
     : props.theme.margins.md};
-
-  Link {
-    font-size: ${props =>
-  !!props.fontSize
-    ? props.theme.fontSizes[props.fontSize]
-    : props.theme.fontSizes.nm} !important;
-    color: ${props => !!props.theme.colors.primary} !important;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 export const WithPadding = styled.div`
@@ -78,15 +101,4 @@ export const Background = styled.div`
   !!props.color
     ? props.theme.colors[props.color]
     : props.theme.colors.transparent};
-`;
-
-export const ReadMore = styled.a`
-  font-size: ${props => props.theme.fontSizes.nm};
-  color: black;
-  line-height: 4rem;
-  text-decoration: ${props => props.noDecoration ? "none" : "underline"};
-  cursor: pointer;
-  &:hover {
-    color: ${props => props.theme.colors.link};
-  }
 `;
