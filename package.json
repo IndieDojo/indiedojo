@@ -12,6 +12,8 @@
     "gatsby": "^1.0.7",
     "gatsby-link": "^1.0.9",
     "gatsby-plugin-react-helmet": "^1.0.1",
-    "gatsby-plugin-styled-components": "^1.0.1"
+    "gatsby-plugin-styled-components": "^1.0.1",
+    "react-markdown": "^2.5.0",
+    "react-remarkable": "^1.1.1"
   }
 }

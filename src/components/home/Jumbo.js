@@ -44,7 +44,7 @@ const Jumbo = props =>
   <JumboWrapper>
     <Logo/>
     {/*<LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>*/}
-    <H2Lg margin='xxl' bold center>A one week bootcamp for indie hackers</H2Lg>
+    <H2Lg margin='xxl' bold center>A one-week bootcamp for indie hackers</H2Lg>
     <Booking isMobile={props.isMobile}/>
   </JumboWrapper>
 export default Jumbo

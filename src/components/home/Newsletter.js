@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Title, H2Lg, H3Nm } from '../components/Base';
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
 import { WithPadding, H1 } from "../components/Base";
+import Markdown from 'react-remarkable';
 
 const NewsletterWrapper = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ const NewsletterButton = styled.input`
 const Book = styled.div`
   display: flex;
   background: #eee;
-  padding: 10px;
+  padding: 20px;
   margin: 0 auto 20px auto;
   max-width: 400px;
 `
@@ -53,12 +54,20 @@ const BookContents = styled.div`
 
 `
 
+const BookHeading = styled.h4`
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 5px;
+`
+
 const BookTitle = styled.h3`
+  font-size: 22px;
+  margin-bottom: 5px;
 `
 
 const BookImage = styled.img`
   width: 120px;
-  margin-top: -30px;
 `
 
 const Newsletter = props =>
@@ -66,9 +75,16 @@ const Newsletter = props =>
     <ContainerSmall>
       <WithPadding padding='xxl'>
         <NewsletterWrapper>
-          <NewsletterHeading>Join the dojo</NewsletterHeading>
+          <NewsletterHeading>Can't Join This Time?</NewsletterHeading>
 
-          <NewsletterIntro>Sign up for our newsletter to know about upcoming bootcamps and get access to an exclusive eBook</NewsletterIntro>
+          <NewsletterIntro>
+            <Markdown>
+            You can still be part of Indie Dojo! 
+            Sign up for our newsletter to know about **upcoming bootcamps**, 
+            be notified of **live streams and hangouts**, 
+            and get access to an **exclusive eBook**.
+            </Markdown>
+          </NewsletterIntro>
 
           <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
             <NewsletterField type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
@@ -76,7 +92,7 @@ const Newsletter = props =>
               onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}
               className="button"
               type="submit"
-              value="Join"
+              value="Sign Up & Get My eBook"
               name="subscribe"
               id="mc-embedded-subscribe"
               className="button"
@@ -90,8 +106,8 @@ const Newsletter = props =>
             </div>
 
             <BookContents>
+              <BookHeading>Your Free eBook</BookHeading>
               <BookTitle>Color Theory for Startups</BookTitle>
-
               <p>Through 9 short case studies, learn how leading companies
               use color to establish their brand and reinforce their messaging.</p>
             </BookContents>
