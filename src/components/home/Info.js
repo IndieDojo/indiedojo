@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { WithPadding, Title} from "../components/Base";
-import { Row, Cell } from '../grid/Grid';
+import React from "react";
 import styled from "styled-components";
+import { WithPadding, Title} from "../components/Base";
 
 const items = [
   "You are determined to become independent and to setup your web-based business",
