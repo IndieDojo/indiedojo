@@ -64,7 +64,7 @@ class Tac extends Component {
           <FluidContainer>
             <ContainerSmall>
               <WithPadding padding='xxxl'>
-                <MarkdownWrapper>
+                <MarkdownWrapper isMobile={this.state.isMobile}>
                   <Markdown source={TAC}/>
                 </MarkdownWrapper>
               </WithPadding>

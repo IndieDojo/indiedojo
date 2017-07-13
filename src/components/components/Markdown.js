@@ -13,9 +13,13 @@ export const MarkdownWrapper= styled.div`
     margin-bottom: ${props => props.theme.margins.lg};
   }
 
-  h2 {
+  h2, h3, h4 {
     margin-top: ${props => props.theme.margins.nm};
     font-size: ${props => props.theme.fontSizes.nm};
+  }
+
+  h2 {
+    font-size: ${props => props.theme.fontSizes.md};
   }
 
   p {
@@ -43,14 +47,18 @@ export const MarkdownWrapper= styled.div`
     margin-bottom: ${props => props.theme.margins.lg}
   }
 
-  ul li {
+  ol {
+    margin-bottom: ${props => props.theme.margins.lg}
+  }
+
+  ul li, ol li {
     font-size: ${props => props.theme.fontSizes.nm};
     color: ${props => props.theme.colors.text};
     line-height: 1.65;
     padding-left: ${props => props.theme.margins.lg};
   }
   li:before {
-    content: "- ";
+    content: "";
   }
 
   blockquote {

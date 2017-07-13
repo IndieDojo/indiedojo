@@ -64,7 +64,7 @@ class CodeOfConduct extends Component {
           <FluidContainer>
             <ContainerSmall>
               <WithPadding padding='xxxl'>
-                <MarkdownWrapper>
+                <MarkdownWrapper isMobile={this.state.isMobile}>
                   <Markdown source={COC}/>
                 </MarkdownWrapper>
               </WithPadding>
