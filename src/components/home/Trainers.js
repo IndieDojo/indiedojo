@@ -34,8 +34,8 @@ const SachaBio = () =>
   <Bio>
     <Text>
       Sacha is a developer, designer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
-      Japan. He is an author of <LinkTo href='http://vulcanjs.org/'>Vulcan.js</LinkTo> full-stack app framework,
-      co-authored <LinkTo href='https://www.discovermeteor.com/'>Discover Meteor</LinkTo> book and created the biggest survey on the <LinkTo href='http://stateofjs.com/'>State of Javascript</LinkTo>.
+      Japan. He is an author of <LinkTo inherit href='http://vulcanjs.org/'>Vulcan.js</LinkTo> full-stack app framework,
+      co-authored <LinkTo inherit href='https://www.discovermeteor.com/'>Discover Meteor</LinkTo> book and created the biggest survey on the <LinkTo inherit href='http://stateofjs.com/'>State of Javascript</LinkTo>.
     </Text>
   </Bio>
 
@@ -50,7 +50,7 @@ const JulianBio = () =>
 const MaciejBio = () =>
   <Bio>
     <Text>
-      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <LinkTo href='https://www.codecamps.com'>in Flip Flops</LinkTo> and and works on his own
+      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <LinkTo inherit href='https://www.codecamps.com'>in Flip Flops</LinkTo> and and works on his own
       projects. In his previous life, he's been a trader working in a city.
     </Text>
   </Bio>

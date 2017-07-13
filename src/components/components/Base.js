@@ -111,8 +111,10 @@ export const LinkTo = styled.a`
   color: ${props => props.theme.colors.link};
   font-size: ${props => props.inherit ? 'inherit' : '1em'};
   transition: color 0.1s ease-in;
+  text-decoration: none;
   &:hover {
     color: ${props => props.theme.colors.primary};
+    text-decoration: underline;
   }
   @media only screen and (min-width: 48em ) {
     font-size: ${props => props.inherit ? 'inherit' : '1.15em'};
