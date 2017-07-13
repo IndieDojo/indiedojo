@@ -31,8 +31,8 @@ const weights = {
 const colors = {
   primary: "#00BDEB",
   primaryHover: "",
-  accent: '#b7014e',
-  accentHover: '#c01755',
+  accent: '#F56911',
+  accentHover: '#bf2121',
   success: '#45AD43',
   text: "rgba(0,0,0,0.8)",
   light: "rgba(0,0,0,0.55)",

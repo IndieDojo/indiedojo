@@ -10,7 +10,7 @@ const DatesWrapper = styled.div`
   justify-content: center;
 `;
 
-const Date = styled.div`
+const BookingDate = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,16 +22,27 @@ const Date = styled.div`
   }
 `;
 
+const BookingPrice = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
+  color: ${props => props.theme.colors.transparentWhite};
+  a{
+    color: ${props => props.theme.colors.transparentWhite};
+  }
+`;
+
 const Booking = ({ light, isMobile }) => (
   <DatesWrapper className='dates-wrapper'>
-    <Date isMobile={isMobile}>
-      <Subtitle color={light ? 'transparentWhite' : 'text' }>Kyoto, 13-18 November</Subtitle>
+    <BookingDate isMobile={isMobile}>
+      <Subtitle color={light ? 'transparentWhite' : 'text' }>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton
+        variant="jumbo"
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
-        Book
+        Book Now
       </BookingButton>
-    </Date>
+      <BookingPrice>Early Registration Price: <strong>$1,490</strong> (<a href="#included">What's included?</a>)</BookingPrice>
+    </BookingDate>
   </DatesWrapper>
 );
 

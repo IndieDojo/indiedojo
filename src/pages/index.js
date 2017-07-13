@@ -82,24 +82,17 @@ class Index extends Component {
 
             <ContainerSmall>
               <WhatIsIt />
-              <Newsletter isMobile={this.state.isMobile}/>
             </ContainerSmall>
 
             <Container>
               <Topics isMobile={this.state.isMobile}/>
-            </Container>
-
-            <ContainerSmall>
-              <Info isMobile={this.state.isMobile} />
-            </ContainerSmall>
-
-            <Container>
               <Program isMobile={this.state.isMobile} />
               <Trainers isMobile={this.state.isMobile} />
-              <BookingBlock isMobile={this.state.isMobile} />
             </Container>
 
             <ContainerSmall>
+              <BookingBlock isMobile={this.state.isMobile} />
+              <Newsletter isMobile={this.state.isMobile}/>
               <Faqs isMobile={this.state.isMobile} />
             </ContainerSmall>
 
