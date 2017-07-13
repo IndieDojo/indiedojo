@@ -7,6 +7,7 @@ import { getTheme } from "../components/Theme";
 import { WithPadding, H1 } from "../components/components/Base";
 
 import Jumbo from "../components/home/Jumbo";
+import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
 import Program from "../components/home/Program";
@@ -21,13 +22,18 @@ import '../components/main.css'
 // Sets global css
 injectGlobal`
   @font-face {
-    font-family: 'Raleway', arial;
-    src: url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
+    font-family: 'Zilla Slab';
+    src: url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700,700i');
   }
 
   body, html, *, li {
+    font-family: 'Zilla Slab', helvetica, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, p{
     margin: 0;
-    font-family: 'Raleway', arial;
+  }
+  body, html {
+    margin: 0;
     font-size: 16px;
   }
 `;
@@ -67,9 +73,11 @@ class Index extends Component {
               isMobile={this.state.isMobile}
               windowWidth={this.state.windowWidth}
             />
-            <Subscribe isMobile={this.state.isMobile} />
+            {/*<Subscribe isMobile={this.state.isMobile} />*/}
             <WhatIsIt />
           </FluidContainer>
+
+          <Newsletter/>
 
           <Info isMobile={this.state.isMobile} />
           <Program isMobile={this.state.isMobile} />
