@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { FluidContainer, ContainerSmall, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1Xl, H2Md, Text } from "../components/Base";
+import { WithPadding, Title, Subtitle, Text } from "../components/Base";
 
 const faqs = [
   {
@@ -18,20 +18,11 @@ const faqs = [
   },
 ];
 
-const FaqWrapper = styled.div`
-  margin-bottom: ${props => props.theme.margins.lg};
-  &:nth-child(even) {
-    background: ${props => props.theme.colors.veryLight};
-  }
-`
-
 const Faq = ({question, answer}) =>
-  <Cell xs={12}>
-    <FaqWrapper>
-      <H2Md bold>{question}</H2Md>
-      <Text>{answer}</Text>
-    </FaqWrapper>
-  </Cell>
+  <WithPadding padding='md'>
+    <Subtitle bold>{question}</Subtitle>
+    <Text>{answer}</Text>
+  </WithPadding>
 
 const Faqs = ({ isMobile }) => (
   <FluidContainer>
@@ -39,15 +30,17 @@ const Faqs = ({ isMobile }) => (
       <WithPadding padding="xl">
         <Row>
           <Cell xs={12} center>
-            <H1Xl lineHeight="2" margin='lg' bold center>
+            <Title lineHeight="2" margin='lg' bold center>
               FAQs
-            </H1Xl>
+            </Title>
           </Cell>
         </Row>
         <Row>
-          { faqs.map( faq => (
-            <Faq {...faq} key={faq.question}/>
-          ))}
+          <Cell xs={12}>
+            { faqs.map( faq => (
+              <Faq {...faq} key={faq.question}/>
+            ))}
+          </Cell>
         </Row>
       </WithPadding>
     </ContainerSmall>
