@@ -17,6 +17,8 @@ import Trainers from "../components/home/Trainers";
 import Faqs from "../components/home/Faqs";
 import Subscribe from "../components/home/Subscribe";
 import Booking from "../components/home/Booking";
+import BookingBlock from "../components/home/BookingBlock";
+
 import WebsiteHead from '../components/home/WebsiteHead'
 import '../components/main.css'
 
@@ -70,20 +72,22 @@ class Index extends Component {
       <ThemeProvider theme={getTheme(this.state.windowWidth)}>
         <div>
           <WebsiteHead />
+
           <FluidContainer>
             <Jumbo
               isMobile={this.state.isMobile}
               windowWidth={this.state.windowWidth}
             />
-            {/*<Subscribe isMobile={this.state.isMobile} />*/}
-            <WhatIsIt />
-          </FluidContainer>
 
-          <Topics/>
+            <ContainerSmall>
+              <WhatIsIt />
+              <Newsletter isMobile={this.state.isMobile}/>
+            </ContainerSmall>
 
-          <Newsletter/>
+            <Container>
+              <Topics isMobile={this.state.isMobile}/>
+            </Container>
 
-          <FluidContainer>
             <ContainerSmall>
               <Info isMobile={this.state.isMobile} />
             </ContainerSmall>
@@ -91,16 +95,14 @@ class Index extends Component {
             <Container>
               <Program isMobile={this.state.isMobile} />
               <Trainers isMobile={this.state.isMobile} />
-            </Container>
-
-            <Container>
-              <WithPadding padding="xl">
-                <Booking isMobile={this.state.isMobile} />
-              </WithPadding>
+              <BookingBlock isMobile={this.state.isMobile} />
             </Container>
           </FluidContainer>
 
-          <Faqs isMobile={this.state.isMobile} />
+          <ContainerSmall>
+            <Faqs isMobile={this.state.isMobile} />
+          </ContainerSmall>
+
         </div>
       </ThemeProvider>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container } from '../grid/Grid'
-import { MainTitle, Title, Subtitle } from '../components/Base';
+import { WithPadding, MainTitle, Title, Subtitle } from '../components/Base';
 import Booking from './Booking'
 
 // 1.125 is a ratio of height/width of the cover photo
@@ -61,6 +61,7 @@ const Logo = styled.div`
   background-image: url('/indiedojo-white.png');
   background-size: contain;
   background-repeat: no-repeat;
+  margin-bottom: ${props => props.theme.margins.md};
 `
 
 const Jumbo = ({isMobile}) =>
@@ -89,7 +90,9 @@ const Jumbo = ({isMobile}) =>
     <LandingMessageWrapper>
       <Logo isMobile={isMobile}/>
       <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
-      <Booking light isMobile={isMobile}/>
+      <WithPadding padding='xl'>
+        <Booking light isMobile={isMobile}/>
+      </WithPadding>
     </LandingMessageWrapper>
   </VideoWrapper>
 export default Jumbo

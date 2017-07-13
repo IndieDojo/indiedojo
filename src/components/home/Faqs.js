@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { FluidContainer, ContainerSmall, Row, Cell } from "../grid/Grid";
+import { Row, Cell } from "../grid/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../components/Base";
 
 const faqs = [
@@ -25,26 +25,22 @@ const Faq = ({question, answer}) =>
   </WithPadding>
 
 const Faqs = ({ isMobile }) => (
-  <FluidContainer>
-    <ContainerSmall>
-      <WithPadding padding="xl">
-        <Row>
-          <Cell xs={12} center>
-            <Title lineHeight="2" margin='lg' bold center>
-              FAQs
-            </Title>
-          </Cell>
-        </Row>
-        <Row>
-          <Cell xs={12}>
-            { faqs.map( faq => (
-              <Faq {...faq} key={faq.question}/>
-            ))}
-          </Cell>
-        </Row>
-      </WithPadding>
-    </ContainerSmall>
-  </FluidContainer>
+  <WithPadding padding="xl">
+    <Row>
+      <Cell xs={12} center>
+        <Title lineHeight="2" margin='lg' bold center>
+          FAQs
+        </Title>
+      </Cell>
+    </Row>
+    <Row>
+      <Cell xs={12}>
+        { faqs.map( faq => (
+          <Faq {...faq} key={faq.question}/>
+        ))}
+      </Cell>
+    </Row>
+  </WithPadding>
 );
 
 export default Faqs;
