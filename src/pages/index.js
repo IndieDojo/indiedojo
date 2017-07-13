@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { injectGlobal, ThemeProvider } from "styled-components";
 
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/grid/Grid";
-import { Header } from "../components/header/Header";
 import { getTheme } from "../components/Theme";
 import { WithPadding, H1 } from "../components/components/Base";
 
