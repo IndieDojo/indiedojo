@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
 import {
   WithPadding,
-  H1Md,
-  H2Md,
-  H3Md,
+  Title,
+  Subtitle,
   Button,
   Text
 } from "../components/Base";
@@ -54,9 +53,9 @@ const JustSubscribed = () => (
   <Row>
     <Cell xs={12} sm={8} smOffset={4} md={6} mdOffset={3} center>
       <SubscribedCard>
-        <H3Md bold>
+        <Subtitle size='md' bold>
           Thanks for subscribing!
-        </H3Md>
+        </Subtitle>
       </SubscribedCard>
     </Cell>
   </Row>
@@ -143,7 +142,7 @@ class Subscribe extends Component {
               ? this.renderJustSubscribed()
               : <Row>
                   <Cell xs={12} center>
-                    <H1Md
+                    <Title
                       color="text"
                       lineHeight="1.5"
                       margin="md"
@@ -151,7 +150,7 @@ class Subscribe extends Component {
                       superbold
                     >
                       Join our online chat and watch the event online
-                    </H1Md>
+                    </Title>
 
                   </Cell>
                   <Cell xs={12} md={8} mdOffset={2} center>

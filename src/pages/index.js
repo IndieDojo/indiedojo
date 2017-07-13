@@ -90,10 +90,8 @@ class Index extends Component {
 
             <Container>
               <Program isMobile={this.state.isMobile} />
+              <Trainers isMobile={this.state.isMobile} />
             </Container>
-
-            <Trainers isMobile={this.state.isMobile} />
-
 
             <Container>
               <WithPadding padding="xl">

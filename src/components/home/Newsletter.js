@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Title, H2Lg, H3Nm } from '../components/Base';
+import { Title, Text, H3Nm, Subtitle } from '../components/Base';
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
 import { WithPadding, H1 } from "../components/Base";
-import Markdown from 'react-remarkable';
+// import Markdown from 'react-remarkable';
 
 const NewsletterWrapper = styled.div`
   display: flex;
@@ -13,18 +13,18 @@ const NewsletterWrapper = styled.div`
 `
 
 
-const NewsletterHeading = H2Lg.extend`
-  text-align: center;
-  margin-bottom: 10px;
-  max-width: 400px;
-`
+// const NewsletterHeading = H2Lg.extend`
+//   text-align: center;
+//   margin-bottom: 10px;
+//   max-width: 400px;
+// `
 
-const NewsletterIntro = H3Nm.extend`
-  text-align: center;
-  margin-bottom: 20px;
-  max-width: 400px;
-  font-size: 18px;
-`
+// const NewsletterIntro = H3Nm.extend`
+//   text-align: center;
+//   margin-bottom: 20px;
+//   max-width: 400px;
+//   font-size: 18px;
+// `
 
 const NewsletterForm = styled.form`
   border: 1px solid #333;
@@ -60,17 +60,17 @@ const BookContents = styled.div`
 
 `
 
-const BookHeading = styled.h4`
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 16px;
-  margin-bottom: 5px;
-`
-
-const BookTitle = styled.h3`
-  font-size: 22px;
-  margin-bottom: 5px;
-`
+// const BookHeading = styled.h4`
+//   text-transform: uppercase;
+//   font-weight: normal;
+//   font-size: 16px;
+//   margin-bottom: 5px;
+// `
+//
+// const BookTitle = styled.h3`
+//   font-size: 22px;
+//   margin-bottom: 5px;
+// `
 
 const BookImage = styled.img`
   width: 120px;
@@ -81,16 +81,16 @@ const Newsletter = props =>
     <ContainerSmall>
       <WithPadding padding='xxl'>
         <NewsletterWrapper>
-          <NewsletterHeading>Can't Join This Time?</NewsletterHeading>
+          <Subtitle margin='md' center bold>Can't Join This Time?</Subtitle>
 
-          <NewsletterIntro>
-            <Markdown>
-            You can still be part of Indie Dojo! 
-            Sign up for our newsletter to know about **upcoming bootcamps**, 
-            be notified of **live streams and hangouts**, 
-            and get access to an **exclusive eBook**.
-            </Markdown>
-          </NewsletterIntro>
+          {/* <NewsletterIntro> */}
+            <Text paddingBottom='xl'>
+              You can still be part of Indie Dojo!
+              Sign up for our newsletter to know about <b>upcoming bootcamps</b>,
+              be notified of <b>live streams and hangouts</b>,
+              and get access to an **exclusive eBook**.
+            </Text>
+          {/* </NewsletterIntro> */}
 
           <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
             <NewsletterField type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
@@ -112,10 +112,12 @@ const Newsletter = props =>
             </div>
 
             <BookContents>
-              <BookHeading>Your Free eBook</BookHeading>
-              <BookTitle>Color Theory for Startups</BookTitle>
-              <p>Through 9 short case studies, learn how leading companies
-              use color to establish their brand and reinforce their messaging.</p>
+              <Subtitle size='nm' margin='sm' uppercase>Your Free eBook</Subtitle>
+              <Subtitle size='md' margin='md' bold>Color Theory for Startups</Subtitle>
+              <Text>
+                Through 9 short case studies, learn how leading companies
+                use color to establish their brand and reinforce their messaging.
+              </Text>
             </BookContents>
           </Book>
 

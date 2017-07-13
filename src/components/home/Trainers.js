@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FluidContainer, Container, Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, H1Xl, H1Md, Subtitle, Text } from '../components/Base'
+import { Row, Cell } from '../grid/Grid';
+import { WithPadding, Background, Title, Subtitle, Text } from '../components/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -35,8 +35,8 @@ const Link = styled.a`
 
 const TrainerInfo = ({name, title}) =>
   <div>
-    <H1Md bold>{name}</H1Md>
-    <Subtitle color='lightGrey'>{title}</Subtitle>
+    <Subtitle bold>{name}</Subtitle>
+    <Subtitle size='nm' color='lightGrey'>{title}</Subtitle>
   </div>
 
 const Bio = styled.div`
@@ -72,39 +72,35 @@ const MaciejBio = () =>
   </Bio>
 
 const Trainers = ({isMobile}) => (
-  <FluidContainer>
-    <Background color='veryLight'>
-      <Container>
-        <WithPadding padding='xxl'>
-          <Row>
-            <Cell xs={12} center>
-              <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
-                Our team
-              </H1Xl>
-            </Cell>
-            <Cell xs={12} sm={6} center>
-              <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg' isMobile={isMobile}/>
-              <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
-              <SachaBio />
-            </Cell>
+  <Background color='transparentt'>
+    <WithPadding padding='xxl'>
+      <Row>
+        <Cell xs={12} center>
+          <Title margin={isMobile ? "lg" : "xl"} bold center>
+            Our Team
+          </Title>
+        </Cell>
+        <Cell xs={12} sm={6} center>
+          <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg' isMobile={isMobile}/>
+          <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
+          <SachaBio />
+        </Cell>
 
-            <Cell xs={12} sm={6} center>
-              <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/julian.jpg' isMobile={isMobile}/>
-              <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
-              <JulianBio />
-            </Cell>
-            <Cell xs={12} sm={6} smOffset={3} center>
-              <WithPadding padding='xl'>
-                <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>
-                <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
-                <MaciejBio />
-              </WithPadding>
-            </Cell>
-          </Row>
-        </WithPadding>
-      </Container>
-    </Background>
-  </FluidContainer>
+        <Cell xs={12} sm={6} center>
+          <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/julian.jpg' isMobile={isMobile}/>
+          <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
+          <JulianBio />
+        </Cell>
+        <Cell xs={12} sm={6} smOffset={3} center>
+          <WithPadding padding='xl'>
+            <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>
+            <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
+            <MaciejBio />
+          </WithPadding>
+        </Cell>
+      </Row>
+    </WithPadding>
+  </Background>
 );
 
 export default Trainers;
