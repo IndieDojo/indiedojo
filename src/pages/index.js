@@ -22,13 +22,13 @@ import '../components/main.css'
 // Sets global css
 injectGlobal`
   @font-face {
-    font-family: 'Raleway', arial;
-    src: url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
+    font-family: 'Zilla Slab';
+    src: url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700,700i');
   }
 
   body, html, *, li {
     margin: 0;
-    font-family: 'Raleway', arial;
+    font-family: 'Zilla Slab', helvetica, sans-serif;
     font-size: 16px;
   }
 `;

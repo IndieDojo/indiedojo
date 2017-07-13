@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Title, H2Lg } from '../components/Base';
+import { Title, H2Lg, H3Nm } from '../components/Base';
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
 import { WithPadding, H1 } from "../components/Base";
 
@@ -12,12 +12,12 @@ const NewsletterWrapper = styled.div`
 `
 
 
-const NewsletterHeading = styled.h2`
+const NewsletterHeading = H2Lg.extend`
   text-align: center;
   margin-bottom: 10px;
 `
 
-const NewsletterIntro = styled.h3`
+const NewsletterIntro = H3Nm.extend`
   text-align: center;
   margin-bottom: 20px;
 `
