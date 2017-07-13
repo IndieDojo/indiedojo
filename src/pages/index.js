@@ -7,6 +7,7 @@ import { getTheme } from "../components/Theme";
 import { WithPadding, H1 } from "../components/components/Base";
 
 import Jumbo from "../components/home/Jumbo";
+import Topics from "../components/home/Topics";
 import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
@@ -76,6 +77,8 @@ class Index extends Component {
             {/*<Subscribe isMobile={this.state.isMobile} />*/}
             <WhatIsIt />
           </FluidContainer>
+
+          <Topics/>
 
           <Newsletter/>
 
