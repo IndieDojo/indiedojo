@@ -11,14 +11,12 @@ const JumboWrapper = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 100%;
-  min-height: 60vh;
-  border-top: 8px solid black;
+  min-height: 100vh;
 }`
 
 const Logo = styled.div`
-  height: 120px;
-  width: 120px;
-  // background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/indie-dojo-logo-light-grey.jpg');
+  height: 200px;
+  width: 200px;
   background-image: url('/indiedojo.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -43,7 +41,6 @@ const LogoText = Title.extend`
 const Jumbo = props =>
   <JumboWrapper>
     <Logo/>
-    {/*<LogoText margin='0' lineHeight='1.25' black>Indie Dojo</LogoText>*/}
     <H2Lg margin='xxl' bold center>A one-week bootcamp for indie hackers</H2Lg>
     <Booking isMobile={props.isMobile}/>
   </JumboWrapper>

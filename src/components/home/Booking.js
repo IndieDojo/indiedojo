@@ -33,15 +33,6 @@ const Booking = ({ isMobile }) => (
         Book
       </BookingButton>
     </Date>
-    <Date isMobile={isMobile}>
-      <H3Md color="text" bold>Bali</H3Md>
-      <H3Nm color="text">4-9 December</H3Nm>
-      <BookingButton
-        href="https://www.codecamps.com/courses/o8X4WmtnC3hMMKovu/booking"
-      >
-        Book
-      </BookingButton>
-    </Date>
   </DatesWrapper>
 );
 
