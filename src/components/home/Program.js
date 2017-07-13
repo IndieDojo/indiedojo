@@ -4,16 +4,25 @@ import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
 import {
   Background,
   WithPadding,
-  MdTitle,
-  H1Xl,
-  H3Nm,
+  Title,
+  Subtitle,
   H3Sm,
   Text,
   MdText,
   FloatRight
 } from "../components/Base";
 
+import { BookingButton } from '../components/BookingButton'
 import { program } from "./detailedProgram";
+
+const ProgramButton = BookingButton.extend`
+  background: ${props => props.theme.colors.veryLightGrey};
+  color: ${props => props.theme.colors.text};
+  &:hover {
+    background: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.transparentWhite};
+  }
+`
 
 const ProgramWrapper = styled.div`
   display: flex;
@@ -54,21 +63,22 @@ const Header = ({ headers, activeIndex, onClick, isMobile, mainColor }) => (
         mainColor={mainColor}
         isMobile={isMobile}
       >
-        <H3Sm
+        <Subtitle
+          size='nm'
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
-          margin='sm'
-          bold
+          margin='md'
         >
           {header.day}
-        </H3Sm>
-        <H3Nm
+        </Subtitle>
+        <Subtitle
+          size='nm'
           lineHeight="1"
           color={index === activeIndex ? "white" : "mainColor"}
           bold
         >
           {header.topic}
-        </H3Nm>
+        </Subtitle>
       </HeaderCell>
     ))}
   </HeaderWrapper>
@@ -156,7 +166,7 @@ class TimeBlock extends Component {
         <Row>
           <Cell xs={3}>
             <TimeCell isMobile={isMobile}>
-              <H3Sm color='text'>{timeBlock.time}</H3Sm>
+              <Subtitle size='sm' color='text'>{timeBlock.time}</Subtitle>
             </TimeCell>
           </Cell>
 
@@ -164,9 +174,9 @@ class TimeBlock extends Component {
             <Row>
               <Cell xs={12}>
                 <TimeBlockHeader>
-                  <H3Nm color='text' margin='0' bold>
+                  <Subtitle size='nm' color='text' margin='0' bold>
                     {timeBlock.title}
-                  </H3Nm>
+                  </Subtitle>
                 </TimeBlockHeader>
               </Cell>
               {this.state.active &&
@@ -211,7 +221,8 @@ const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
 
 class CourseProgram extends Component {
   state = {
-    activeIndex: 0
+    activeIndex: 0,
+    isProgramVisible: false
   };
 
   getHeaders = (program) => {
@@ -222,20 +233,23 @@ class CourseProgram extends Component {
     this.setState({ activeIndex: Number(e.currentTarget.dataset.index) });
   };
 
+  onProgramButtonClick = e => {
+    this.setState({isProgramVisible: this.state.isProgramVisible ? false : true });
+  }
+
   render() {
     const { isMobile } = this.props;
     const mainColor = "black";
     const secondColor = "light";
 
     return (
-      <FluidContainer>
-        <Container>
+
           <WithPadding padding="xl">
             <Row>
               <Cell xs={12} center>
-                <H1Xl lineHeight="2" margin={isMobile ? "lg" : "xl"} bold center>
+                <Title margin={isMobile ? "lg" : "xl"} bold center>
                   Program
-                </H1Xl>
+                </Title>
               </Cell>
             </Row>
 
@@ -247,15 +261,17 @@ class CourseProgram extends Component {
               mainColor={mainColor}
             />
 
-            <DayBlock
-              dayBlock={program[this.state.activeIndex]}
-              isMobile={isMobile}
-              mainColor={mainColor}
-            />
+            { this.state.isProgramVisible &&
+              <DayBlock
+                dayBlock={program[this.state.activeIndex]}
+                isMobile={isMobile}
+                mainColor={mainColor}
+              />}
+            <ProgramButton onClick={this.onProgramButtonClick}>{this.state.isProgramVisible ? "Hide program" : "Show full program"}</ProgramButton>
+
 
           </WithPadding>
-        </Container>
-      </FluidContainer>
+
     );
   }
 }

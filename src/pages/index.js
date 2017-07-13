@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { injectGlobal, ThemeProvider } from "styled-components";
 
-import { FluidContainer, Container, Row, Cell } from "../components/grid/Grid";
+import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/grid/Grid";
 import { Header } from "../components/header/Header";
 import { getTheme } from "../components/Theme";
 import { WithPadding, H1 } from "../components/components/Base";
@@ -12,7 +12,7 @@ import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
 import Program from "../components/home/Program";
-import WhatYouWillLearn from "../components/home/WhatYouWillLearn";
+
 import Trainers from "../components/home/Trainers";
 import Faqs from "../components/home/Faqs";
 import Subscribe from "../components/home/Subscribe";
@@ -42,7 +42,8 @@ injectGlobal`
 // Some css theme params depend on window width.
 class Index extends Component {
   state = {
-    windowWidth: 0
+    windowWidth: 0,
+    isMobile: false
   };
 
   componentDidMount() {
@@ -82,11 +83,18 @@ class Index extends Component {
 
           <Newsletter/>
 
-          <Info isMobile={this.state.isMobile} />
-          <Program isMobile={this.state.isMobile} />
-          <Trainers isMobile={this.state.isMobile} />
-
           <FluidContainer>
+            <ContainerSmall>
+              <Info isMobile={this.state.isMobile} />
+            </ContainerSmall>
+
+            <Container>
+              <Program isMobile={this.state.isMobile} />
+            </Container>
+
+            <Trainers isMobile={this.state.isMobile} />
+
+
             <Container>
               <WithPadding padding="xl">
                 <Booking isMobile={this.state.isMobile} />

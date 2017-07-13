@@ -2,17 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Title, H2Lg, H3Nm } from '../components/Base';
 import { FluidContainer, Container, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1 } from "../components/Base";
+import { WithPadding, Subtitle, Text } from "../components/Base";
 import { Lightbulb, Megaphone, Cog, Palette } from "../components/Icons";
 
 const TopicsWrapper = styled.div`
 
-`
-
-const TopicsHeading = styled.h2`
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 20px;
 `
 
 const Topics = styled.div`
@@ -32,55 +26,60 @@ const Topic = styled.div`
 `
 
 const TopicHeading = styled.h3`
-  font-size: 24px;
+  font-size: ${props => props.theme.fontSizes.md};
   text-align: center;
 `
 
 const TopicList = styled.ul`
-  
+
+`
+
+const TopicItem = styled.li`
+  font-size: ${props => props.theme.fontSizes.nm};
+  padding-bottom: ${props => props.theme.margins.sm};
 `
 
 const Newsletter = props =>
   <FluidContainer>
     <Container>
       <WithPadding padding='xxl'>
-        <TopicsHeading>What You'll Learn</TopicsHeading>
+        <Subtitle size='lg' margin='lg' center bold>What You'll Learn</Subtitle>
         <TopicsWrapper>
           <Topics>
             <Topic>
               <Lightbulb/>
               <TopicHeading>Idea</TopicHeading>
               <TopicList>
-                <li>Find a need</li>
-                <li>Define a MVP</li>
-                <li>Validate your idea</li>
+                <TopicItem>Find a need</TopicItem>
+                <TopicItem>Define a MVP</TopicItem>
+                <TopicItem>VaTopicItemdate your idea</TopicItem>
               </TopicList>
             </Topic>
             <Topic>
               <Palette/>
               <TopicHeading>Design</TopicHeading>
               <TopicList>
-                <li>Build a prototype</li>
-                <li>Create a brand</li>
-                <li>Learn the basics of UX</li>
+                <TopicItem>Build a prototype</TopicItem>
+                <TopicItem>Define a MVP</TopicItem>
+                <TopicItem>Learn the basics of UX</TopicItem>
               </TopicList>
             </Topic>
             <Topic>
               <Cog/>
               <TopicHeading>Coding</TopicHeading>
               <TopicList>
-                <li>Evaluate technologies</li>
-                <li>Reuse existing resources</li>
-                <li>Understand the basics</li>
+                <TopicItem>Evaluate technologies</TopicItem>
+                <TopicItem>Reuse existing resources</TopicItem>
+                <TopicItem>Understand the basics</TopicItem>
               </TopicList>
             </Topic>
             <Topic>
               <Megaphone/>
               <TopicHeading>Marketing</TopicHeading>
               <TopicList>
-                <li>Find an audience</li>
-                <li>Set up marketing channels</li>
-                <li>Create a launch plan</li>
+                <TopicItem>Find an audience</TopicItem>
+                <TopicItem>Set up marketing channels</TopicItem>
+                <TopicItem>Create a launch plan</TopicItem>
               </TopicList>
             </Topic>
           </Topics>

@@ -1,30 +1,34 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { WithPadding, Title} from "../components/Base";
+import { Row, Cell } from '../grid/Grid';
+import styled from "styled-components";
 
-import IsItForMe from './IsItForMe';
-import WhatYouWillLearn from './WhatYouWillLearn'
+const items = [
+  "You are determined to become independent and to setup your web-based business",
+  "You have an idea, and don't know where to start,",
+  "You feel overwhelmed with what it takes to make it reality,",
+  "You want to meet other determined indie founders,",
+  "You can't focus at home and want to spend a week with other project-builders."
+];
 
-const Panel = styled.div`
-  display: flex;
-  flex-direction: ${props => props.isMobile ? 'column' : 'row'};
-`
+const List = styled.ul`
+  list-style: disc;
+  padding-left: ${props => props.theme.margins.lg};
+`;
 
-const Item = styled.div`
-  box-sizing: border-box;
-  width: ${props => props.isMobile ? '100%' : '50%'};
-  background: ${props => props.theme.colors[props.background]};
-  padding: 0 ${props => props.isMobile ? props.theme.margins.md : props.theme.margins.xl};
-`
+const Item = styled.li`
+  color: ${props => props.theme.colors.text};
+  font-size: ${props => props.theme.fontSizes.nm};
+  padding-bottom: ${props => props.theme.margins.md};
+`;
 
-const Info = ({isMobile}) => (
-  <Panel isMobile={isMobile}>
-    <Item background='black' isMobile={isMobile}>
-      <IsItForMe />
-    </Item>
-    <Item background='veryLight' isMobile={isMobile}>
-      <WhatYouWillLearn />
-    </Item>
-  </Panel>
-)
+const IsItForMe = () => (
+  <WithPadding padding="xxl">
+    <Title margin="md" bold>It's for you if:</Title>
+    <List>
+      {items.map((item, index) => <Item key={index}>{item}</Item>)}
+    </List>
+  </WithPadding>
+);
 
-export default Info;
+export default IsItForMe;

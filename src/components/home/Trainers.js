@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container, Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, H1Xl, H1Md, H2, Text } from '../components/Base'
+import { WithPadding, Background, H1Xl, H1Md, Subtitle, Text } from '../components/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -36,7 +36,7 @@ const Link = styled.a`
 const TrainerInfo = ({name, title}) =>
   <div>
     <H1Md bold>{name}</H1Md>
-    <H2 color='lightGrey'>{title}</H2>
+    <Subtitle color='lightGrey'>{title}</Subtitle>
   </div>
 
 const Bio = styled.div`

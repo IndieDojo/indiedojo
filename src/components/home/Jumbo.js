@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container } from '../grid/Grid'
-import { Title, H2Lg } from '../components/Base';
+import { MainTitle, Title, Subtitle } from '../components/Base';
 import Booking from './Booking'
 
 // 1.125 is a ratio of height/width of the cover photo
@@ -88,7 +88,7 @@ const Jumbo = ({isMobile}) =>
 
     <LandingMessageWrapper>
       <Logo isMobile={isMobile}/>
-      <H2Lg margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</H2Lg>
+      <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
       <Booking light isMobile={isMobile}/>
     </LandingMessageWrapper>
   </VideoWrapper>

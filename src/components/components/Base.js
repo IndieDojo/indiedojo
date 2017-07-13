@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby-link";
 
-export const Title = styled.h1`
+export const MainTitle = styled.h1`
   color: ${props =>
   props.color ? props.theme.colors[props.color] : props.theme.colors.text};
   margin-bottom: ${props =>
@@ -12,19 +12,24 @@ export const Title = styled.h1`
   display: ${props => props.inline ? "inline-block" : "block"};
   font-weight: ${props => {
     if (props.black) return props.theme.weights.black;
-    if (props.superbold ) return props.theme.weights.superbold;
+    if (props.superbold) return props.theme.weights.superbold;
     if (props.bold) return props.theme.weights.bold;
     return props.theme.weights.normal;
   }};
-  font-size: ${props => props.theme.fontSizes.nm};
-  line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
-  text-align: ${props => props.center ? 'center' : 'auto'};
+  font-size: ${props => !!props.size ? props.theme.fontSizes[props.size] : props.theme.fontSizes.lg};
+  line-height: ${props => !!props.lineHeight ? props.lineHeight : '1.5'};
+  text-align: ${props => props.center ? "center" : "auto"};
 `;
+
+export const Title = MainTitle.withComponent("h2");
+const H3 = MainTitle.withComponent('h3');
+export const Subtitle = H3.extend`
+  font-size: ${props => !!props.size ? props.theme.fontSizes[props.size] : props.theme.fontSizes.md};
+`
 
 export const XxxlTitle = Title.extend`
   font-size: ${props => props.theme.fontSizes.xxxl};
 `;
-
 
 export const XxlTitle = Title.extend`
   font-size: ${props => props.theme.fontSizes.xxl};
@@ -60,7 +65,7 @@ export const H1Md = MdTitle;
 export const H1Nm = NmTitle;
 export const H1Sm = SmTitle;
 
-export const H2 = Title.withComponent("h2");
+
 export const H2Xxl = XxlTitle.withComponent("h2");
 export const H2Xl = XlTitle.withComponent("h2");
 export const H2Lg = LgTitle.withComponent("h2");
@@ -68,7 +73,7 @@ export const H2Md = MdTitle.withComponent("h2");
 export const H2Nm = NmTitle.withComponent("h2");
 export const H2Sm = SmTitle.withComponent("h2");
 
-export const H3 = Title.withComponent("h3");
+
 export const H3Xxl = XxlTitle.withComponent("h3");
 export const H3Xl = XlTitle.withComponent("h3");
 export const H3Lg = LgTitle.withComponent("h3");
@@ -87,15 +92,28 @@ export const H4Sm = SmTitle.withComponent("h4");
 export const Text = styled.p`
   display: ${props => props.inlineBlock ? "inline-block" : "inline"};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
-  font-size: ${props => !!props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.nm};
-  font-weight: ${props => props.bold ? props.theme.weights.bold : props.theme.weights.normal};
+  font-size: ${props =>
+  !!props.fontSize
+    ? props.theme.fontSizes[props.fontSize]
+    : props.theme.fontSizes.nm};
+  font-weight: ${props =>
+  props.bold ? props.theme.weights.bold : props.theme.weights.normal};
   color: ${props =>
-    props.color ? props.theme.colors[props.color] : props.theme.colors.text};
-  padding-top: ${props => !!props.paddingTop ? props.theme.margins[props.paddingTop] : props.theme.margins.md};
-  padding-bottom: ${props => !!props.paddingBottom ? props.theme.margins[props.paddingBottom] : props.theme.margins.md};
+  props.color ? props.theme.colors[props.color] : props.theme.colors.text};
+  padding-top: ${props =>
+  !!props.paddingTop
+    ? props.theme.margins[props.paddingTop]
+    : props.theme.margins.md};
+  padding-bottom: ${props =>
+  !!props.paddingBottom
+    ? props.theme.margins[props.paddingBottom]
+    : props.theme.margins.md};
 
   Link {
-    font-size: ${props => !!props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.nm} !important;
+    font-size: ${props =>
+  !!props.fontSize
+    ? props.theme.fontSizes[props.fontSize]
+    : props.theme.fontSizes.nm} !important;
     color: ${props => !!props.theme.colors.primary} !important;
     text-decoration: none;
     &:hover {
@@ -103,7 +121,6 @@ export const Text = styled.p`
     }
   }
 `;
-
 
 export const Image = styled.img`
   display: inline-block;
@@ -137,12 +154,18 @@ export const ImageRoundSmall = styled(ImageRound)`
 `;
 
 export const WithPadding = styled.div`
-  padding: ${props => !!props.padding ? props.theme.margins[props.padding] : props.theme.margins.lg} 0;
+  padding: ${props =>
+  !!props.padding
+    ? props.theme.margins[props.padding]
+    : props.theme.margins.lg} 0;
 `;
 
 export const Background = styled.div`
   width: 100%;
-  background: ${props => !!props.color ? props.theme.colors[props.color] : props.theme.colors.transparent};
+  background: ${props =>
+  !!props.color
+    ? props.theme.colors[props.color]
+    : props.theme.colors.transparent};
 `;
 
 export const Button = styled.button`
@@ -172,28 +195,29 @@ const LinkStyled = styled.span`
   a {
     display: ${props => props.block ? "block" : "inline"};
     font-size: ${props =>
-      !!props.fontSize
-        ? props.theme.fontSizes[props.fontSize]
-        : props.theme.fontSizes.nm};
+  !!props.fontSize
+    ? props.theme.fontSizes[props.fontSize]
+    : props.theme.fontSizes.nm};
     font-family: ${props =>
-      !!props.serif
-        ? props.theme.fontFamily.serif
-        : props.theme.fontFamily.sansSerif};
+  !!props.serif
+    ? props.theme.fontFamily.serif
+    : props.theme.fontFamily.sansSerif};
     font-weight: ${props => props.bold ? "bold" : "normal"};
     line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
     text-decoration: ${props => !!props.noDecoration ? "none" : "underline"};
     color: ${props =>
-      !!props.color ? props.theme.colors[props.color] : props.theme.colors.primary};
+  !!props.color ? props.theme.colors[props.color] : props.theme.colors.primary};
         &:hover {
     color: ${props =>
-      !!props.hoverColor
-        ? props.theme.colors[props.hoverColor]
-        : props.theme.colors.primary};
+  !!props.hoverColor
+    ? props.theme.colors[props.hoverColor]
+    : props.theme.colors.primary};
     cursor: pointer;
     text-decoration: ${props =>
-      props.noDecorationOnHover ? "none" : "underline"};
+  props.noDecorationOnHover ? "none" : "underline"};
     };
-    margin-bottom: ${props => !!props.margin ? props.theme.margins[props.margin] : '0'};
+    margin-bottom: ${props =>
+  !!props.margin ? props.theme.margins[props.margin] : "0"};
   }
 `;
 
@@ -235,7 +259,7 @@ export const ReadMore = styled.a`
   font-size: ${props => props.theme.fontSizes.nm};
   color: black;
   line-height: 4rem;
-  text-decoration: ${props => props.noDecoration ? 'none' : 'underline'};
+  text-decoration: ${props => props.noDecoration ? "none" : "underline"};
   cursor: pointer;
   &:hover {
     color: ${props => props.theme.colors.link};
@@ -257,10 +281,10 @@ export const Card = styled.div`
   !!props.radius ? props.theme.radius[props.radius] : 0};
   box-shadow: ${props => !!props.shadow ? `0 3px 10px rgba(0,0,0,0.14)` : 0};
   border-radius: ${props => {
-    if (!!props.radius) {
-      return props.theme.radius[props.radius];
-    } else {
-      return 0;
-    }
-  }};
+  if (!!props.radius) {
+    return props.theme.radius[props.radius];
+  } else {
+    return 0;
+  }
+}};
 `;
