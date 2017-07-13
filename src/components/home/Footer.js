@@ -45,14 +45,14 @@ const Footer = () => (
 
             <Cell xs={12} center>
               <Subtitle size='sm' marginRight='xl' inline>
-                <LinkTo inherit to=''>Terms and Conditions</LinkTo>
+                <Link to='/terms-and-conditions'>Terms and Conditions</Link>
               </Subtitle>
               <Subtitle size='sm' inline>
-                <LinkTo inherit to=''>Code of Conduct</LinkTo>
+                <Link to='/code-of-conduct'>Code of Conduct</Link>
               </Subtitle>
             </Cell>
 
-            <WithPadding padding='xl'/> 
+            <WithPadding padding='xl'/>
 
             <Cell xs={12} center>
               <Subtitle size='xs' color='transparentWhite50'>

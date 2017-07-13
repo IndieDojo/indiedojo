@@ -1,4 +1,4 @@
-export const CodeOfConduct = `# Course Code of Conduct
+export const COC = `# Course Code of Conduct
 
 All attendees and trainers at our course are required to agree with the following code of conduct. Organiser will enforce this code throughout the event. We expect cooperation from all participants to help ensure a safe environment for everybody.
 

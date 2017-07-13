@@ -1,11 +1,21 @@
 {
     "data": {
         "allSitePage": {
-            "totalCount": 1,
+            "totalCount": 3,
             "edges": [
                 {
                     "node": {
                         "path": "/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/code-of-conduct/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/terms-and-conditions/"
                     }
                 }
             ]

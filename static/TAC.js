@@ -1,4 +1,5 @@
-const TAC = `# Bootcamp Terms of Business
+export const TAC = `# Bootcamp Terms of Business
+
 
 **Dear fellow geek,**
 Thank you for choosing the Indie Dojo (‘Bootcamp’). Please read these terms and conditions carefully. **By taking part in the Bootcamp you are deemed to accept these terms and conditions. Please print off a copy for future reference if you are viewing this online.**
@@ -59,11 +60,11 @@ Any personal data that the Organiser collects from you will be kept secure and t
 
 **11.2** A Force Majeure Event includes any act, event, non-happening, omission or accident beyond the Organiser’s reasonable control and includes in particular (without limitation) strikes, lock-outs or other industrial action; civil commotion, riot, invasion, terrorist attack or threat of terrorist attack, war (whether declared or not) or threat or preparation for war; fire, explosion, storm, flood, earthquake, subsidence, epidemic or other natural disaster; impossibility of the use of railways, shipping, aircraft, motor transport or other means of public or private transport; impossibility of the use of public or private telecommunications networks; the acts, decrees, legislation, regulations or restrictions of any government.
 
-**11.3** The Organiser’s performance under these terms is deemed to be suspended for the period that the Force Majeure Event continues, and the Organiser will have an extension of time for performance for the duration of that period.  
+**11.3** The Organiser’s performance under these terms is deemed to be suspended for the period that the Force Majeure Event continues, and the Organiser will have an extension of time for performance for the duration of that period.
 
 
 ## 12. Governing law
-This agreement and any non-contractual obligations arising in connection with it shall be governed by English law. The English courts shall have exclusive jurisdiction to determine any dispute arising in connection with this agreement, including disputes relating to any non-contractual obligations.   
+This agreement and any non-contractual obligations arising in connection with it shall be governed by English law. The English courts shall have exclusive jurisdiction to determine any dispute arising in connection with this agreement, including disputes relating to any non-contractual obligations.
 
 
 # Appendix- Bootcamp Rules and Details
