@@ -22,11 +22,10 @@ const Date = styled.div`
   }
 `;
 
-const Booking = ({ isMobile }) => (
+const Booking = ({ light, isMobile }) => (
   <DatesWrapper className='dates-wrapper'>
     <Date isMobile={isMobile}>
-      <H3Md color="text" bold>Kyoto</H3Md>
-      <H3Nm color="text">13-18 November</H3Nm>
+      <H3Md color={light ? 'transparentWhite' : 'text' }>Kyoto, 13-18 November</H3Md>
       <BookingButton
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >

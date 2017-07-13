@@ -40,6 +40,7 @@ const colors = {
   link: "#3077b6",
   transparent: "rgba(255,255,255,0)",
   transparentWhite: "rgba(255,255,255, 0.9)",
+  transparentWhite75: "rgba(255,255,255, 0.75)",
   white: "rgba(255, 255, 255, 1)",
   black: "rgba(0,0,0,1)",
   lightGrey: "rgba(0,0,0,0.5)",
