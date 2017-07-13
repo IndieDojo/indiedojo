@@ -50,10 +50,10 @@ const NewsletterButton = styled.input`
 
 const Book = styled.div`
   display: flex;
-  background: #eee;
-  padding: 20px;
-  margin: 0 auto 20px auto;
-  max-width: 400px;
+  box-sizing: border-box;
+  background: ${props => props.theme.colors.veryLight};
+  padding: ${props => props.theme.margins.lg};
+  width: 100%;
 `
 
 const BookContents = styled.div`
