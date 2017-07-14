@@ -40,6 +40,24 @@ injectGlobal`
     margin: 0;
     font-size: 16px;
   }
+
+  a {
+    color: ${props => props.theme.colors.link};
+    font-size: inherit;
+    transition: color 0.1s ease-in;
+    text-decoration: none;
+    cursor: pointer;
+    &:visited {
+      text-decoration: none;
+      color: ${props => props.theme.colors.link};
+    }
+    &:hover {
+      color: ${props => props.theme.colors.primary};
+      text-decoration: underline;
+    }
+  }
+
+
 `;
 
 // Some css theme params depend on window width.
