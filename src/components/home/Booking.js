@@ -25,7 +25,7 @@ const BookingDate = styled.div`
 const BookingPrice = styled.div`
   margin-top: 20px;
   font-size: 18px;
-  color: ${props => props.theme.colors.transparentWhite};
+  color: ${props => props.light ? props.theme.colors.transparentWhite : props.theme.colors.primary};
   a{
     color: ${props => props.theme.colors.transparentWhite};
   }
@@ -41,7 +41,7 @@ const Booking = ({ light, isMobile }) => (
       >
         Book Now
       </BookingButton>
-      <BookingPrice>Early Registration Price: <strong>$1,490</strong> (<a href="#included">What's included?</a>)</BookingPrice>
+      <BookingPrice light={light}>Early Registration Price: <strong>$1,490</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
     </BookingDate>
   </DatesWrapper>
 );

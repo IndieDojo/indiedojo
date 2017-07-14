@@ -4,28 +4,12 @@ import { Title, Text, Subtitle } from '../components/Base';
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
 import { WithPadding, H1 } from "../components/Base";
 
-// import Markdown from 'react-remarkable';
-
 const NewsletterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `
-
-
-// const NewsletterHeading = H2Lg.extend`
-//   text-align: center;
-//   margin-bottom: 10px;
-//   max-width: 400px;
-// `
-
-// const NewsletterIntro = H3Nm.extend`
-//   text-align: center;
-//   margin-bottom: 20px;
-//   max-width: 400px;
-//   font-size: 18px;
-// `
 
 const NewsletterForm = styled.form`
   border: 1px solid #333;
@@ -61,18 +45,6 @@ const BookContents = styled.div`
 
 `
 
-// const BookHeading = styled.h4`
-//   text-transform: uppercase;
-//   font-weight: normal;
-//   font-size: 16px;
-//   margin-bottom: 5px;
-// `
-//
-// const BookTitle = styled.h3`
-//   font-size: 22px;
-//   margin-bottom: 5px;
-// `
-
 const BookImage = styled.img`
   width: 120px;
 `
@@ -84,15 +56,12 @@ const Newsletter = ({isMobile}) =>
         Can't Join This Time?
       </Title>
 
-      {/* <NewsletterIntro> */}
-        <Text paddingBottom='xl'>
-          You can still be part of Indie Dojo!
-          Sign up for our newsletter to know about <b>upcoming bootcamps</b>,
-          be notified of <b>live streams and hangouts</b>,
-          and get access to an <b>exclusive eBook</b>.
-        </Text>
-      {/* </NewsletterIntro> */}
-
+      <Text paddingBottom='xl'>
+        You can still be part of Indie Dojo!
+        Sign up for our newsletter to know about <b>upcoming bootcamps</b>,
+        be notified of <b>live streams and hangouts</b>,
+        and get access to an <b>exclusive eBook</b>.
+      </Text>
 
       {/* <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate> */}
       <NewsletterForm action="//gmail.us10.list-manage.com/subscribe/post?u=ad72e9706ca16886b52c76e66&amp;id=14ef1c90fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>

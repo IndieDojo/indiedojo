@@ -121,10 +121,17 @@ class Index extends Component {
               </Container>
             </Background>
 
-
             <ContainerSmall>
               <BookingBlock isMobile={this.state.isMobile} />
-              <Newsletter isMobile={this.state.isMobile}/>
+            </ContainerSmall>
+
+            <Background color='veryLight'>
+              <ContainerSmall>
+                <Newsletter isMobile={this.state.isMobile}/>
+              </ContainerSmall>
+            </Background>
+
+            <ContainerSmall>
               <Faqs isMobile={this.state.isMobile} />
             </ContainerSmall>
 
