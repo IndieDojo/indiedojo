@@ -22,5 +22,6 @@ export const BookingButton = styled.a`
   &:hover {
     border-color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};
     color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};
+    text-decoration: none;
   }
 `

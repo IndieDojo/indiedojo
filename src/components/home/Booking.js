@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BookingButton } from "../components/BookingButton";
-import { Subtitle } from "../components/Base";
+import { Subtitle, LinkTo } from "../components/Base";
 
 const DatesWrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const Booking = ({ light, isMobile }) => (
     <BookingDate isMobile={isMobile}>
       <Subtitle color={light ? 'transparentWhite' : 'text' }>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton
-        variant="jumbo"
+        variant={ light ? 'jumbo' : 'else'}
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
         Book Now

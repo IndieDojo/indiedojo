@@ -20,7 +20,7 @@ const ProfileImage = styled.div`
 const TrainerInfo = ({name, title}) =>
   <div>
     <Subtitle bold>{name}</Subtitle>
-    <Subtitle size='nm' color='lightGrey'>{title}</Subtitle>
+    <Subtitle size='nm' margin='md' color='lightGrey'>{title}</Subtitle>
   </div>
 
 const Bio = styled.div`
