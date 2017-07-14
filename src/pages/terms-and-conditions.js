@@ -5,12 +5,12 @@ import { getTheme } from "../components/Theme";
 
 import WebsiteHead from '../components/home/WebsiteHead'
 
-import { FluidContainer, ContainerSmall } from '../components/grid/Grid';
+import { FluidContainer, ContainerSmall, Row, Cell } from '../components/grid/Grid';
 import { WithPadding } from '../components/components/Base'
 import { MarkdownWrapper } from '../components/components/Markdown'
 import { TAC } from '../../static/TAC'
 import Footer from "../components/home/Footer";
-
+import { Logo } from '../components/components/Logo'
 
 // Sets global css
 injectGlobal`
@@ -64,6 +64,11 @@ class Tac extends Component {
           <FluidContainer>
             <ContainerSmall>
               <WithPadding padding='xxxl'>
+                <Row>
+                  <Cell xs={12} center>
+                    <Logo isMobile={this.state.isMobile}/>
+                  </Cell>
+                </Row>
                 <MarkdownWrapper isMobile={this.state.isMobile}>
                   <Markdown source={TAC}/>
                 </MarkdownWrapper>

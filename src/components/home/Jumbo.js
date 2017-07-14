@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container } from '../grid/Grid'
 import { WithPadding, MainTitle, Title, Subtitle } from '../components/Base';
+import { Logo } from '../components/Logo'
 import Booking from './Booking'
 
 // 1.125 is a ratio of height/width of the cover photo
@@ -53,17 +54,6 @@ const Image = styled.img`
   z-index: -2;
 `;
 
-
-const Logo = styled.div`
-  box-sizing: border-box;
-  height: ${props => props.isMobile ? '100px' : '12vw'};
-  width: ${props => props.isMobile ? '100px' : '12vw'};
-  background-image: url('/indiedojo-white.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-bottom: ${props => props.theme.margins.md};
-`
-
 const Jumbo = ({isMobile}) =>
   <VideoWrapper className='video-wrapper' isMobile={isMobile}>
     {isMobile
@@ -88,7 +78,7 @@ const Jumbo = ({isMobile}) =>
     <VideoCover isMobile={isMobile}/>
 
     <LandingMessageWrapper>
-      <Logo isMobile={isMobile}/>
+      <Logo light isMobile={isMobile}/>
       <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
       <WithPadding padding='sm'>
         <Booking light isMobile={isMobile}/>
