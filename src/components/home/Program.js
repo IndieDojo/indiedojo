@@ -6,12 +6,6 @@ import { BookingButton } from "../components/BookingButton";
 import { program } from "./detailedProgram";
 
 const ProgramButton = BookingButton.extend`
-  background: ${props => props.theme.colors.veryLightGrey};
-  color: ${props => props.theme.colors.text};
-  &:hover {
-    background: ${props => props.theme.colors.black};
-    color: ${props => props.theme.colors.transparentWhite};
-  }
 `;
 
 const ProgramWrapper = styled.div`
@@ -24,7 +18,7 @@ const HeaderCell = styled.div`
   flex-grow: 1;
   text-align: center;
   background: ${props =>
-  props.active ? props.mainColor : props.theme.colors.veryLight};
+  props.active ? props.theme.colors[props.mainColor] : props.theme.colors.veryLight};
   border-bottom: ${props => props.isMobile ? "1px solid white" : "0"};
   padding: ${props => props.theme.margins.md};
   cursor: ${props => props.active ? "normal" : "pointer"};
@@ -83,9 +77,9 @@ const TimeBlockWrapper = styled.div`
   border-left: 7px solid ${props => {
   switch (props.type) {
     case "lecture":
-      return props.mainColor;
+      return props.theme.colors[props.mainColor];
     case "workshop":
-      return props.theme.colors.lightGrey;
+      return props.theme.colors[props.secondColor];
     case "break":
       return props.theme.colors.veryLightGrey;
     default:
@@ -95,9 +89,9 @@ const TimeBlockWrapper = styled.div`
   border-right: 7px solid ${props => {
   switch (props.type) {
     case "lecture":
-      return props.mainColor;
+      return props.theme.colors[props.mainColor];
     case "workshop":
-      return props.theme.colors.lightGrey;
+      return props.theme.colors[props.secondColor];
     case "break":
       return props.theme.colors.veryLightGrey;
     default:
@@ -161,6 +155,7 @@ class TimeBlock extends Component {
         active={this.state.active}
         withDescription={!!timeBlock.description}
         mainColor={mainColor}
+        secondColor={secondColor}
       >
         <Row>
           <Cell xs={3}>
@@ -198,7 +193,7 @@ class TimeBlock extends Component {
 const DayBlockWrapper = styled.div`
 `;
 
-const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
+const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
   <DayBlockWrapper>
     {dayBlock.timeBlocks.map((timeBlock, index) => (
       <TimeBlock
@@ -206,6 +201,7 @@ const DayBlock = ({ dayBlock, isMobile, mainColor }) => (
         timeBlock={timeBlock}
         isMobile={isMobile}
         mainColor={mainColor}
+        secondColor={secondColor}
       />
     ))}
   </DayBlockWrapper>
@@ -233,7 +229,8 @@ class CourseProgram extends Component {
 
   render() {
     const { isMobile } = this.props;
-    const mainColor = "black";
+    const mainColor = "primary";
+    const secondColor="primaryHover"
 
     return (
       <WithPadding padding="xl">
@@ -259,6 +256,7 @@ class CourseProgram extends Component {
               dayBlock={program[this.state.activeIndex]}
               isMobile={isMobile}
               mainColor={mainColor}
+              secondColor={secondColor}
             />}
           <ProgramButton onClick={this.onProgramButtonClick}>
             {this.state.isProgramVisible ? "Hide program" : "Show full program"}
