@@ -48,6 +48,7 @@ const JulianBio = () =>
     </Text>
   </Bio>
 
+
 const MaciejBio = () =>
   <Bio>
     <Text>
@@ -71,9 +72,9 @@ const Trainers = ({isMobile}) =>
       </Cell>
 
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/julian.jpg' isMobile={isMobile}/>
-        <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
-        <JulianBio />
+        <ProfileImage imgUrl='/batman.png' isMobile={isMobile}/>
+        <TrainerInfo name='To be announced' title=""/>
+        {/* <JulianBio /> */}
       </Cell>
       <Cell xs={12} sm={4} center>
         <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>

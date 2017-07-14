@@ -115,6 +115,7 @@ class Index extends Component {
             </Container>
 
             <Background color='veryLight'>
+              <div id='trainers'></div>
               <Container>
                 <Trainers isMobile={this.state.isMobile} />
               </Container>

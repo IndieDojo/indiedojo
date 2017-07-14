@@ -6,6 +6,7 @@ import { BookingButton } from "../components/BookingButton";
 import { program } from "./detailedProgram";
 
 const ProgramButton = BookingButton.extend`
+  margin-top: ${props => props.theme.margins.xl};
 `;
 
 const ProgramWrapper = styled.div`
