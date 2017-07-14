@@ -3,7 +3,7 @@ import { injectGlobal, ThemeProvider } from "styled-components";
 
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/grid/Grid";
 import { getTheme } from "../components/Theme";
-import { WithPadding, H1 } from "../components/components/Base";
+import { Background, WithPadding, H1 } from "../components/components/Base";
 
 import Jumbo from "../components/home/Jumbo";
 import Topics from "../components/home/Topics";
@@ -101,12 +101,25 @@ class Index extends Component {
             <ContainerSmall>
               <WhatIsIt />
             </ContainerSmall>
+          </FluidContainer>
+
+          <FluidContainer>
+            <Background color='primary'>
+              <Container>
+                <Topics isMobile={this.state.isMobile}/>
+              </Container>
+            </Background>
 
             <Container>
-              <Topics isMobile={this.state.isMobile}/>
               <Program isMobile={this.state.isMobile} />
-              <Trainers isMobile={this.state.isMobile} />
             </Container>
+
+            <Background color='veryLight'>
+              <Container>
+                <Trainers isMobile={this.state.isMobile} />
+              </Container>
+            </Background>
+
 
             <ContainerSmall>
               <BookingBlock isMobile={this.state.isMobile} />

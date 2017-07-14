@@ -36,6 +36,7 @@ const TopicList = styled.ul`
 `
 
 const TopicItem = styled.li`
+  color: ${props => props.theme.colors.transparentWhite};
   font-size: ${props => props.theme.fontSizes.nm};
   padding-bottom: ${props => props.theme.margins.sm};
 `
@@ -43,24 +44,24 @@ const TopicItem = styled.li`
 const Topics = ({ isMobile }) =>
   <TopicsWrapper>
     <WithPadding padding='xxl'>
-      <Title margin={isMobile ? "xl" : "xxl"} bold center>
+      <Title color='transparentWhite' margin={isMobile ? "xl" : "xxl"} bold center>
         What You'll Learn
       </Title>
       <Row>
         <Cell xs={12} sm={6} md={3} center>
           <Lightbulb/>
           <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Idea</Subtitle>
+          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Idea</Subtitle>
           <TopicList>
             <TopicItem>Find a need</TopicItem>
             <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>VaTopicItemdate your idea</TopicItem>
+            <TopicItem>Evaluate your idea</TopicItem>
           </TopicList>
         </Cell>
         <Cell xs={12} sm={6} md={3} center>
           <Palette/>
           <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Design</Subtitle>
+          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Design</Subtitle>
           <TopicList>
             <TopicItem>Build a prototype</TopicItem>
             <TopicItem>Define a MVP</TopicItem>
@@ -70,7 +71,7 @@ const Topics = ({ isMobile }) =>
         <Cell xs={12} sm={6} md={3} center>
           <Cog/>
           <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm'  center bold>Coding</Subtitle>
+          <Subtitle  color='transparentWhite' size='md' margin='sm'  center bold>Coding</Subtitle>
           <TopicList>
             <TopicItem>Evaluate technologies</TopicItem>
             <TopicItem>Reuse existing resources</TopicItem>
@@ -80,7 +81,7 @@ const Topics = ({ isMobile }) =>
         <Cell xs={12} sm={6} md={3} center>
           <Megaphone/>
           <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Marketing</Subtitle>
+          <Subtitle  color='transparentWhite' size='md' margin='sm' center bold>Marketing</Subtitle>
           <TopicList>
             <TopicItem>Find an audience</TopicItem>
             <TopicItem>Set up marketing channels</TopicItem>

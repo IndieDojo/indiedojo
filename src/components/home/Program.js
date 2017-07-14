@@ -233,7 +233,7 @@ class CourseProgram extends Component {
     const secondColor="primaryHover"
 
     return (
-      <WithPadding padding="xl">
+      <WithPadding padding="xxl">
         <Row>
           <Cell xs={12} center>
             <Title margin={isMobile ? "lg" : "xl"} bold center>
@@ -245,7 +245,7 @@ class CourseProgram extends Component {
           <Header
             headers={this.getHeaders(program)}
             activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-            onClick={this.state.isProgramVisible ? this.onHeaderTabClick : null}
+            onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
             isMobile={isMobile}
             isProgramVisible={this.state.isProgramVisible}
             mainColor={mainColor}

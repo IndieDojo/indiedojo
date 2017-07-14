@@ -67,7 +67,7 @@ class CodeOfConduct extends Component {
               <WithPadding padding='xxxl'>
                 <Row>
                   <Cell xs={12} center>
-                    <Logo isMobile={this.state.isMobile}/>
+                    <Logo margin='xxl' isMobile={this.state.isMobile}/>
                   </Cell>
                 </Row>
                 <MarkdownWrapper isMobile={this.state.isMobile}>
