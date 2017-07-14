@@ -5,7 +5,12 @@
             "edges": [
                 {
                     "node": {
-                        "path": "/"
+                        "path": "/Base/"
+                    }
+                },
+                {
+                    "node": {
+                        "path": "/Base0/"
                     }
                 },
                 {
@@ -15,17 +20,12 @@
                 },
                 {
                     "node": {
+                        "path": "/"
+                    }
+                },
+                {
+                    "node": {
                         "path": "/terms-and-conditions/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/Base/"
-                    }
-                },
-                {
-                    "node": {
-                        "path": "/Base0/"
                     }
                 }
             ]

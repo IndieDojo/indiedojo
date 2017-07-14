@@ -66,7 +66,7 @@ const Trainers = ({isMobile}) =>
         </Title>
       </Cell>
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg' isMobile={isMobile}/>
+        <ProfileImage imgUrl='/sacha.jpg' isMobile={isMobile}/>
         <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
         <SachaBio />
       </Cell>
@@ -77,7 +77,7 @@ const Trainers = ({isMobile}) =>
         {/* <JulianBio /> */}
       </Cell>
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>
+        <ProfileImage imgUrl='/maciej.jpg' isMobile={isMobile}/>
         <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
         <MaciejBio />
       </Cell>

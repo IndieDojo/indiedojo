@@ -69,7 +69,7 @@ const Jumbo = ({isMobile}) =>
           isMobile={isMobile}
         >
           <source
-            src="https://player.vimeo.com/external/225405488.sd.mp4?s=a11ea740555d3ed029be2174fa7dd17df768f739&profile_id=164"
+            src="https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164"
             type="video/mp4"
           />
         </VideoPlayer>
