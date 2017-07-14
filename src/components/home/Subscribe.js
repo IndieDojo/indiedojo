@@ -114,7 +114,7 @@ class Subscribe extends Component {
         body: JSON.stringify(subscriber),
       	headers: new Headers({
       		'Content-Type': 'application/json; charset=utf-8',
-          'Authorization': "Basic " + window.btoa("any:eacdd37f6f46f9b29099964ffa6387cd-us10")
+          'Authorization': "Basic " + window && window.btoa("any:eacdd37f6f46f9b29099964ffa6387cd-us10")
       	})
       });
 

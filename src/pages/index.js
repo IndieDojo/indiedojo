@@ -50,7 +50,7 @@ class Index extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("resize", this.onWindowResize);
+    window && window.addEventListener("resize", this.onWindowResize);
     this.setState({
       windowWidth: window.innerWidth,
       isMobile: window.innerWidth <= 600
@@ -58,13 +58,13 @@ class Index extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onWindowResize);
+    window && window.removeEventListener("resize", this.onWindowResize);
   }
 
   onWindowResize = () => {
     this.setState({
-      windowWidth: window.innerWidth,
-      isMobile: window.innerWidth <= 600
+      windowWidth: window && window.innerWidth,
+      isMobile: window && window.innerWidth <= 600
     });
   };
 

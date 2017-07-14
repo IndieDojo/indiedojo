@@ -4,18 +4,20 @@ import { FluidContainer, Container } from '../grid/Grid'
 import { WithPadding, MainTitle, Title, Subtitle } from '../components/Base';
 import Booking from './Booking'
 
+// this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};
+
 // 1.125 is a ratio of height/width of the cover photo
 const VideoWrapper = styled.div`
   position: relative;
   min-width: 100%;
-  height: ${props => props.isMobile ? `100vh` : `${window.innerWidth * 0.5625}px`};
+  height: 100vh;
   overflow:hidden;
 `;
 
 const VideoPlayer = styled.video`
   object-fit: cover;
   width: 100%;
-  height: ${props => props.isMobile ? `100vh` : `${window.innerWidth * 0.5625}px`};
+  height: 100vh;
   z-index: -2;
 `;
 
@@ -24,7 +26,7 @@ const VideoCover = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: ${props => props.isMobile ? `100vh` : `${window.innerWidth * 0.5625}px`};
+  height: 100vh;
   background: url('/black-pattern-2x2.png'), rgba(0,0,0,0.15);
   background-position: left-top;
   background-repeat: reapeat;
