@@ -5,12 +5,12 @@
             "edges": [
                 {
                     "node": {
-                        "path": "/"
+                        "path": "/code-of-conduct/"
                     }
                 },
                 {
                     "node": {
-                        "path": "/code-of-conduct/"
+                        "path": "/"
                     }
                 },
                 {
