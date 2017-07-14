@@ -29,15 +29,15 @@ const weights = {
 };
 
 const colors = {
-  primary: "#00BDEB",
-  primaryHover: "",
+  primary: "#F56911",
+  primaryHover: "#bf2121",
   accent: '#F56911',
   accentHover: '#bf2121',
   success: '#45AD43',
   text: "rgba(0,0,0,0.8)",
   light: "rgba(0,0,0,0.55)",
 
-  link: "#00BDEB",
+  link: "#F56911",
   transparent: "rgba(255,255,255,0)",
   transparentWhite: "rgba(255,255,255, 0.9)",
   transparentWhite75: "rgba(255,255,255, 0.75)",

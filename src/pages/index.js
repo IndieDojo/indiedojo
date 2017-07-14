@@ -3,7 +3,7 @@ import { injectGlobal, ThemeProvider } from "styled-components";
 
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/grid/Grid";
 import { getTheme } from "../components/Theme";
-import { WithPadding, H1 } from "../components/components/Base";
+import { Background, WithPadding, H1 } from "../components/components/Base";
 
 import Jumbo from "../components/home/Jumbo";
 import Topics from "../components/home/Topics";
@@ -40,6 +40,24 @@ injectGlobal`
     margin: 0;
     font-size: 16px;
   }
+
+  a {
+    color: ${props => props.theme.colors.link};
+    font-size: inherit;
+    transition: color 0.1s ease-in;
+    text-decoration: none;
+    cursor: pointer;
+    &:visited {
+      text-decoration: none;
+      color: ${props => props.theme.colors.link};
+    }
+    &:hover {
+      color: ${props => props.theme.colors.primary};
+      text-decoration: underline;
+    }
+  }
+
+
 `;
 
 // Some css theme params depend on window width.
@@ -83,16 +101,37 @@ class Index extends Component {
             <ContainerSmall>
               <WhatIsIt />
             </ContainerSmall>
+          </FluidContainer>
+
+          <FluidContainer>
+            <Background color='primary'>
+              <Container>
+                <Topics isMobile={this.state.isMobile}/>
+              </Container>
+            </Background>
 
             <Container>
-              <Topics isMobile={this.state.isMobile}/>
               <Program isMobile={this.state.isMobile} />
-              <Trainers isMobile={this.state.isMobile} />
             </Container>
+
+            <Background color='veryLight'>
+              <div id='trainers'></div>
+              <Container>
+                <Trainers isMobile={this.state.isMobile} />
+              </Container>
+            </Background>
 
             <ContainerSmall>
               <BookingBlock isMobile={this.state.isMobile} />
-              <Newsletter isMobile={this.state.isMobile}/>
+            </ContainerSmall>
+
+            <Background color='veryLight'>
+              <ContainerSmall>
+                <Newsletter isMobile={this.state.isMobile}/>
+              </ContainerSmall>
+            </Background>
+
+            <ContainerSmall>
               <Faqs isMobile={this.state.isMobile} />
             </ContainerSmall>
 

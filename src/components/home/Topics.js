@@ -28,17 +28,15 @@ const Topic = styled.div`
     display: block;
   }
 `
-
-// const TopicHeading = styled.h3`
-//   font-size: ${props => props.theme.fontSizes.md};
-//   text-align: center;
-// `
-
 const TopicList = styled.ul`
-
+  display: inline-block;
+  align-self: center;
+  list-style-type: none;
+  margin-bottom: ${props => props.theme.margins.xl}
 `
 
 const TopicItem = styled.li`
+  color: ${props => props.theme.colors.transparentWhite};
   font-size: ${props => props.theme.fontSizes.nm};
   padding-bottom: ${props => props.theme.margins.sm};
 `
@@ -46,40 +44,44 @@ const TopicItem = styled.li`
 const Topics = ({ isMobile }) =>
   <TopicsWrapper>
     <WithPadding padding='xxl'>
-      <Title margin={isMobile ? "lg" : "xl"} bold center>
+      <Title color='transparentWhite' margin={isMobile ? "xl" : "xxl"} bold center>
         What You'll Learn
       </Title>
       <Row>
-        <Cell xs={12} sm={6} md={3}>
+        <Cell xs={12} sm={6} md={3} center>
           <Lightbulb/>
-          <Subtitle size='md' center bold>Idea</Subtitle>
+          <WithPadding padding='sm'></WithPadding>
+          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Idea</Subtitle>
           <TopicList>
             <TopicItem>Find a need</TopicItem>
             <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>VaTopicItemdate your idea</TopicItem>
+            <TopicItem>Evaluate your idea</TopicItem>
           </TopicList>
         </Cell>
-        <Cell xs={12} sm={6} md={3}>
+        <Cell xs={12} sm={6} md={3} center>
           <Palette/>
-          <Subtitle size='md' center bold>Design</Subtitle>
+          <WithPadding padding='sm'></WithPadding>
+          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Design</Subtitle>
           <TopicList>
             <TopicItem>Build a prototype</TopicItem>
             <TopicItem>Define a MVP</TopicItem>
             <TopicItem>Learn the basics of UX</TopicItem>
           </TopicList>
         </Cell>
-        <Cell xs={12} sm={6} md={3}>
+        <Cell xs={12} sm={6} md={3} center>
           <Cog/>
-          <Subtitle size='md' center bold>Coding</Subtitle>
+          <WithPadding padding='sm'></WithPadding>
+          <Subtitle  color='transparentWhite' size='md' margin='sm'  center bold>Coding</Subtitle>
           <TopicList>
             <TopicItem>Evaluate technologies</TopicItem>
             <TopicItem>Reuse existing resources</TopicItem>
             <TopicItem>Understand the basics</TopicItem>
           </TopicList>
         </Cell>
-        <Cell xs={12} sm={6} md={3}>
+        <Cell xs={12} sm={6} md={3} center>
           <Megaphone/>
-          <Subtitle size='md' center bold>Marketing</Subtitle>
+          <WithPadding padding='sm'></WithPadding>
+          <Subtitle  color='transparentWhite' size='md' margin='sm' center bold>Marketing</Subtitle>
           <TopicList>
             <TopicItem>Find an audience</TopicItem>
             <TopicItem>Set up marketing channels</TopicItem>

@@ -20,7 +20,7 @@ const ProfileImage = styled.div`
 const TrainerInfo = ({name, title}) =>
   <div>
     <Subtitle bold>{name}</Subtitle>
-    <Subtitle size='nm' color='lightGrey'>{title}</Subtitle>
+    <Subtitle size='nm' margin='md' color='lightGrey'>{title}</Subtitle>
   </div>
 
 const Bio = styled.div`
@@ -42,15 +42,17 @@ const SachaBio = () =>
 const JulianBio = () =>
   <Bio>
     <Text>
-      Julian is a founder, engineer and entrepreneur. Originally from Paris, France but these days he live in Osaka,
-      Japan. He is an author of Vulcan.js full-stack app framework, co-authored Discover Meteor book and created the biggest survey on the State of Javascript.
+      Julian founded NameLayer, a domain name company and sold it to Techstars.
+      He is an author of <LinkTo inherit href='http://velocityjs.org/'>Velocity</LinkTo> — an open source library used by Samsung, Uber, WhatsApp, and thousands of others.
+      Today he grows his new company <LinkTo inherit href='https://www.bellcurve.com/'>Bell Curve</LinkTo> and writes the best handbooks on <LinkTo inherit href='https://www.julian.com/'>Startup Growth, Becoming Smarter and Muscle Building</LinkTo>.
     </Text>
   </Bio>
+
 
 const MaciejBio = () =>
   <Bio>
     <Text>
-      Maciej is a developer, trader, entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <LinkTo inherit href='https://www.codecamps.com'>in Flip Flops</LinkTo> and and works on his own
+      Maciej is a developer, trader and entrepreneur. He was born in Poland but lives now in London. Maciej organises a coding bootcamps <LinkTo inherit href='https://www.codecamps.com'>in Flip Flops</LinkTo> and and works on his own
       projects. In his previous life, he's been a trader working in a city.
     </Text>
   </Bio>
@@ -64,18 +66,18 @@ const Trainers = ({isMobile}) =>
         </Title>
       </Cell>
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/website/sacha.jpg' isMobile={isMobile}/>
+        <ProfileImage imgUrl='/sacha.jpg' isMobile={isMobile}/>
         <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
         <SachaBio />
       </Cell>
 
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/julian.jpg' isMobile={isMobile}/>
-        <TrainerInfo name='Julian Shapiro' title="Founder, engineer and etrepreneur"/>
-        <JulianBio />
+        <ProfileImage imgUrl='/batman.png' isMobile={isMobile}/>
+        <TrainerInfo name='To be announced' title=""/>
+        {/* <JulianBio /> */}
       </Cell>
       <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/maciej.jpg' isMobile={isMobile}/>
+        <ProfileImage imgUrl='/maciej.jpg' isMobile={isMobile}/>
         <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
         <MaciejBio />
       </Cell>

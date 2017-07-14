@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BookingButton } from "../components/BookingButton";
-import { Subtitle } from "../components/Base";
+import { Subtitle, LinkTo } from "../components/Base";
 
 const DatesWrapper = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const BookingDate = styled.div`
 const BookingPrice = styled.div`
   margin-top: 20px;
   font-size: 18px;
-  color: ${props => props.theme.colors.transparentWhite};
+  color: ${props => props.light ? props.theme.colors.transparentWhite : props.theme.colors.primary};
   a{
     color: ${props => props.theme.colors.transparentWhite};
   }
@@ -36,12 +36,12 @@ const Booking = ({ light, isMobile }) => (
     <BookingDate isMobile={isMobile}>
       <Subtitle color={light ? 'transparentWhite' : 'text' }>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton
-        variant="jumbo"
+        variant={ light ? 'jumbo' : 'else'}
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
         Book Now
       </BookingButton>
-      <BookingPrice>Early Registration Price: <strong>$1,490</strong> (<a href="#included">What's included?</a>)</BookingPrice>
+      <BookingPrice light={light}>Early Registration Price: <strong>$1,490</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
     </BookingDate>
   </DatesWrapper>
 );

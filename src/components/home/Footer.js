@@ -44,19 +44,22 @@ const Footer = () => (
             <Divider />
 
             <Cell xs={12} center>
-              <Subtitle size='sm' marginRight='xl' inline>
+              <Subtitle color='primary' size='sm' marginRight='xl' inline>
                 <Link to='/terms-and-conditions'>Terms and Conditions</Link>
               </Subtitle>
-              <Subtitle size='sm' inline>
+              <Subtitle color='primary' size='sm' inline>
                 <Link to='/code-of-conduct'>Code of Conduct</Link>
               </Subtitle>
             </Cell>
 
-            <WithPadding padding='xl'/>
+            <WithPadding padding='xxl'/>
 
             <Cell xs={12} center>
-              <Subtitle size='xs' color='transparentWhite50'>
+              <Subtitle size='xs' margin='lg' color='transparentWhite50'>
                 Built by Sacha Greif and Maciej Nowakowski with <LinkTo inherit href='https://www.gatsbyjs.org/'>Gatsby</LinkTo>.
+              </Subtitle>
+              <Subtitle size='xs' color='transparentWhite50'>
+                {`© 2017 Level Eleven Web Solutions Ltd.`}
               </Subtitle>
             </Cell>
           </Row>
