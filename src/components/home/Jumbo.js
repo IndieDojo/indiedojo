@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container } from '../styled/Grid'
-import { WithPadding, MainTitle, Title, Subtitle } from '../styled/Base';
+import { WithPadding, MainTitle, Subtitle } from '../styled/Base';
 import { Logo } from '../styled/Logo'
 import Booking from './Booking'
 
@@ -12,7 +12,6 @@ const VideoWrapper = styled.div`
   position: relative;
   min-width: 100%;
   height: 100vh;
-  overflow:hidden;
 `;
 
 const VideoPlayer = styled.video`
@@ -23,7 +22,6 @@ const VideoPlayer = styled.video`
 `;
 
 const VideoCover = styled.div`
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -40,52 +38,60 @@ const LandingMessageWrapper = styled.div`
   background: transparent;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   z-index: 2;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
 `;
 
 const Image = styled.img`
-  object-fit: cover;
+  position: absolute;
+  z-index: 9;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+`;
+
+const Image2 = styled.img`
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+`;
+
+const Cover = styled.svg`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+`
+
+const Title = styled.h1`
 `;
 
 const Jumbo = ({isMobile}) =>
   <VideoWrapper className='video-wrapper' isMobile={isMobile}>
-    {isMobile
-      ? <Image
-          src="/indiedojo-first-frame-mobile.jpg"
-        />
-      : <VideoPlayer
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/indiedojo-first-frame.jpg"
-          isMobile={isMobile}
-        >
-          <source
-            src="https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164"
-            type="video/mp4"
-          />
-        </VideoPlayer>
-      }
+    
+    <Image src="/35836232345_d90bfef2f6_b.jpg"/>
 
-    <VideoCover isMobile={isMobile}/>
+
+
+    <Image2 src="/freddie-marriage-50490.jpg"/>
 
     <LandingMessageWrapper>
-      <Logo light isMobile={isMobile}/>
-      <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
-      <WithPadding padding='sm'>
-        <Booking light isMobile={isMobile}/>
-      </WithPadding>
+      <Logo isMobile={isMobile}/>
+      <Title>A one-week bootcamp <br/>for indie hackers</Title>
+      <Booking light isMobile={isMobile}/>
     </LandingMessageWrapper>
+
   </VideoWrapper>
 export default Jumbo

@@ -9,5 +9,5 @@ export const Logo = styled.div`
   background-image: ${props => props.light ? `url('/indiedojo-white.png')` : `url('/indiedojo.png')` };
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: ${props => !!props.margin ? props.theme.margins[props.margin] : props.theme.margins.lg};
+  
 `

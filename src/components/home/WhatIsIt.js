@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { WithPadding, Title, Text, LinkTo } from '../styled/Base';
 import { ContainerSmall } from '../styled/Grid';
+import styled from 'styled-components';
+
+const AboutWrapper = styled.div`
+`
 
 const WhatIsIt = () =>
   <ContainerSmall>
