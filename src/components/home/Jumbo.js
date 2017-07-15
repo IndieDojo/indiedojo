@@ -12,6 +12,7 @@ const VideoWrapper = styled.div`
   position: relative;
   min-width: 100%;
   height: 100vh;
+  margin-bottom: 400px;
 `;
 
 const VideoPlayer = styled.video`
@@ -63,8 +64,9 @@ const Image2 = styled.img`
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
-  clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+  top: 50%;
+  // clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
 `;
 
 const Cover = styled.svg`
