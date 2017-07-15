@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Container, Row, Cell } from "../styled/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
-import { BookingButton } from "../styled/BookingButton";
-import { program } from "../../../data/detailedProgram";
 
-const ProgramButton = BookingButton.extend`
-  margin-top: ${props => props.theme.margins.xl};
-`;
+import ProgramHeader from './ProgramHeader'
+import { ProgramButton } from "../styled/Buttons";
+import { program } from "../../../data/detailedProgram";
 
 const ProgramWrapper = styled.div`
   display: flex;
@@ -15,64 +13,7 @@ const ProgramWrapper = styled.div`
   justify-content: center;
 `;
 
-const HeaderCell = styled.div`
-  flex-grow: 1;
-  text-align: center;
-  background: ${props =>
-  props.active ? props.theme.colors[props.mainColor] : props.theme.colors.veryLight};
-  border-bottom: ${props => props.isMobile ? "1px solid white" : "0"};
-  padding: ${props => props.theme.margins.md};
-  cursor: ${props => props.active ? "normal" : "pointer"};
-  transition: all 0.2s ease-out;
-  overflow: hidden;
-  &:hover {
-    background: ${props =>
-      {
-        if (!props.isProgramVisible ) return props.theme.colors.veryLight;
-        return props.active ? props.mainColor : props.theme.colors.veryLightHover
-      }
-    };
-  }
-`;
 
-const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: ${props => props.isMobile ? "column" : "row wrap"};
-  background: ${props => props.theme.colors.transparent};
-`;
-
-const Header = ({ headers, activeIndex, onClick, isMobile, mainColor, isProgramVisible }) => (
-  <HeaderWrapper isMobile={isMobile}>
-    {headers.map((header, index) => (
-      <HeaderCell
-        key={index}
-        active={index === activeIndex}
-        data-index={index}
-        onClick={onClick}
-        mainColor={mainColor}
-        isMobile={isMobile}
-        isProgramVisible={isProgramVisible}
-      >
-        <Subtitle
-          size="nm"
-          lineHeight="1"
-          color={index === activeIndex ? "white" : "mainColor"}
-          margin="md"
-        >
-          {header.day}
-        </Subtitle>
-        <Subtitle
-          size="nm"
-          lineHeight="1"
-          color={index === activeIndex ? "white" : "mainColor"}
-          bold
-        >
-          {header.topic}
-        </Subtitle>
-      </HeaderCell>
-    ))}
-  </HeaderWrapper>
-);
 
 const TimeBlockWrapper = styled.div`
   border-left: 7px solid ${props => {
@@ -194,7 +135,7 @@ class TimeBlock extends Component {
 const DayBlockWrapper = styled.div`
 `;
 
-const DayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
+const ProgramDayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
   <DayBlockWrapper>
     {dayBlock.timeBlocks.map((timeBlock, index) => (
       <TimeBlock
@@ -244,7 +185,7 @@ class CourseProgram extends Component {
             </Cell>
 
             <Cell xs={12} center>
-            <Header
+            <ProgramHeader
               headers={this.getHeaders(program)}
               activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
               onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
@@ -254,7 +195,7 @@ class CourseProgram extends Component {
             />
 
             {this.state.isProgramVisible &&
-              <DayBlock
+              <ProgramDayBlock
                 dayBlock={program[this.state.activeIndex]}
                 isMobile={isMobile}
                 mainColor={mainColor}

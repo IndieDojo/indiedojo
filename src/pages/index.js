@@ -9,7 +9,7 @@ import Topics from "../components/home/Topics";
 import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
-import Program from "../components/home/Program";
+import Program from "../components/program/Program";
 
 import Trainers from "../components/home/Trainers";
 import Faqs from "../components/home/Faqs";
@@ -26,19 +26,19 @@ const Index = (props, {isMobile, windowWidth}) =>
   <FluidContainer>
 
     <Jumbo isMobile={isMobile} windowWidth={windowWidth}/>
-    
+
     <WhatIsIt />
 
     <Topics isMobile={isMobile}/>
-     
+
     <Program isMobile={isMobile} />
-    
+
     <Trainers isMobile={isMobile} />
-      
+
     <BookingBlock isMobile={isMobile} />
 
     <Newsletter isMobile={isMobile}/>
-      
+
     <Faqs isMobile={isMobile} />
 
   </FluidContainer>

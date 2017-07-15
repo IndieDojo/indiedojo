@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { BookingButton } from "../styled/BookingButton";
+import { BookingButton } from "../styled/Buttons";
 import { Subtitle, LinkTo } from "../styled/Base";
 
 const DatesWrapper = styled.div`

@@ -26,3 +26,7 @@ export const BookingButton = styled.a`
     text-decoration: none;
   }
 `
+
+export const ProgramButton = BookingButton.extend`
+  margin-top: ${props => props.theme.margins.xl};
+`;
