@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FluidContainer, Container } from '../grid/Grid'
-import { WithPadding, MainTitle, Title, Subtitle } from '../common/Base';
-import { Logo } from '../common/Logo'
+import { FluidContainer, Container } from '../styled/Grid'
+import { WithPadding, MainTitle, Title, Subtitle } from '../styled/Base';
+import { Logo } from '../styled/Logo'
 import Booking from './Booking'
 
 // this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};
@@ -28,9 +28,10 @@ const VideoCover = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url('/black-pattern-2x2.png'), rgba(0,0,0,0.15);
+  // background: url('/black-pattern-2x2.png'), rgba(0,0,0,0.15);
   background-position: left-top;
   background-repeat: reapeat;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
   z-index: 1;
 `;
 

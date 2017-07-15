@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row, Cell } from '../grid/Grid';
-import { WithPadding, Subtitle, Title, Text } from "../common/Base";
-import { Lightbulb, Megaphone, Cog, Palette } from "../common/Icons";
+import { Row, Cell } from '../styled/Grid';
+import { WithPadding, Subtitle, Title, Text } from "../styled/Base";
+import { Lightbulb, Megaphone, Cog, Palette } from "../styled/Icons";
+import { Container } from "../styled/Grid";
+
+const Background = styled.div`
+  background: linear-gradient(#ef4040,#F56911);
+`
 
 const TopicsWrapper = styled.div`
   svg{
@@ -43,99 +48,58 @@ const TopicItem = styled.li`
 `
 
 const Topics = ({ isMobile }) =>
-  <TopicsWrapper>
-    <WithPadding padding='xxl'>
-      <Title color='transparentWhite' margin={isMobile ? "xl" : "xxl"} bold center>
-        What You'll Learn
-      </Title>
-      <Row>
-        <Cell xs={12} sm={6} md={3} center>
-          <Lightbulb/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Idea</Subtitle>
-          <TopicList>
-            <TopicItem>Find a need</TopicItem>
-            <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>Evaluate your idea</TopicItem>
-          </TopicList>
-        </Cell>
-        <Cell xs={12} sm={6} md={3} center>
-          <Palette/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Design</Subtitle>
-          <TopicList>
-            <TopicItem>Build a prototype</TopicItem>
-            <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>Learn the basics of UX</TopicItem>
-          </TopicList>
-        </Cell>
-        <Cell xs={12} sm={6} md={3} center>
-          <Cog/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle  color='transparentWhite' size='md' margin='sm'  center bold>Coding</Subtitle>
-          <TopicList>
-            <TopicItem>Evaluate technologies</TopicItem>
-            <TopicItem>Reuse existing resources</TopicItem>
-            <TopicItem>Understand the basics</TopicItem>
-          </TopicList>
-        </Cell>
-        <Cell xs={12} sm={6} md={3} center>
-          <Megaphone/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle  color='transparentWhite' size='md' margin='sm' center bold>Marketing</Subtitle>
-          <TopicList>
-            <TopicItem>Find an audience</TopicItem>
-            <TopicItem>Set up marketing channels</TopicItem>
-            <TopicItem>Create a launch plan</TopicItem>
-          </TopicList>
-        </Cell>
-      </Row>
-    </WithPadding>
-  </TopicsWrapper>
-
-// const Newsletter = props =>
-//   <WithPadding padding='xxl'>
-//     <Subtitle size='lg' margin='lg' center bold>What You'll Learn</Subtitle>
-//     <TopicsWrapper>
-//       <Topics>
-//         <Topic>
-//           <Lightbulb/>
-//           <Subtitle size='md' center bold>Idea</Subtitle>
-//           <TopicList>
-//             <TopicItem>Find a need</TopicItem>
-//             <TopicItem>Define a MVP</TopicItem>
-//             <TopicItem>VaTopicItemdate your idea</TopicItem>
-//           </TopicList>
-//         </Topic>
-//         <Topic>
-//           <Palette/>
-//           <Subtitle size='md' center bold>Design</Subtitle>
-//           <TopicList>
-//             <TopicItem>Build a prototype</TopicItem>
-//             <TopicItem>Define a MVP</TopicItem>
-//             <TopicItem>Learn the basics of UX</TopicItem>
-//           </TopicList>
-//         </Topic>
-//         <Topic>
-//           <Cog/>
-//           <Subtitle size='md' center bold>Coding</Subtitle>
-//           <TopicList>
-//             <TopicItem>Evaluate technologies</TopicItem>
-//             <TopicItem>Reuse existing resources</TopicItem>
-//             <TopicItem>Understand the basics</TopicItem>
-//           </TopicList>
-//         </Topic>
-//         <Topic>
-//           <Megaphone/>
-//           <Subtitle size='md' center bold>Marketing</Subtitle>
-//           <TopicList>
-//             <TopicItem>Find an audience</TopicItem>
-//             <TopicItem>Set up marketing channels</TopicItem>
-//             <TopicItem>Create a launch plan</TopicItem>
-//           </TopicList>
-//         </Topic>
-//       </Topics>
-//     </TopicsWrapper>
-//   </WithPadding>
+  <Background color='primary'>
+    <Container>
+      <TopicsWrapper>
+        <WithPadding padding='xxl'>
+          <Title color='transparentWhite' margin={isMobile ? "xl" : "xxl"} bold center>
+            What You'll Learn
+          </Title>
+          <Row>
+            <Cell xs={12} sm={6} md={3} center>
+              <Lightbulb/>
+              <WithPadding padding='sm'></WithPadding>
+              <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Idea</Subtitle>
+              <TopicList>
+                <TopicItem>Find a need</TopicItem>
+                <TopicItem>Define a MVP</TopicItem>
+                <TopicItem>Evaluate your idea</TopicItem>
+              </TopicList>
+            </Cell>
+            <Cell xs={12} sm={6} md={3} center>
+              <Palette/>
+              <WithPadding padding='sm'></WithPadding>
+              <Subtitle color='transparentWhite' size='md' margin='sm' center bold>Design</Subtitle>
+              <TopicList>
+                <TopicItem>Build a prototype</TopicItem>
+                <TopicItem>Define a MVP</TopicItem>
+                <TopicItem>Learn the basics of UX</TopicItem>
+              </TopicList>
+            </Cell>
+            <Cell xs={12} sm={6} md={3} center>
+              <Cog/>
+              <WithPadding padding='sm'></WithPadding>
+              <Subtitle  color='transparentWhite' size='md' margin='sm'  center bold>Coding</Subtitle>
+              <TopicList>
+                <TopicItem>Evaluate technologies</TopicItem>
+                <TopicItem>Reuse existing resources</TopicItem>
+                <TopicItem>Understand the basics</TopicItem>
+              </TopicList>
+            </Cell>
+            <Cell xs={12} sm={6} md={3} center>
+              <Megaphone/>
+              <WithPadding padding='sm'></WithPadding>
+              <Subtitle  color='transparentWhite' size='md' margin='sm' center bold>Marketing</Subtitle>
+              <TopicList>
+                <TopicItem>Find an audience</TopicItem>
+                <TopicItem>Set up marketing channels</TopicItem>
+                <TopicItem>Create a launch plan</TopicItem>
+              </TopicList>
+            </Cell>
+          </Row>
+        </WithPadding>
+      </TopicsWrapper>
+    </Container>
+  </Background>
 
 export default Topics

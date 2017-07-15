@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, Title, Subtitle, Text, LinkTo } from '../common/Base'
+import { Container, Row, Cell } from '../styled/Grid';
+import { WithPadding, Background, Title, Subtitle, Text, LinkTo } from '../styled/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -58,30 +58,35 @@ const MaciejBio = () =>
   </Bio>
 
 const Trainers = ({isMobile}) =>
-  <WithPadding padding='xxl'>
-    <Row>
-      <Cell xs={12} center>
-        <Title margin={isMobile ? "lg" : "xl"} bold center>
-          Our Team
-        </Title>
-      </Cell>
-      <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='/sacha.jpg' isMobile={isMobile}/>
-        <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
-        <SachaBio />
-      </Cell>
+<div>
+  <div id='trainers'></div>
+  <Container>
+    <WithPadding padding='xxl'>
+      <Row>
+        <Cell xs={12} center>
+          <Title margin={isMobile ? "lg" : "xl"} bold center>
+            Our Team
+          </Title>
+        </Cell>
+        <Cell xs={12} sm={4} center>
+          <ProfileImage imgUrl='/sacha.jpg' isMobile={isMobile}/>
+          <TrainerInfo name='Sacha Greif' title="Developer, designer and entrepreneur"/>
+          <SachaBio />
+        </Cell>
 
-      <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='/batman.png' isMobile={isMobile}/>
-        <TrainerInfo name='To be announced' title=""/>
-        {/* <JulianBio /> */}
-      </Cell>
-      <Cell xs={12} sm={4} center>
-        <ProfileImage imgUrl='/maciej.jpg' isMobile={isMobile}/>
-        <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
-        <MaciejBio />
-      </Cell>
-    </Row>
-  </WithPadding>
+        <Cell xs={12} sm={4} center>
+          <ProfileImage imgUrl='/batman.png' isMobile={isMobile}/>
+          <TrainerInfo name='To be announced' title=""/>
+          {/* <JulianBio /> */}
+        </Cell>
+        <Cell xs={12} sm={4} center>
+          <ProfileImage imgUrl='/maciej.jpg' isMobile={isMobile}/>
+          <TrainerInfo name='Maciej Nowakowski' title="Developer, trader and etrepreneur"/>
+          <MaciejBio />
+        </Cell>
+      </Row>
+    </WithPadding>
+  </Container>
+</div>
 
 export default Trainers;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Markdown from 'react-remarkable';
 
-import { FluidContainer, ContainerSmall, Row, Cell } from '../components/grid/Grid';
-import { WithPadding } from '../components/common/Base'
-import { MarkdownWrapper } from '../components/common/Markdown'
+import { FluidContainer, ContainerSmall, Row, Cell } from '../components/styled/Grid';
+import { WithPadding } from '../components/styled/Base'
+import { MarkdownWrapper } from '../components/styled/Markdown'
 import { TAC } from '../../data/TAC'
 import Footer from "../components/home/Footer";
-import { Logo } from '../components/common/Logo'
+import { Logo } from '../components/styled/Logo'
 
 // Some css theme params depend on window width.
 class Tac extends Component {

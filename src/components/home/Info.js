@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { WithPadding, Title} from "../common/Base";
+import { WithPadding, Title} from "../styled/Base";
 
 const items = [
   "You are determined to become independent and to setup your web-based business",

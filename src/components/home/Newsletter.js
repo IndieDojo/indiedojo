@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Title, Text, Subtitle } from '../common/Base';
-import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1 } from "../common/Base";
+import { Title, Text, Subtitle } from '../styled/Base';
+import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../styled/Grid";
+import { WithPadding, H1 } from "../styled/Base";
 
 const NewsletterWrapper = styled.div`
   display: flex;
@@ -50,49 +50,51 @@ const BookImage = styled.img`
 `
 
 const Newsletter = ({isMobile}) =>
-  <WithPadding padding='xxl'>
-    <NewsletterWrapper>
-      <Title margin='sm' bold center>
-        Can't Join This Time?
-      </Title>
+  <ContainerSmall>
+    <WithPadding padding='xxl'>
+      <NewsletterWrapper>
+        <Title margin='sm' bold center>
+          Can't Join This Time?
+        </Title>
 
-      <Text paddingBottom='xl'>
-        You can still be part of Indie Dojo!
-        Sign up for our newsletter to know about <b>upcoming bootcamps</b>,
-        be notified of <b>live streams and hangouts</b>,
-        and get access to an <b>exclusive eBook</b>.
-      </Text>
+        <Text paddingBottom='xl'>
+          You can still be part of Indie Dojo!
+          Sign up for our newsletter to know about <b>upcoming bootcamps</b>,
+          be notified of <b>live streams and hangouts</b>,
+          and get access to an <b>exclusive eBook</b>.
+        </Text>
 
-      {/* <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate> */}
-      <NewsletterForm action="//gmail.us10.list-manage.com/subscribe/post?u=ad72e9706ca16886b52c76e66&amp;id=14ef1c90fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <NewsletterField type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
-        <NewsletterButton
-          onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}
-          className="button"
-          type="submit"
-          value="Sign Up"
-          name="subscribe"
-          id="mc-embedded-subscribe"
-        />
-      </NewsletterForm>
+        {/* <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate> */}
+        <NewsletterForm action="//gmail.us10.list-manage.com/subscribe/post?u=ad72e9706ca16886b52c76e66&amp;id=14ef1c90fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <NewsletterField type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
+          <NewsletterButton
+            onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}
+            className="button"
+            type="submit"
+            value="Sign Up"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+          />
+        </NewsletterForm>
 
-      <Book>
+        <Book>
 
-        <div>
-          <BookImage src="/color-theory-for-startups.png"/>
-        </div>
+          <div>
+            <BookImage src="/color-theory-for-startups.png"/>
+          </div>
 
-        <BookContents>
-          <Subtitle size='nm' margin='sm' uppercase>Your Free eBook</Subtitle>
-          <Subtitle size='md' margin='md' bold>Color Theory for Startups</Subtitle>
-          <Text>
-            Through 9 short case studies, learn how leading companies
-            use color to establish their brand and reinforce their messaging.
-          </Text>
-        </BookContents>
-      </Book>
+          <BookContents>
+            <Subtitle size='nm' margin='sm' uppercase>Your Free eBook</Subtitle>
+            <Subtitle size='md' margin='md' bold>Color Theory for Startups</Subtitle>
+            <Text>
+              Through 9 short case studies, learn how leading companies
+              use color to establish their brand and reinforce their messaging.
+            </Text>
+          </BookContents>
+        </Book>
 
-    </NewsletterWrapper>
-  </WithPadding>
+      </NewsletterWrapper>
+    </WithPadding>
+  </ContainerSmall>
 
 export default Newsletter

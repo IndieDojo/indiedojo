@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Row, Cell } from '../grid/Grid'
+import { Row, Cell } from '../styled/Grid'
 import { Card, H2 } from './Base'
 
 const ErrorMessage = styled.h3`

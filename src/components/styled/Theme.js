@@ -34,7 +34,7 @@ const colors = {
   accent: '#F56911',
   accentHover: '#bf2121',
   success: '#45AD43',
-  text: "rgba(0,0,0,0.8)",
+  text: "rgb(76, 32, 9)",
   light: "rgba(0,0,0,0.55)",
 
   link: "#F56911",
@@ -43,7 +43,7 @@ const colors = {
   transparentWhite75: "rgba(255,255,255, 0.75)",
   transparentWhite50: "rgba(255,255,255, 0.5)",
   white: "rgba(255, 255, 255, 1)",
-  black: "rgba(0,0,0,1)",
+  black: "rgb(37, 34, 32)",
   lightGrey: "rgba(0,0,0,0.5)",
   veryLightGrey: "rgba(0,0,0,0.2)",
   veryLight: "rgba(0,0,0, 0.05)",

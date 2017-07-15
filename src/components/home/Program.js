@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Cell } from "../grid/Grid";
-import { WithPadding, Title, Subtitle, Text } from "../common/Base";
-import { BookingButton } from "../common/BookingButton";
+import { Container, Row, Cell } from "../styled/Grid";
+import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
+import { BookingButton } from "../styled/BookingButton";
 import { program } from "../../../data/detailedProgram";
 
 const ProgramButton = BookingButton.extend`
@@ -234,37 +234,39 @@ class CourseProgram extends Component {
     const secondColor="primaryHover"
 
     return (
-      <WithPadding padding="xxl">
-        <Row>
-          <Cell xs={12} center>
-            <Title margin={isMobile ? "lg" : "xl"} bold center>
-              Program
-            </Title>
-          </Cell>
+      <Container>
+        <WithPadding padding="xxl">
+          <Row>
+            <Cell xs={12} center>
+              <Title margin={isMobile ? "lg" : "xl"} bold center>
+                Program
+              </Title>
+            </Cell>
 
-          <Cell xs={12} center>
-          <Header
-            headers={this.getHeaders(program)}
-            activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-            onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
-            isMobile={isMobile}
-            isProgramVisible={this.state.isProgramVisible}
-            mainColor={mainColor}
-          />
-
-          {this.state.isProgramVisible &&
-            <DayBlock
-              dayBlock={program[this.state.activeIndex]}
+            <Cell xs={12} center>
+            <Header
+              headers={this.getHeaders(program)}
+              activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
+              onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
               isMobile={isMobile}
+              isProgramVisible={this.state.isProgramVisible}
               mainColor={mainColor}
-              secondColor={secondColor}
-            />}
-          <ProgramButton onClick={this.onProgramButtonClick}>
-            {this.state.isProgramVisible ? "Hide program" : "Show full program"}
-          </ProgramButton>
-          </Cell>
-        </Row>
-      </WithPadding>
+            />
+
+            {this.state.isProgramVisible &&
+              <DayBlock
+                dayBlock={program[this.state.activeIndex]}
+                isMobile={isMobile}
+                mainColor={mainColor}
+                secondColor={secondColor}
+              />}
+            <ProgramButton onClick={this.onProgramButtonClick}>
+              {this.state.isProgramVisible ? "Hide program" : "Show full program"}
+            </ProgramButton>
+            </Cell>
+          </Row>
+        </WithPadding>
+      </Container>
     );
   }
 }
