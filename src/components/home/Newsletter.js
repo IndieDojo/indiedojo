@@ -16,6 +16,10 @@ const NewsletterForm = styled.form`
   flex-direction: row;
   flex: 1 0 auto;
   margin-bottom: ${props => props.theme.margins.xl};
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const NewsletterField = styled.input`
@@ -26,34 +30,28 @@ const NewsletterField = styled.input`
   padding: 10px;
   line-height: 50px;
   height: 50px;
+  min-width: 200px;
   outline: none;
   &:focus {
     border: 3px solid ${props => props.theme.colors.primary};
   }
+  @media only screen and (max-width: 600px) {
+    margin-bottom: ${props => props.theme.margins.sm};
+    &:nth-child(2) {
+      margin-bottom: ${props => props.theme.margins.md};
+    }
+  }
 `
 
 const NewsletterButton = styled.input`
+  box-sizing: border-box;
   padding: 10px ${props => props.theme.margins.xl};
   color: ${props => props.theme.colors.primary};
   border: 3px solid ${props => props.theme.colors.primary};
   background: none;
   font-size: ${props => props.theme.fontSizes.nm};
+  font-weight: ${props => props.theme.weights.bold};
   cursor: pointer;
-  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    ${props => props.theme.colors.primary};
-  }
-  &::-moz-placeholder { /* Firefox 19+ */
-    ${props => props.theme.colors.primary};
-  }
-  &:-ms-input-placeholder { /* IE 10+ */
-    ${props => props.theme.colors.primary};
-  }
-  &:-moz-placeholder { /* Firefox 18- */
-    ${props => props.theme.colors.primary};
-  }
-  &:input-placeholder {
-    ${props => props.theme.colors.primary};
-  }
   outline: none;
   &:hover {
     color: ${props => props.theme.colors.primaryHover};
