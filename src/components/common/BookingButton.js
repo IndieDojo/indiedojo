@@ -8,9 +8,7 @@ export const BookingButton = styled.a`
   box-sizing: border-box;
   // line-height: 50px;
   // height: 50px;
-  // border-radius: ${props => props.theme.radius.md};
   color: ${props => props.theme.colors.transparentWhite75};
-  // background: ${props => props.theme.colors.accent};
   border: 3px solid;
   border-color: ${props => props.theme.colors.accent};
   color: ${props => props.theme.colors.primary};
@@ -27,5 +25,4 @@ export const BookingButton = styled.a`
     color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};
     text-decoration: none;
   }
-
 `
