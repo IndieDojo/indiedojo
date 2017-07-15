@@ -59,6 +59,7 @@ const Image = styled.img`
 
 const mobileImageUrl = "/indiedojo-first-frame-mobile.jpg";
 const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
+const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4?s=5d365fe6ff3a4146ff42c705ebe626e4a02ad5b9&profile_id=174";
 const videoFirstFrameUrl = "/indiedojo-first-frame.jpg";
 
 const Jumbo = ({ isMobile }) => (
@@ -73,7 +74,7 @@ const Jumbo = ({ isMobile }) => (
           poster={videoFirstFrameUrl}
           isMobile={isMobile}
         >
-          <source src={landingPageVideoUrl} type="video/mp4" />
+          <source src={landingPageVideoUrl720} type="video/mp4" />
         </VideoPlayer>}
 
     <VideoCover isMobile={isMobile} />
