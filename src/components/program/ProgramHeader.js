@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Subtitle } from "../styled/Base";
 
@@ -20,6 +20,7 @@ import { Subtitle } from "../styled/Base";
 //     onClick: Function, pass if you want to change the activity status of the program,
 
 
+// If the cell is 'active' (selected) it will get `mainColor` background
 const HeaderCell = styled.div`
   flex-grow: 1;
   text-align: center;
@@ -40,6 +41,8 @@ const HeaderCell = styled.div`
   }
 `;
 
+
+// If isMobile displays program header as column; if not as row
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: ${props => props.isMobile ? "column" : "row wrap"};

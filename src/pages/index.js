@@ -31,7 +31,7 @@ const Index = (props, {isMobile, windowWidth}) =>
 
     <Topics isMobile={isMobile}/>
 
-    <Program isMobile={isMobile} />
+    <Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/>
 
     <Trainers isMobile={isMobile} />
 
