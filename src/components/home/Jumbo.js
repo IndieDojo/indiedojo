@@ -25,7 +25,7 @@ const VideoPlayer = styled.video`
 const VideoCover = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0;d
   width: 100%;
   height: 100vh;
   // background: url('/black-pattern-2x2.png'), rgba(0,0,0,0.15);
@@ -33,7 +33,7 @@ const VideoCover = styled.div`
   background-repeat: reapeat;
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
   z-index: 1;
-`;
+`
 
 const LandingMessageWrapper = styled.div`
   position: absolute;

@@ -13,6 +13,7 @@ const Faq = ({q, a}) =>
 
 const Faqs = ({ isMobile }) => (
   <ContainerSmall>
+    <div id='included'></div>
     <WithPadding padding="xl">
       <Row>
         <Cell xs={12} center>
