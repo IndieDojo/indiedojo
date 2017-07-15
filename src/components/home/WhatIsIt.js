@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WithPadding, Title, Text, LinkTo } from '../components/Base';
+import { WithPadding, Title, Text, LinkTo } from '../common/Base';
 
 const WhatIsIt = () =>
   <WithPadding padding='xxl'>

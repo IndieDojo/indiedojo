@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container } from '../grid/Grid'
-import { WithPadding, MainTitle, Title, Subtitle } from '../components/Base';
-import { Logo } from '../components/Logo'
+import { WithPadding, MainTitle, Title, Subtitle } from '../common/Base';
+import { Logo } from '../common/Logo'
 import Booking from './Booking'
 
 // this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};

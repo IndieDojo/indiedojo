@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Title, Text, Subtitle } from '../components/Base';
+import { Title, Text, Subtitle } from '../common/Base';
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../grid/Grid";
-import { WithPadding, H1 } from "../components/Base";
+import { WithPadding, H1 } from "../common/Base";
 
 const NewsletterWrapper = styled.div`
   display: flex;

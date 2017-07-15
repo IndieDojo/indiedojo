@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { BookingButton } from "../components/BookingButton";
-import { Subtitle, LinkTo } from "../components/Base";
+import { BookingButton } from "../common/BookingButton";
+import { Subtitle, LinkTo } from "../common/Base";
 
 const DatesWrapper = styled.div`
   display: flex;

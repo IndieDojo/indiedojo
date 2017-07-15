@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Cell } from '../grid/Grid';
-import { WithPadding, Subtitle, Title, Text } from "../components/Base";
-import { Lightbulb, Megaphone, Cog, Palette } from "../components/Icons";
+import { WithPadding, Subtitle, Title, Text } from "../common/Base";
+import { Lightbulb, Megaphone, Cog, Palette } from "../common/Icons";
 
 const TopicsWrapper = styled.div`
   svg{
@@ -32,7 +32,8 @@ const TopicList = styled.ul`
   display: inline-block;
   align-self: center;
   list-style-type: none;
-  margin-bottom: ${props => props.theme.margins.xl}
+  margin-bottom: ${props => props.theme.margins.xl};
+  padding: 0;
 `
 
 const TopicItem = styled.li`

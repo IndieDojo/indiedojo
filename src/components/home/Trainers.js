@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Cell } from '../grid/Grid';
-import { WithPadding, Background, Title, Subtitle, Text, LinkTo } from '../components/Base'
+import { WithPadding, Background, Title, Subtitle, Text, LinkTo } from '../common/Base'
 
 const ProfileImage = styled.div`
   display: inline-block;

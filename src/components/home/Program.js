@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Cell } from "../grid/Grid";
-import { WithPadding, Title, Subtitle, Text } from "../components/Base";
-import { BookingButton } from "../components/BookingButton";
-import { program } from "./detailedProgram";
+import { WithPadding, Title, Subtitle, Text } from "../common/Base";
+import { BookingButton } from "../common/BookingButton";
+import { program } from "../../../data/detailedProgram";
 
 const ProgramButton = BookingButton.extend`
   margin-top: ${props => props.theme.margins.xl};

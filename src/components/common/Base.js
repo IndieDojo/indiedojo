@@ -71,7 +71,7 @@ export const Subtitle = H3.extend`
   font-size: ${props => !!props.size ? props.theme.fontSizes[props.size] : props.theme.fontSizes.md};
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
   display: ${props => props.inlineBlock ? "inline-block" : "inline"};
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
   font-size: ${props =>

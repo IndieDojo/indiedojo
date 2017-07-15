@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Cell } from "../grid/Grid";
-import { WithPadding, Title, Subtitle, Text } from "../components/Base";
+import { WithPadding, Title, Subtitle, Text } from "../common/Base";
 import faqs from '../../../data/faq.yaml';
 import Markdown from 'react-remarkable';
 

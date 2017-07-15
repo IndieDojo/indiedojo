@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from 'gatsby-link';
 import { FluidContainer, ContainerSmall, Row, Cell } from "../grid/Grid";
-import { Background, WithPadding, Subtitle, LinkTo } from "../components/Base";
+import { Background, WithPadding, Subtitle, LinkTo } from "../common/Base";
 
 const SocialThings = styled.ul`
   display: block;
