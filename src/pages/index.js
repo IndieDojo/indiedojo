@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { injectGlobal, ThemeProvider } from "styled-components";
+import PropTypes from "prop-types";
 
 import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/styled/Grid";
 import { Background, WithPadding, H1 } from "../components/styled/Base";
@@ -17,9 +18,6 @@ import Subscribe from "../components/home/Subscribe";
 import Booking from "../components/home/Booking";
 import BookingBlock from "../components/home/BookingBlock";
 import Footer from "../components/home/Footer";
-import PropTypes from "prop-types";
-import WebsiteHead from '../components/home/WebsiteHead'
-
 
 // Some css theme params depend on window width.
 const Index = (props, {isMobile, windowWidth}) =>
