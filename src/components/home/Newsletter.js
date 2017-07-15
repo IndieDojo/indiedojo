@@ -12,25 +12,53 @@ const NewsletterWrapper = styled.div`
 `
 
 const NewsletterForm = styled.form`
-  border: 1px solid #333;
-  display: inline-block;
-  margin-bottom: 40px;
-  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 auto;
+  margin-bottom: ${props => props.theme.margins.xl};
 `
 
 const NewsletterField = styled.input`
-  border: 0;
-  border-right: 1px solid #333;
-  font-size: 18px;
+  box-sizing: border-box;
+  border: 3px solid ${props => props.theme.colors.veryLightGrey};
+  margin-right: 3px;
+  font-size: ${props => props.theme.fontSizes.nm};
   padding: 10px;
+  line-height: 50px;
+  height: 50px;
+  outline: none;
+  &:focus {
+    border: 3px solid ${props => props.theme.colors.primary};
+  }
 `
 
 const NewsletterButton = styled.input`
-  border: 0;
-  background: #eee;
-  padding: 10px;
-  font-size: 18px;
+  padding: 10px ${props => props.theme.margins.xl};
+  color: ${props => props.theme.colors.primary};
+  border: 3px solid ${props => props.theme.colors.primary};
+  background: none;
+  font-size: ${props => props.theme.fontSizes.nm};
   cursor: pointer;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    ${props => props.theme.colors.primary};
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    ${props => props.theme.colors.primary};
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    ${props => props.theme.colors.primary};
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    ${props => props.theme.colors.primary};
+  }
+  &:input-placeholder {
+    ${props => props.theme.colors.primary};
+  }
+  outline: none;
+  &:hover {
+    color: ${props => props.theme.colors.primaryHover};
+    border: 3px solid ${props => props.theme.colors.primaryHover};
+  }
 `
 
 const Book = styled.div`
@@ -66,6 +94,7 @@ const Newsletter = ({isMobile}) =>
 
         {/* <NewsletterForm action="//sachagreif.us2.list-manage.com/subscribe/post?u=b5af47765edbd2fc173dbf27a&amp;id=d8282e7e96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate> */}
         <NewsletterForm action="//gmail.us10.list-manage.com/subscribe/post?u=ad72e9706ca16886b52c76e66&amp;id=14ef1c90fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <NewsletterField type="text" placeholder="Your first name" name="FNAME" class="" id="mce-FNAME" />
           <NewsletterField type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
           <NewsletterButton
             onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}

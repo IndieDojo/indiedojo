@@ -8,13 +8,10 @@ import WebsiteHead from '../components/home/WebsiteHead'
 
 // Some css theme params depend on window width.
 class Layout extends Component {
-  constructor() {
-    super()
-    this.state = {
-      windowWidth: 0,
-      isMobile: false
-    };
-  }
+  state = {
+    windowWidth: 0,
+    isMobile: false
+  };
 
   componentDidMount() {
     window.addEventListener("resize", this.onWindowResize);
@@ -37,15 +34,13 @@ class Layout extends Component {
 
   getChildContext() {
     return {
-      isMobile: this.state.isMobile,
-      windowWidth: this.state.windowWidth
+      isMobile: this.state.isMobile
     };
   }
 
   render() {
     const component = React.cloneElement(this.props.children(), {
-      isMobile: this.state.isMobile,
-      windowWidth: this.state.windowWidth
+      isMobile: this.state.isMobile
     });
 
     return (

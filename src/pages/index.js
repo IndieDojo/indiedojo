@@ -22,10 +22,10 @@ import WebsiteHead from '../components/home/WebsiteHead'
 
 
 // Some css theme params depend on window width.
-const Index = (props, {isMobile, windowWidth}) =>
+const Index = (props, { isMobile }) =>
   <FluidContainer>
 
-    <Jumbo isMobile={isMobile} windowWidth={windowWidth}/>
+    <Jumbo isMobile={isMobile}/>
 
     <WhatIsIt />
 

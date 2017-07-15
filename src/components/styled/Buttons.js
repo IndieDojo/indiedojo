@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// arguments:
+//   variant - if 'jumbo', displays in 'white' on hover; otherwise: accentHover;
+//
 export const BookingButton = styled.a`
   display: inline-block;
   margin-top: ${props => props.theme.margins.lg};
   padding: 10px ${props => props.theme.margins.xl};
   box-sizing: border-box;
-  // line-height: 50px;
-  // height: 50px;
-  color: ${props => props.theme.colors.transparentWhite75};
   border: 3px solid;
   border-color: ${props => props.theme.colors.accent};
   color: ${props => props.theme.colors.primary};

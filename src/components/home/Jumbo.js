@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { FluidContainer, Container } from '../styled/Grid'
-import { WithPadding, MainTitle, Title, Subtitle } from '../styled/Base';
-import { Logo } from '../styled/Logo'
-import Booking from './Booking'
+import React, { Component } from "react";
+import styled from "styled-components";
+import { FluidContainer, Container } from "../styled/Grid";
+import { WithPadding, MainTitle, Title, Subtitle } from "../styled/Base";
+import { Logo } from "../styled/Logo";
+import Booking from "./Booking";
 
 // this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};
 
@@ -57,35 +57,36 @@ const Image = styled.img`
   z-index: -2;
 `;
 
-const Jumbo = ({isMobile}) =>
-  <VideoWrapper className='video-wrapper' isMobile={isMobile}>
+const mobileImageUrl = "/indiedojo-first-frame-mobile.jpg";
+const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
+const videoFirstFrameUrl = "/indiedojo-first-frame.jpg";
+
+const Jumbo = ({ isMobile }) => (
+  <VideoWrapper isMobile={isMobile}>
     {isMobile
-      ? <Image
-          src="/indiedojo-first-frame-mobile.jpg"
-        />
+      ? <Image src={mobileImageUrl} />
       : <VideoPlayer
           autoPlay
           loop
           muted
           playsInline
-          poster="/indiedojo-first-frame.jpg"
+          poster={videoFirstFrameUrl}
           isMobile={isMobile}
         >
-          <source
-            src="https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164"
-            type="video/mp4"
-          />
-        </VideoPlayer>
-      }
+          <source src={landingPageVideoUrl} type="video/mp4" />
+        </VideoPlayer>}
 
-    <VideoCover isMobile={isMobile}/>
+    <VideoCover isMobile={isMobile} />
 
     <LandingMessageWrapper>
-      <Logo light isMobile={isMobile}/>
-      <MainTitle margin='md' color='transparentWhite' bold center>A one-week bootcamp for indie hackers</MainTitle>
-      <WithPadding padding='sm'>
-        <Booking light isMobile={isMobile}/>
+      <Logo light isMobile={isMobile} />
+      <MainTitle margin="md" color="transparentWhite" bold center>
+        A one-week bootcamp for indie hackers
+      </MainTitle>
+      <WithPadding padding="sm">
+        <Booking light isMobile={isMobile} />
       </WithPadding>
     </LandingMessageWrapper>
   </VideoWrapper>
-export default Jumbo
+);
+export default Jumbo;
