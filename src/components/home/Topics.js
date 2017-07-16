@@ -6,6 +6,7 @@ import { Idea, Design, Code, Marketing } from "../styled/Icons";
 import { Container } from "../styled/Grid";
 import { Cross } from "../styled/Patterns";
 import { BookingButton } from "../styled/Buttons";
+import topicsData from "../../../data/topics.yaml";
 
 const Background = styled.div`
   // background: linear-gradient(#ef4040,#F56911);
@@ -114,12 +115,12 @@ const FullProgramButton = BookingButton.extend`
   z-index: 10;
 `
 
-const Topic = ({heading, image, subtitle, items}) =>
+const Topic = ({days, image, title, items}) =>
   <TopicWrapper>
-    <TopicHeading>{heading}</TopicHeading>
+    <TopicHeading>{days}</TopicHeading>
     <TopicContent>
       <TopicsIcon src={image}/>
-      <Subtitle size='md' margin='sm' center bold>{subtitle}</Subtitle>
+      <Subtitle size='md' margin='sm' center bold>{title}</Subtitle>
       <TopicList>
         {items.map(item => <TopicItem key={item}>{item}</TopicItem>)}
       </TopicList>
@@ -138,10 +139,7 @@ const Topics = ({ isMobile }) =>
       <TopicTitle margin={isMobile ? "xl" : "xxl"} bold center>What You'll Learn</TopicTitle>
 
       <TopicsRow>
-        <Topic image="/if_idea_2213480.svg" heading="Day 1-2" subtitle="Idea" items={['Find a need', 'Define your MVP', 'Evaluate your idea']} />
-        <Topic image="/if_tools_2170943.svg" heading="Day 3" subtitle="Design" items={['Build a prototype', 'Define your MVP', 'Learn the basics of UX']} />
-        <Topic image="/if_engineering_thinking_2139345.svg" heading="Day 4" subtitle="Coding" items={['Evaluate technologies','Reuse existing resources','Understand the basics']} />
-        <Topic image="/if_advertisement_2181656.svg" heading="Day 5-6" subtitle="Marketing" items={['Find an audience','Set up channels','Create a launch plan']} />
+        {topicsData.map(topic => <Topic {...topic}/>)}
       </TopicsRow>
 
       <FullProgramButton light>View Full Program</FullProgramButton>
