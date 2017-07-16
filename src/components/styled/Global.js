@@ -7,8 +7,9 @@ injectGlobal`
     src: url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,700,700i');
   }
 
-  body, html, *, li {
+  body, html, * {
     font-family: 'Zilla Slab', helvetica, sans-serif;
+    box-sizing: border-box;
   }
   h1, h2, h3, h4, h5, h6, p{
     margin: 0;
