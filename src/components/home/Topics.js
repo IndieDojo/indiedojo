@@ -122,7 +122,7 @@ const TopCover = styled.div`
   top: -1px;
   left: 0;
   z-index: 10;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 0%, 0% 100%, 0% 0%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 2px, 0% 100%, 0% 0%);
 `
 
 

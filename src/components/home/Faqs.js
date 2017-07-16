@@ -7,7 +7,7 @@ import Markdown from 'react-remarkable';
 
 const Faq = ({q, a}) =>
   <WithPadding padding='md'>
-    <Subtitle bold>{q}</Subtitle>
+    <Subtitle bold center margin='lg'>{q}</Subtitle>
     <Text><Markdown>{a}</Markdown></Text>
   </WithPadding>
 
