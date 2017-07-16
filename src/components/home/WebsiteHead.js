@@ -6,6 +6,7 @@ const WebsiteHead = () =>
     <title>Indie Dojo - a one week bootcamp for indie hackers</title>
     <meta name='description' content="A one-week bootcamp for indie hackers, that will give you a detailed, step-by-step guide, how to move from a blank page to the launch-ready web product."/>
     <link rel="canonical" href="http://www.indiedojo.club" />
+    <link rel="shortcut icon" href="/favicon.png" />
 
     <html itemscope itemtype="http://schema.org/Event"/>
 
