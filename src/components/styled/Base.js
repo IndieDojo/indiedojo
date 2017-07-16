@@ -90,6 +90,12 @@ export const Text = styled.div`
   !!props.paddingBottom
     ? props.theme.margins[props.paddingBottom]
     : props.theme.margins.md};
+  p{
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const WithPadding = styled.div`

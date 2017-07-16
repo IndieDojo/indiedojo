@@ -42,7 +42,7 @@ const Trainers = ({isMobile}) =>
       <Row>
         <Cell xs={12} center>
           <Title margin={isMobile ? "lg" : "xl"} bold center>
-            Our Team
+            Instructors
           </Title>
         </Cell>
         

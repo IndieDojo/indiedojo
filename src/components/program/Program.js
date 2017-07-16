@@ -23,13 +23,14 @@ const ProgramButton = BookingButton.extend`
 `
 
 const ProgramContent = Cell.extend`
-  padding-bottom: 250px;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 250px;
 `
 
 class CourseProgram extends Component {
   state = {
     activeIndex: 0,
-    isProgramVisible: false
+    isProgramVisible: true
   };
 
   getHeaders = program => {

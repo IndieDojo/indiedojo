@@ -27,7 +27,7 @@ const HeaderCell = styled.div`
   background: ${props =>
   props.active
     ? props.theme.colors[props.mainColor]
-    : props.theme.colors.veryLight};
+    : 'rgba(255,255,255,0.1)'};
   border-bottom: ${props => props.isMobile ? "1px solid white" : "0"};
   padding: ${props => props.theme.margins.md};
   cursor: ${props => props.active ? "normal" : "pointer"};
@@ -66,7 +66,7 @@ const ProgramHeader = (
         <Subtitle
           size="nm"
           lineHeight="1"
-          color={index === activeIndex ? "white" : "mainColor"}
+          color={index === activeIndex ? "white" : "link"}
           margin="md"
         >
           {header.day}
@@ -74,7 +74,7 @@ const ProgramHeader = (
         <Subtitle
           size="nm"
           lineHeight="1"
-          color={index === activeIndex ? "white" : "mainColor"}
+          color={index === activeIndex ? "white" : "link"}
           bold
         >
           {header.topic}

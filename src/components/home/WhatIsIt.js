@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { WithPadding, Title, Text, LinkTo } from '../styled/Base';
 import { ContainerSmall } from '../styled/Grid';
 import styled from 'styled-components';
+import about from '../../../data/about.yaml';
+import Markdown from 'react-remarkable';
 
 const AboutWrapper = styled.div`
 position: relative;
@@ -20,10 +22,7 @@ const WhatIsIt = () =>
           About
         </Title>
         <Text fontSize='md' inlineBlock>
-          <b>Indie Dojo</b> is a one-week bootcamp, that will give you a detailed, step-by-step guide on how to move from a blank page to a launch-ready web product.
-        </Text>
-        <Text fontSize='md' inlineBlock>
-          You will learn from a team of <LinkTo inherit href='#trainers'>trainers</LinkTo> that built, bootstrapped, and launched their own <b>successful projects</b> on the web.
+          <Markdown>{about.content}</Markdown>
         </Text>
       </WithPadding>
     </AboutContents>

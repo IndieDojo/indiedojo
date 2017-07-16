@@ -118,7 +118,7 @@ const TopCover = styled.div`
   background: #fff;
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: 300px;
   top: -1px;
   left: 0;
   z-index: 10;
@@ -130,7 +130,7 @@ const BottomCover = styled.div`
   background: #fff;
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: 300px;
   bottom: -1px;
   left: 0;
   z-index: 10;

@@ -112,7 +112,7 @@ class TimeBlock extends Component {
         <Row>
           <Cell xs={3}>
             <TimeCell>
-              <Subtitle size="sm" color="text">{timeBlock.time}</Subtitle>
+              <Subtitle size="sm" color="white">{timeBlock.time}</Subtitle>
             </TimeCell>
           </Cell>
 
@@ -120,7 +120,7 @@ class TimeBlock extends Component {
             <Row>
               <Cell xs={12}>
                 <TimeBlockHeader>
-                  <Subtitle size="nm" color="text" margin="0" bold>
+                  <Subtitle size="nm" color="white" margin="0">
                     {timeBlock.title}
                   </Subtitle>
                 </TimeBlockHeader>
