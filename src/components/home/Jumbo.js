@@ -48,7 +48,7 @@ const LandingMessageWrapper = styled.div`
   justify-content: center;  
 `;
 
-const Image = styled.img`
+const Image = styled.div`
   position: absolute;
   z-index: 9;
   width: 100%;
@@ -56,16 +56,14 @@ const Image = styled.img`
   left: 0;
   top: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  background-image: url('/35836232345_d90bfef2f6_b.jpg');
+  background-size: cover;
 `;
 
-const Image2 = styled.img`
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  left: 0;
+const Image2 = Image.extend`
   top: 50%;
-  // clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+
+  background-image: url('/pawel-nolbert-310974.jpg');
   clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
 `;
 
@@ -80,38 +78,12 @@ const Cover = styled.svg`
 const Title = styled.h1`
 `;
 
-<<<<<<< HEAD
+
 const mobileImageUrl = "/indiedojo-first-frame-mobile.jpg";
 const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
 const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4?s=5d365fe6ff3a4146ff42c705ebe626e4a02ad5b9&profile_id=174";
 const videoFirstFrameUrl = "/indiedojo-first-frame.jpg";
 
-const Jumbo = ({ isMobile }) => (
-  <VideoWrapper isMobile={isMobile}>
-    {isMobile
-      ? <Image src={mobileImageUrl} />
-      : <VideoPlayer
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={videoFirstFrameUrl}
-          isMobile={isMobile}
-        >
-          <source src={landingPageVideoUrl720} type="video/mp4" />
-        </VideoPlayer>}
-
-    <VideoCover isMobile={isMobile} />
-
-    <LandingMessageWrapper>
-      <Logo light isMobile={isMobile} />
-      <MainTitle margin="md" color="transparentWhite" bold center>
-        A one-week bootcamp for indie hackers
-      </MainTitle>
-      <WithPadding padding="sm">
-        <Booking light isMobile={isMobile} />
-      </WithPadding>
-=======
 export const LogoImage = styled.img`
   display: block;
   width: 150px;
@@ -121,19 +93,16 @@ export const LogoImage = styled.img`
 const Jumbo = ({isMobile}) =>
   <VideoWrapper className='video-wrapper' isMobile={isMobile}>
     
-    <Image src="/35836232345_d90bfef2f6_b.jpg"/>
+    <Image/>
 
-
-
-    <Image2 src="/freddie-marriage-50490.jpg"/>
+    <Image2/>
 
     <LandingMessageWrapper>
       <LogoImage src="/indiedojo.png"/>
       <Title>A one-week bootcamp <br/>for indie hackers</Title>
-      <Booking light isMobile={isMobile}/>
->>>>>>> new-design-2
+      <Booking isMobile={isMobile}/>
     </LandingMessageWrapper>
 
   </VideoWrapper>
-);
+
 export default Jumbo;

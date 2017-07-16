@@ -4,6 +4,7 @@ import { Row, Cell } from '../styled/Grid';
 import { WithPadding, Subtitle, Title, Text } from "../styled/Base";
 import { Lightbulb, Megaphone, Cog, Palette } from "../styled/Icons";
 import { Container } from "../styled/Grid";
+import { Cross } from "../styled/Patterns";
 
 const Background = styled.div`
   // background: linear-gradient(#ef4040,#F56911);
@@ -11,7 +12,7 @@ const Background = styled.div`
 
 const TopicsWrapper = styled.div`
   position: relative;
-  height: 800px;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,15 +40,18 @@ const TopicTitle = Title.extend`
 const Topic = styled.div`
   width: calc(85%/4);
   margin-right: 5%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,1);
   padding: 20px;
+  *{
+    visibility: hidden;
+  }
   svg{
     height: 100px;
     width: 100px;
     margin: 0 auto 20px auto;
     display: block;
     g{
-      stroke: #787894;
+      stroke: #333;
     }
   }
   &:last-child{
@@ -55,7 +59,7 @@ const Topic = styled.div`
   }
 `
 const TopicList = styled.ul`
-margin: 0;
+  margin: 0;
   align-self: center;
   list-style-type: none;
   padding: 0;
@@ -67,7 +71,7 @@ const TopicItem = styled.li`
   text-align: center;
 `
 
-const Image = styled.img`
+const Image = styled.div`
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -75,13 +79,31 @@ const Image = styled.img`
   left: 0;
   top: 0;
   // clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
-  clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 70%, 50% 100%, 0 70%);
+  clip-path: polygon(0% 33%, 50% 0%, 100% 33%, 100% 66%, 50% 100%, 0 66%);
+  background-image: url('/yuki-yoshida-104560.jpg');
+  background-image: url('/oskar-krawczyk-172854.jpg');
+  background-size: cover;
+  background-position: 50% 0%;
 `;
+
+const TopicsPattern = Cross.extend`
+  // background-color: #787894;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+`
 
 const Topics = ({ isMobile }) =>
   <TopicsWrapper>
     {/*<Image src="/35836232345_d90bfef2f6_b.jpg"/>*/}
-    <Image src="/yuki-yoshida-104560.jpg"/>
+    <Image>
+      <TopicsPattern/>
+    </Image>
+
 
     <TopicsContent>
       <TopicTitle margin={isMobile ? "xl" : "xxl"} bold center>

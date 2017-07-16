@@ -10,8 +10,8 @@ export const BookingButton = styled.a`
   padding: 10px ${props => props.theme.margins.xl};
   box-sizing: border-box;
   border: 3px solid;
-  border-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.primary};
+  border-color: ${props => props.light ? 'white' : props.theme.colors.accent};
+  color: ${props => props.light ? 'white' : props.theme.colors.primary};
   font-size: ${props => props.theme.fontSizes.nm};
   font-weight: ${props => props.theme.weights.bold};
   text-decoration: none;
