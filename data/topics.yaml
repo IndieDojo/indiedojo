@@ -1,28 +1,28 @@
 - title: Idea
-  days: Days 1-2
+  days: Day 1
   image: "/if_idea_2213480.svg"
   items: 
     - Find a need
     - Define your MVP
     - Evaluate your idea
 - title: Design
-  days: Day 3
+  days: Days 2-3
   image: "/if_tools_2170943.svg"
   items: 
     - Typography & Colors
     - Basic of branding
     - Learn Figma
-- title: Code
-  days: Day 4
-  image: "/if_engineering_thinking_2139345.svg"
-  items: 
-    - Evaluate technologies
-    - Reuse existing resources
-    - Understand the basics
 - title: Marketing
-  days: Days 5-6
+  days: Days 4-5
   image: "/if_advertisement_2181656.svg"
   items: 
     - Find an audience
     - Set up channels
     - Create a launch plan
+- title: Launch
+  days: Day 6
+  image: "/if_engineering_thinking_2139345.svg"
+  items: 
+    - Evaluate technologies
+    - Reuse existing resources
+    - Understand the basics

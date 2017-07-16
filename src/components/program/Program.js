@@ -5,14 +5,26 @@ import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
 
 import ProgramHeader from './ProgramHeader'
 import ProgramDayBlock from './ProgramDayBlock'
-import { ProgramButton } from "../styled/Buttons";
 import { program } from "../../../data/detailedProgram";
+import { BookingButton } from "../styled/Buttons";
 
 const ProgramWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
+
+const ProgramButton = BookingButton.extend`
+  display: block;
+  position: relative;
+  z-index: 10;
+  margin-top: ${props => props.theme.margins.xl};
+`
+
+const ProgramContent = Cell.extend`
+  padding-bottom: 250px;
+`
 
 class CourseProgram extends Component {
   state = {
@@ -38,39 +50,39 @@ class CourseProgram extends Component {
     const { isMobile, mainColor, secondColor } = this.props;
 
     return (
-      <Container>
-        <WithPadding padding="xxl">
-          <Row>
-            <Cell xs={12} center>
-              <Title margin={isMobile ? "lg" : "xl"} bold center>
-                Program
-              </Title>
-            </Cell>
+      <ProgramWrapper>
 
-            <Cell xs={12} center>
-            <ProgramHeader
-              headers={this.getHeaders(program)}
-              activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-              onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
-              isMobile={isMobile}
-              isProgramVisible={this.state.isProgramVisible}
-              mainColor={mainColor}
-            />
+        <ProgramButton light onClick={this.onProgramButtonClick}>
+          {this.state.isProgramVisible ? "Hide Program" : "View Full Program"}
+        </ProgramButton>
 
-            {this.state.isProgramVisible &&
-              <ProgramDayBlock
-                dayBlock={program[this.state.activeIndex]}
-                isMobile={isMobile}
-                mainColor={mainColor}
-                secondColor={secondColor}
-              />}
-            <ProgramButton onClick={this.onProgramButtonClick}>
-              {this.state.isProgramVisible ? "Hide program" : "Show full program"}
-            </ProgramButton>
-            </Cell>
-          </Row>
-        </WithPadding>
-      </Container>
+        <Container>
+          <WithPadding padding="xxl">
+            <Row>
+
+            {this.state.isProgramVisible ?
+              <ProgramContent xs={12} center>
+                <ProgramHeader
+                  headers={this.getHeaders(program)}
+                  activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
+                  onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
+                  isMobile={isMobile}
+                  isProgramVisible={this.state.isProgramVisible}
+                  mainColor={mainColor}
+                />
+                <ProgramDayBlock
+                  dayBlock={program[this.state.activeIndex]}
+                  isMobile={isMobile}
+                  mainColor={mainColor}
+                  secondColor={secondColor}
+                />}
+              </ProgramContent>
+             : null}
+            </Row>
+          </WithPadding>
+        </Container>
+
+      </ProgramWrapper>
     );
   }
 }

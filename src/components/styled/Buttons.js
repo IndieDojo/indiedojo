@@ -27,6 +27,3 @@ export const BookingButton = styled.a`
   }
 `
 
-export const ProgramButton = BookingButton.extend`
-  margin-top: ${props => props.theme.margins.xl};
-`;
