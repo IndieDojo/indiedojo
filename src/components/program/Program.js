@@ -30,7 +30,7 @@ const ProgramContent = Cell.extend`
 class CourseProgram extends Component {
   state = {
     activeIndex: 0,
-    isProgramVisible: true
+    isProgramVisible: false
   };
 
   getHeaders = program => {
