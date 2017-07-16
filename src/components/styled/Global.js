@@ -21,7 +21,7 @@ injectGlobal`
   }
 
   a {
-    color: ${props => props.theme.colors.link};
+    color: #F56911;
     font-size: inherit;
     transition: color 0.1s ease-in;
     text-decoration: none;

@@ -5,6 +5,7 @@ import { WithPadding, Subtitle, Title, Text } from "../styled/Base";
 import { Idea, Design, Code, Marketing } from "../styled/Icons";
 import { Container } from "../styled/Grid";
 import { Cross } from "../styled/Patterns";
+import { BookingButton } from "../styled/Buttons";
 
 const Background = styled.div`
   // background: linear-gradient(#ef4040,#F56911);
@@ -12,36 +13,46 @@ const Background = styled.div`
 
 const TopicsWrapper = styled.div`
   position: relative;
-  height: 120vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `
 
 const TopicsContent = Container.extend`
 // width: 50%;
 // margin-left: 200px;
+  height: 120vh;
+
   position: relative;
   z-index: 10;
   top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
-const AllTopics = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const TopicsRow = Row.extend`
+  margin-bottom: 40px;
 `
 
 const TopicTitle = Title.extend`
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 40px;
+  color: #fff;
+  z-index: 10;
 `
 
-const Topic = styled.div`
+const TopicHeading = styled.h3`
+  background: #F2EFEE;
+  padding: 10px;
+  text-align: center;
+`
+
+const TopicContent = styled.div`
+  padding: 30px;
+`
+
+const TopicWrapper = styled.div`
   width: calc(85%/4);
   margin-right: 5%;
   background: rgba(255,255,255,1);
-  padding: 20px;
   svg{
     height: 100px;
     width: 100px;
@@ -52,6 +63,7 @@ const Topic = styled.div`
     margin-right: 0;
   }
 `
+
 const TopicList = styled.ul`
   margin: 0;
   align-self: center;
@@ -60,7 +72,7 @@ const TopicList = styled.ul`
 `
 
 const TopicItem = styled.li`
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: 18px;
   padding-bottom: ${props => props.theme.margins.sm};
   text-align: center;
 `
@@ -75,20 +87,19 @@ const Image = styled.div`
   // clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
   clip-path: polygon(0% 33%, 50% 0%, 100% 33%, 100% 66%, 50% 100%, 0 66%);
   background-image: url('/yuki-yoshida-104560.jpg');
-  background-image: url('/oskar-krawczyk-172854.jpg');
+  background-image: url('/oskar-krawczyk-172854-b.jpg');
   background-size: cover;
   background-position: 50% 0%;
 `;
 
-const TopicsPattern = Cross.extend`
-  // background-color: #787894;
+const ImageCover = Cross.extend`
   position: absolute;
   z-index: 10;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  display: none;
+  background: linear-gradient(rgba(20,13,8,0) 50%, rgba(20,13,8,1) 90%);
 `
 
 const TopicsIcon = styled.img`
@@ -97,61 +108,46 @@ const TopicsIcon = styled.img`
   margin: 0 auto;
 `
 
+const FullProgramButton = BookingButton.extend`
+  display: block;
+  position: relative;
+  z-index: 10;
+`
+
+const Topic = ({heading, image, subtitle, items}) =>
+  <TopicWrapper>
+    <TopicHeading>{heading}</TopicHeading>
+    <TopicContent>
+      <TopicsIcon src={image}/>
+      <Subtitle size='md' margin='sm' center bold>{subtitle}</Subtitle>
+      <TopicList>
+        {items.map(item => <TopicItem key={item}>{item}</TopicItem>)}
+      </TopicList>
+    </TopicContent>
+  </TopicWrapper>
+
 const Topics = ({ isMobile }) =>
   <TopicsWrapper>
     {/*<Image src="/35836232345_d90bfef2f6_b.jpg"/>*/}
     <Image>
-      <TopicsPattern/>
+      <ImageCover/>
     </Image>
 
-
     <TopicsContent>
-      <TopicTitle margin={isMobile ? "xl" : "xxl"} bold center>
-        What You'll Learn
-      </TopicTitle>
-      <Row>
-        <Topic xs={12} sm={6} md={3} center>
-          <TopicsIcon src="/if_idea_2213480.svg"/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Idea</Subtitle>
-          <TopicList>
-            <TopicItem>Find a need</TopicItem>
-            <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>Evaluate your idea</TopicItem>
-          </TopicList>
-        </Topic>
-        <Topic xs={12} sm={6} md={3} center>
-          <TopicsIcon src="/if_tools_2170943.svg"/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Design</Subtitle>
-          <TopicList>
-            <TopicItem>Build a prototype</TopicItem>
-            <TopicItem>Define a MVP</TopicItem>
-            <TopicItem>Learn the basics of UX</TopicItem>
-          </TopicList>
-        </Topic>
-        <Topic xs={12} sm={6} md={3} center>
-          <TopicsIcon src="/if_engineering_thinking_2139345.svg"/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm'  center bold>Coding</Subtitle>
-          <TopicList>
-            <TopicItem>Evaluate technologies</TopicItem>
-            <TopicItem>Reuse existing resources</TopicItem>
-            <TopicItem>Understand the basics</TopicItem>
-          </TopicList>
-        </Topic>
-        <Topic xs={12} sm={6} md={3} center>
-          <TopicsIcon src="/if_advertisement_2181656.svg"/>
-          <WithPadding padding='sm'></WithPadding>
-          <Subtitle size='md' margin='sm' center bold>Marketing</Subtitle>
-          <TopicList>
-            <TopicItem>Find an audience</TopicItem>
-            <TopicItem>Set up marketing channels</TopicItem>
-            <TopicItem>Create a launch plan</TopicItem>
-          </TopicList>
-        </Topic>
-      </Row>
+
+      <TopicTitle margin={isMobile ? "xl" : "xxl"} bold center>What You'll Learn</TopicTitle>
+
+      <TopicsRow>
+        <Topic image="/if_idea_2213480.svg" heading="Day 1-2" subtitle="Idea" items={['Find a need', 'Define your MVP', 'Evaluate your idea']} />
+        <Topic image="/if_tools_2170943.svg" heading="Day 3" subtitle="Design" items={['Build a prototype', 'Define your MVP', 'Learn the basics of UX']} />
+        <Topic image="/if_engineering_thinking_2139345.svg" heading="Day 4" subtitle="Coding" items={['Evaluate technologies','Reuse existing resources','Understand the basics']} />
+        <Topic image="/if_advertisement_2181656.svg" heading="Day 5-6" subtitle="Marketing" items={['Find an audience','Set up channels','Create a launch plan']} />
+      </TopicsRow>
+
+      <FullProgramButton light>View Full Program</FullProgramButton>
+
     </TopicsContent>
+
   </TopicsWrapper>
 
 export default Topics

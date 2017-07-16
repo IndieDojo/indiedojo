@@ -125,7 +125,7 @@ const Newsletter = ({isMobile}) =>
           onClick={() => ReactGA.event({ category: 'Subscribe', action: `${section} subscribe` })}
           className="button"
           type="submit"
-          value="Sign Up"
+          value="Get eBook"
           name="subscribe"
           id="mc-embedded-subscribe"
         />
@@ -141,7 +141,7 @@ const Newsletter = ({isMobile}) =>
         <Subtitle size='nm' margin='sm' uppercase>Your Free eBook</Subtitle>
         <Subtitle size='md' margin='md' bold>Color Theory for Startups</Subtitle>
         <Text>
-          Through 9 short case studies, learn how leading companies
+          Through nine short case studies, learn how leading companies
           use color to establish their brand and reinforce their messaging.
         </Text>
       </BookContents>

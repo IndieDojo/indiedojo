@@ -1,4 +1,4 @@
-const gutterWidth = 2; // rem
+const gutterWidth = 4; // rem
 const outerMargin = 4; // rem
 
 const breakPoints = {

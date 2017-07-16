@@ -56,7 +56,7 @@ const Image = styled.div`
   left: 0;
   top: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  background-image: url('/35836232345_d90bfef2f6_b.jpg');
+  background-image: url('/gallery_0051.jpg');
   background-size: cover;
 `;
 

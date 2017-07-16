@@ -1,0 +1,35 @@
+- name: Sacha Greif
+  image: /sacha.jpg
+  title: Developer, designer and entrepreneur
+  bio: >
+    Sacha is a developer, designer and entrepreneur. Originally from Paris, 
+    France but these days he live in Osaka,
+    Japan. He is an author of [VulcanJS](http://vulcanjs.org/) full-stack app framework,
+    co-authored [Discover Meteor](https://www.discovermeteor.com/) book and created the biggest survey on the [State of Javascript](http://stateofjs.com/).
+- name: Maciej Nowakowski
+  image: /maciej.jpg
+  title: Developer, trader and etrepreneur
+  bio: >
+    Maciej is a developer, trader and entrepreneur. 
+    He was born in Poland but lives now in London. 
+    Maciej organises a coding bootcamps [in Flip Flops](https://www.codecamps.com/) 
+    and works on his own projects. 
+    In his previous life, he's been a trader working in a city.
+- name: Maciej Nowakowski
+  image: /maciej.jpg
+  title: Developer, trader and etrepreneur
+  bio: >
+    Maciej is a developer, trader and entrepreneur. 
+    He was born in Poland but lives now in London. 
+    Maciej organises a coding bootcamps [in Flip Flops](https://www.codecamps.com/) 
+    and works on his own projects. 
+    In his previous life, he's been a trader working in a city.
+
+# - name: Julian
+#   image: /julian.jpg
+#   title: Developer, designer and entrepreneur
+#   bio: >
+#     Sacha is a developer, designer and entrepreneur. Originally from Paris, 
+#     France but these days he live in Osaka,
+#     Japan. He is an author of [VulcanJS](http://vulcanjs.org/) full-stack app framework,
+#     co-authored [Discover Meteor](https://www.discovermeteor.com/) book and created the biggest survey on the [State of Javascript](http://stateofjs.com/).
