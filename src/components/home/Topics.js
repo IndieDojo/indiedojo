@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Cell } from '../styled/Grid';
 import { WithPadding, Subtitle, Title, Text } from "../styled/Base";
-import { Lightbulb, Megaphone, Cog, Palette } from "../styled/Icons";
+import { Idea, Design, Code, Marketing } from "../styled/Icons";
 import { Container } from "../styled/Grid";
 import { Cross } from "../styled/Patterns";
 
@@ -42,17 +42,11 @@ const Topic = styled.div`
   margin-right: 5%;
   background: rgba(255,255,255,1);
   padding: 20px;
-  *{
-    visibility: hidden;
-  }
   svg{
     height: 100px;
     width: 100px;
     margin: 0 auto 20px auto;
     display: block;
-    g{
-      stroke: #333;
-    }
   }
   &:last-child{
     margin-right: 0;
@@ -97,6 +91,12 @@ const TopicsPattern = Cross.extend`
   display: none;
 `
 
+const TopicsIcon = styled.img`
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+`
+
 const Topics = ({ isMobile }) =>
   <TopicsWrapper>
     {/*<Image src="/35836232345_d90bfef2f6_b.jpg"/>*/}
@@ -111,7 +111,7 @@ const Topics = ({ isMobile }) =>
       </TopicTitle>
       <Row>
         <Topic xs={12} sm={6} md={3} center>
-          <Lightbulb/>
+          <TopicsIcon src="/if_idea_2213480.svg"/>
           <WithPadding padding='sm'></WithPadding>
           <Subtitle size='md' margin='sm' center bold>Idea</Subtitle>
           <TopicList>
@@ -121,7 +121,7 @@ const Topics = ({ isMobile }) =>
           </TopicList>
         </Topic>
         <Topic xs={12} sm={6} md={3} center>
-          <Palette/>
+          <TopicsIcon src="/if_tools_2170943.svg"/>
           <WithPadding padding='sm'></WithPadding>
           <Subtitle size='md' margin='sm' center bold>Design</Subtitle>
           <TopicList>
@@ -131,7 +131,7 @@ const Topics = ({ isMobile }) =>
           </TopicList>
         </Topic>
         <Topic xs={12} sm={6} md={3} center>
-          <Cog/>
+          <TopicsIcon src="/if_engineering_thinking_2139345.svg"/>
           <WithPadding padding='sm'></WithPadding>
           <Subtitle size='md' margin='sm'  center bold>Coding</Subtitle>
           <TopicList>
@@ -141,7 +141,7 @@ const Topics = ({ isMobile }) =>
           </TopicList>
         </Topic>
         <Topic xs={12} sm={6} md={3} center>
-          <Megaphone/>
+          <TopicsIcon src="/if_advertisement_2181656.svg"/>
           <WithPadding padding='sm'></WithPadding>
           <Subtitle size='md' margin='sm' center bold>Marketing</Subtitle>
           <TopicList>
