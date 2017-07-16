@@ -19,7 +19,7 @@ const WhatIsIt = () =>
     <AboutContents>
       <WithPadding padding='xxl'>
         <Title margin='md' bold center>
-          About
+          What is Indie Dojo?
         </Title>
         <Text fontSize='md' inlineBlock>
           <Markdown>{about.content}</Markdown>

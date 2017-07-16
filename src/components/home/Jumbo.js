@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { FluidContainer, Container } from '../styled/Grid'
+import { FluidContainer, Container, Row, Cell } from '../styled/Grid'
 import { WithPadding, MainTitle, Subtitle } from '../styled/Base';
 import { Logo } from '../styled/Logo'
 import Booking from './Booking'
+import BookingScalable from './BookingScalable'
 
 // this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};
 
@@ -11,8 +12,8 @@ import Booking from './Booking'
 const VideoWrapper = styled.div`
   position: relative;
   min-width: 100%;
-  height: 100vh;
-  margin-bottom: 400px;
+  height: 66.66vw;
+  margin-bottom: 33.33vw; //( 50% * 2/3 * window width)
 `;
 
 const VideoPlayer = styled.video`
@@ -24,7 +25,7 @@ const VideoPlayer = styled.video`
 
 const VideoCover = styled.div`
   top: 0;
-  left: 0;d
+  left: 0;
   width: 100%;
   height: 100vh;
   // background: url('/black-pattern-2x2.png'), rgba(0,0,0,0.15);
@@ -37,15 +38,14 @@ const VideoCover = styled.div`
 const LandingMessageWrapper = styled.div`
   position: absolute;
   background: transparent;
-  top: 0;
+  top: 16vw;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
-  padding-left: 70px;
+  padding-left: 5vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;  
 `;
 
 const Image = styled.div`
@@ -56,7 +56,7 @@ const Image = styled.div`
   left: 0;
   top: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  background-image: url('/gallery_0051.jpg');
+  background-image: url('/talk.jpg');
   background-size: cover;
 `;
 
@@ -74,9 +74,10 @@ const Cover = styled.svg`
   bottom: 0;
   right: 0;
 `
-
-const Title = styled.h1`
-`;
+const Statement = styled.h1`
+  color: ${props => props.theme.colors.text};
+  font-size: 2.5vw;
+`
 
 
 const mobileImageUrl = "/indiedojo-first-frame-mobile.jpg";
@@ -86,21 +87,25 @@ const videoFirstFrameUrl = "/indiedojo-first-frame.jpg";
 
 export const LogoImage = styled.img`
   display: block;
-  width: 150px;
+  width: 10vw;
   position: relative;
 `
 
 const Jumbo = ({isMobile}) =>
-  <VideoWrapper className='video-wrapper' isMobile={isMobile}>
-    
+  <VideoWrapper isMobile={isMobile}>
+
     <Image/>
 
     <Image2/>
 
     <LandingMessageWrapper>
-      <LogoImage src="/indiedojo.png"/>
-      <Title>A one-week bootcamp <br/>for indie hackers</Title>
-      <Booking isMobile={isMobile}/>
+      <Row>
+        <Cell xs={6}>
+          <LogoImage src="/indiedojo.png"/>
+          <Statement>A one-week bootcamp<br/>for indie hackers</Statement>
+          <BookingScalable/>
+        </Cell>
+      </Row>
     </LandingMessageWrapper>
 
   </VideoWrapper>
