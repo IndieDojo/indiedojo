@@ -56,7 +56,6 @@ const Topic = styled.div`
 `
 const TopicList = styled.ul`
 margin: 0;
-  display: inline-block;
   align-self: center;
   list-style-type: none;
   padding: 0;

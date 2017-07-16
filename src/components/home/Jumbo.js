@@ -42,7 +42,7 @@ const LandingMessageWrapper = styled.div`
   width: 100%;
   height: 100%;
   z-index: 2;
-  padding-left: 40px;
+  padding-left: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;  
@@ -80,6 +80,12 @@ const Cover = styled.svg`
 const Title = styled.h1`
 `;
 
+export const LogoImage = styled.img`
+  display: block;
+  width: 150px;
+  position: relative;
+`
+
 const Jumbo = ({isMobile}) =>
   <VideoWrapper className='video-wrapper' isMobile={isMobile}>
     
@@ -90,7 +96,7 @@ const Jumbo = ({isMobile}) =>
     <Image2 src="/freddie-marriage-50490.jpg"/>
 
     <LandingMessageWrapper>
-      <Logo isMobile={isMobile}/>
+      <LogoImage src="/indiedojo.png"/>
       <Title>A one-week bootcamp <br/>for indie hackers</Title>
       <Booking light isMobile={isMobile}/>
     </LandingMessageWrapper>
