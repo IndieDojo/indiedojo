@@ -25,6 +25,7 @@ const ProgramButton = BookingButton.extend`
 const ProgramContent = Cell.extend`
   background: rgba(255,255,255,0.05);
   margin-bottom: 250px;
+  padding-bottom: 40px;
 `
 
 class CourseProgram extends Component {
@@ -76,7 +77,7 @@ class CourseProgram extends Component {
                   isMobile={isMobile}
                   mainColor={mainColor}
                   secondColor={secondColor}
-                />}
+                />
               </ProgramContent>
              : null}
             </Row>

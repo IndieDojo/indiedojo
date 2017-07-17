@@ -55,7 +55,7 @@ const ProgramHeader = (
   <HeaderWrapper isMobile={isMobile}>
     {headers.map((header, index) => (
       <HeaderCell
-        key={header.topic}
+        key={index}
         active={index === activeIndex}
         data-index={index}
         mainColor={mainColor}

@@ -4,179 +4,138 @@ export let program = [
     topic: "Finding an Idea",
     timeBlocks: [
       {
-        title: "Finding a need",
+        title: "Finding A Need",
+        description: "Jobs To Be Done, Creating Badass Users, and more.",
         type: 'lecture',
-        time: '9:30-10:15'
+        time: '09:30-11:00'
       },
       {
-        title: "Work",
-        type: 'workshop',
-        time: '10:15-11:15'
-      },
-      {
-        title: "Coffee break",
-        type: 'break',
-        time: '11:15-11:30'
-      },
-      {
-        title: "Idea validation",
+        title: "Defining Your MVP",
+        description: "Boiling your product down to its essence.",
         type: 'lecture',
-        time: '11:30-12:15'
-      },
-      {
-        title: "Talk to your customers",
-        type: 'workshop',
-        time: '12:15-13:15'
+        time: '11:00-12:30'
       },
       {
         title: "Lunch",
         type: 'break',
-        time: '13:15-14:15'
+        time: '12:30-13:30'
       },
       {
-        title: "Defining your MVP",
+        title: "Prototyping & Testing",
+        description: "How to quickly prototype and validate new ideas.",
         type: 'lecture',
-        time: '14:15-15:00'
+        time: '13:30-15:00'
       },
       {
-        title: "Refining idas",
+        title: "Work on Product",
+        description: "Put in practice what you learned today.",
         type: 'workshop',
-        time: '15:00-19:00'
+        time: '15:00-18:00'
       }
     ]
   },
   {
     day: "Tuesday",
-    topic: "Prototyping & Validation",
+    topic: "Design Basics",
     timeBlocks: [
       {
-        title: "Prototyping Tools",
+        title: "Logos & Branding",
+        description: "How branding can help you get your message across.",
         type: 'lecture',
-        time: '9:00-10:00'
+        time: '09:30-11:00'
       },
       {
-        title: "Let's build a prototyp",
-        type: 'workshop',
-        time: '10:00-13:00'
+        title: "Color & Type",
+        description: "Understanding the basic building blocks of design.",
+        type: 'lecture',
+        time: '11:00-12:30'
       },
       {
         title: "Lunch",
         type: 'break',
-        time: '13:00-14:00'
+        time: '12:30-13:30'
       },
       {
-        title: "How to talk to your customers",
+        title: "Designing With Figma",
+        description: "Learn how to use free design app Figma.",
         type: 'lecture',
-        time: '14:00-15:30'
+        time: '13:30-15:00'
       },
       {
-        title: "Talk to your customers and interate on your idea",
+        title: "Work on Product",
+        description: "Put in practice what you learned today",
         type: 'workshop',
-        time: '15:30-19:00'
+        time: '15:00-18:00'
       }
     ]
   },
   {
     day: "Wednesday",
-    topic: "Design",
+    topic: "Practical Design",
     timeBlocks: [
       {
-        title: "Web design",
-        description: "Learn all the ingredients that make your website look and feel professional. - How to design you logo - How to create a color palette for your brand - Typography - creating font pairs, sizing - Vertical spacing",
+        title: "Landing Pages",
+        description: "What makes for an effective landing page design?",
         type: 'lecture',
-        time: '9:00-9:45'
+        time: '09:30-11:00'
       },
       {
-        title: "Brand your product",
-        type: 'workshop',
-        time: '9:45-10:45'
-      },
-      {
-        title: "Coffee break",
-        type: 'break',
-        time: '10:45-11:00'
-      },
-      {
-        title: "Website design",
-        description: "Learn how to make your customers...",
+        title: "Onboarding",
+        description: "Guiding the user through their first steps. ",
         type: 'lecture',
-        time: '11:00-11:45'
-      },
-      {
-        title: "Planning your website",
-        type: 'workshop',
-        time: '11:45-13:00'
+        time: '11:00-12:30'
       },
       {
         title: "Lunch",
         type: 'break',
-        time: '13:00-14:00'
+        time: '12:30-13:30'
       },
       {
-        title: "Working with a designer",
+        title: "UI Design",
+        description: "How to avoid common UI/UX mistakes.",
         type: 'lecture',
-        time: '14:00-14:45'
+        time: '13:30-15:00'
       },
       {
-        title: "Design on a shoestring",
-        description: "Assets that you will use for your project: - Templates - Stock photos - Icons - Vectors - Illustrations",
-        type: 'lecture',
-        time: '15:45-16:30'
-      },
-      {
-        title: "Design hunt",
-        description: "Assets that you will use for your project: - Templates - Stock photos - Icons - Vectors - Illustrations",
+        title: "Work on Product",
+        description: "Put in practice what you learned today.",
         type: 'workshop',
-        time: '16:30-19:30'
+        time: '15:00-18:00'
       }
     ]
   },
   {
     day: "Thursday",
-    topic: "Coding",
+    topic: "User Acquisition",
     timeBlocks: [
       {
-        title: "Web applications",
-        description: "There are many path to build a website. You will learn which technology will suit your needs best. - How internet works - Building timeBlocks: HTML/CSS/JS - Databases - Static websites - Vulcan - Wordpress - Component-driven development - Integrations (Shopify, Squarespace)",
+        title: "Content Marketing",
+        description: "How to write effective blog posts.",
         type: 'lecture',
-        time: '9:00-10:00'
+        time: '09:30-11:00'
       },
       {
-        title: "Code experiments or Wordpress",
-        description: "Experiment with basics of coding or Wordpress.",
-        type: 'workshop',
-        time: '10:00-13:00'
+        title: "Paid Acquisition",
+        description: "Exploring and comparing different ad channels.",
+        type: 'lecture',
+        time: '11:00-12:30'
       },
       {
         title: "Lunch",
         type: 'break',
-        time: '13:00-14:00'
+        time: '12:30-13:30'
       },
       {
-        title: "Mobile applications",
-        description: "The difference between native and web applications. - React native",
+        title: "Using Email",
+        description: "Email is still the most reliable way to retain users.",
         type: 'lecture',
-        time: '14:00-14:45'
+        time: '13:30-15:00'
       },
       {
-        title: "Working with developer",
-        type: 'lecture',
-        time: '14:45-15:30'
-      },
-      {
-        title: "Prepare your specification for web developer",
+        title: "Work on Product",
+        description: "Put in practice what you learned today",
         type: 'workshop',
-        time: '15:30-16:30'
-      },
-      {
-        title: "Coffee break",
-        type: 'break',
-        time: '16:30-16:45'
-      },
-      {
-        title: "Website experiments",
-        type: 'workshop',
-        time: '16:45-19:30'
+        time: '15:00-18:00'
       }
     ]
   },
@@ -185,47 +144,33 @@ export let program = [
     topic: "Marketing",
     timeBlocks: [
       {
-        title: "Building a good landing page",
-        description: "Landing pages types - A/B testing - Onboarding users",
+        title: "Pricing",
+        description: "How do you set the right price for your product?",
         type: 'lecture',
-        time: '9:00-9:45'
+        time: '09:30-11:00'
       },
       {
-        title: "Fine-tune your website",
-        type: 'workshop',
-        time: '9:45-10:45'
-      },
-      {
-        title: "Coffee break",
-        type: 'break',
-        time: '10:45-11:00'
-      },
-      {
-        title: "Communication",
-        description: "Spreading the word - Running a blog - pros and cons of own blog versus other options (Medium) - Newsletters - Forums - Social media - Copy-writing - Speak your customer's language, Features and benefits - Content marketing and guest posts",
+        title: "Maintaining Growth",
+        description: "Strategies for growing even past the launch.",
         type: 'lecture',
-        time: '11:00-11:45'
-      },
-      {
-        title: "Plan your communication funnels",
-        type: 'workshop',
-        time: '11:45-13:00'
+        time: '11:00-12:30'
       },
       {
         title: "Lunch",
         type: 'break',
-        time: '13:00-14:00'
+        time: '12:30-13:30'
       },
       {
-        title: "Advertising and analytics",
-        description: "Setup your advertising campaign in a right way",
+        title: "Effective Copywriting",
+        description: "How to speak your user's language. ",
         type: 'lecture',
-        time: '14:00-15:00'
+        time: '13:30-15:00'
       },
       {
-        title: "Design your advertising campaign",
+        title: "Work on Product",
+        description: "Put in practice what you learned today",
         type: 'workshop',
-        time: '15:00-19:00'
+        time: '15:00-18:00'
       }
     ]
   },
@@ -234,24 +179,27 @@ export let program = [
     topic: "Launch Day",
     timeBlocks: [
       {
-        title: "Prepare to launch",
+        title: "Launch Checklist",
+        description: "Are you sure you didn't forget anything?",
         type: 'lecture',
-        time: '9:00-9:45'
+        time: '09:30-11:00'
       },
       {
-        title: "Polish your product",
-        type: 'workshop',
-        time: '9:45-15:00'
-      },
-      {
-        title: "Presentation of projects",
+        title: "Case Studies",
+        description: "Instructors share real-world stories of past launches.",
         type: 'lecture',
-        time: '15:00-16:30'
+        time: '11:00-12:30'
       },
       {
-        title: "Launch",
-        type: 'workshop',
-        time: '16:30-19:30'
+        title: "Lunch",
+        type: 'break',
+        time: '12:30-13:30'
+      },
+      {
+        title: "Launch Time",
+        description: "Time to launch your product and see what happens!",
+        type: 'lecture',
+        time: '13:30-17:00'
       }
     ]
   }

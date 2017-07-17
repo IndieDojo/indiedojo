@@ -51,12 +51,6 @@ const TimeBlockWrapper = styled.div`
   background: ${props =>
     props.active ? props.theme.colors.veryLight : "transparent"};
   color: ${props => props.theme.colors.text};
-  transition: all 0.2s ease-out;
-  cursor: ${props => props.withDescription ? "pointer" : ""};
-  padding-bottom: ${props => props.active ? props.theme.margins.lg : "0"};
-  &:hover {
-    background: ${props => props.theme.colors.veryLightHover};
-  }
 `;
 
 // Container for timeBlock.time
@@ -73,13 +67,14 @@ const TimeCell = styled.div`
 const TimeBlockHeader = styled.div`
   display: flex;
   padding-top: ${props => props.theme.margins.md};
-  padding-bottom: ${props => props.theme.margins.md};
+  padding-bottom: ${props => props.theme.margins.sm};
   justify-content: space-between;
 `;
 
 // Container for timeBlock.description
 const DescriptionWrapper = styled.div`
   padding-right: ${props => props.theme.margins.md};
+  color: rgba(255,255,255,0.8);
 `;
 
 class TimeBlock extends Component {
@@ -125,14 +120,12 @@ class TimeBlock extends Component {
                   </Subtitle>
                 </TimeBlockHeader>
               </Cell>
-              {this.state.active &&
-                <Cell xs={12}>
-                  <DescriptionWrapper>
-                    <Text>{timeBlock.description}</Text>
-                  </DescriptionWrapper>
-                </Cell>}
+              <Cell xs={12}>
+                <DescriptionWrapper>
+                  <Text fontSize="sm" color="transparentWhite50">{timeBlock.description}</Text>
+                </DescriptionWrapper>
+              </Cell>
             </Row>
-
           </Cell>
 
           <Cell />
