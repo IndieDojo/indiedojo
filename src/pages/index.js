@@ -27,19 +27,19 @@ const Index = (props, { isMobile }) =>
 
     {/* <Jumbo isMobile={isMobile}/> */}
 
-    {/* <WhatIsIt /> */}
+    <WhatIsIt />
 
     <Topics2 isMobile={isMobile}/>
 
-    {/*<Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/>*/}
+    {/* <Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/> */}
 
-    {/* <Trainers isMobile={isMobile} /> */}
+    <Trainers isMobile={isMobile} />
 
-    {/* <BookingBlock isMobile={isMobile} /> */}
+    <BookingBlock isMobile={isMobile} />
 
     {/* <Newsletter isMobile={isMobile}/> */}
 
-    {/* <Faqs isMobile={isMobile} /> */}
+    <Faqs isMobile={isMobile} />
 
   </FluidContainer>
 

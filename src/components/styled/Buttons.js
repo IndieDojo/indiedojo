@@ -7,6 +7,7 @@ import styled from 'styled-components';
 export const BookingButton = styled.a`
   display: inline-block;
   margin-top: ${props => props.theme.margins.lg};
+  margin-bottom: ${props => props.theme.margins.lg};
   padding: 10px ${props => props.theme.margins.xl};
   box-sizing: border-box;
   border: 3px solid;
@@ -26,4 +27,3 @@ export const BookingButton = styled.a`
     text-decoration: none;
   }
 `
-

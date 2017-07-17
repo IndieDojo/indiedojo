@@ -9,12 +9,8 @@ const DatesWrapper = styled.div`
 const BookingDate = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.centered ? 'center' : 'flex-start'};
+  align-items: ${props => props.center ? 'center' : 'flex-start'};
 `;
-
-const BookingSubtitle = Subtitle.extend`
-  color: ${props => props.light ? 'white' : 'inherit'};
-`
 
 const BookingPrice = styled.div`
   color: ${props => props.light ? 'white' : 'inherit'};
@@ -25,16 +21,16 @@ const BookingPrice = styled.div`
   }
 `;
 
-const Booking = ({ light, centered, isMobile }) => (
+const Booking = ({ light, center, shadow }) => (
   <DatesWrapper className='dates-wrapper'>
-    <BookingDate centered={centered} isMobile={isMobile}>
-      <BookingSubtitle light={light}>Kyoto, Japan, November 13-18 2017</BookingSubtitle>
+    <BookingDate center>
+      <Subtitle color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton light={light}
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
       >
         Book Now
       </BookingButton>
-      <BookingPrice light={light}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
+      <Subtitle size='sm' color={light ? 'white' : 'text'} shadow={shadow}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</Subtitle>
     </BookingDate>
   </DatesWrapper>
 );
