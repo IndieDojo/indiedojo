@@ -144,7 +144,7 @@ const Topic = ({days, image, title, items}) =>
       <TopicsIcon src={image}/>
       <Subtitle size='md' margin='sm' center bold>{title}</Subtitle>
       <TopicList>
-        {items.map(item => <TopicItem key={item}>{item}</TopicItem>)}
+        {items.map((item, index) => <TopicItem key={index}>{item}</TopicItem>)}
       </TopicList>
     </TopicContent>
   </TopicWrapper>
@@ -161,7 +161,7 @@ const Topics = ({ isMobile }) =>
       <TopicTitle margin={isMobile ? "xl" : "xxl"} bold center>What You'll Learn</TopicTitle>
 
       <TopicsRow>
-        {topicsData.map(topic => <Topic {...topic}/>)}
+        {topicsData.map((topic, index) => <Topic key={index} {...topic}/>)}
       </TopicsRow>
 
       <Program/>

@@ -4,25 +4,25 @@
   items: 
     - Find a need
     - Define your MVP
-    - Evaluate your idea
+    - Validate your idea
 - title: Design
   days: Days 2-3
   image: "/if_tools_2170943.svg"
   items: 
-    - Typography & Colors
-    - Basic of branding
-    - Learn Figma
+    - Logos & branding
+    - Landing pages
+    - Onboarding
 - title: Marketing
   days: Days 4-5
   image: "/if_advertisement_2181656.svg"
   items: 
-    - Find an audience
-    - Set up channels
-    - Create a launch plan
+    - Content marketing
+    - Pricing
+    - User acquisition
 - title: Launch
   days: Day 6
-  image: "/if_engineering_thinking_2139345.svg"
+  image: "/if_flag_2206027.svg"
   items: 
-    - Evaluate technologies
-    - Reuse existing resources
-    - Understand the basics
+    - Launch checklist
+    - Case studies
+    - Launch time!

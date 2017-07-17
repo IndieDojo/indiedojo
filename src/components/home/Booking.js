@@ -34,7 +34,7 @@ const Booking = ({ light, centered, isMobile }) => (
       >
         Book Now
       </BookingButton>
-      <BookingPrice light={light}>Early Registration Price: <br/> <strong>$1,490</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
+      <BookingPrice light={light}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
     </BookingDate>
   </DatesWrapper>
 );
