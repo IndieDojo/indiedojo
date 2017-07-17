@@ -54,8 +54,9 @@ class CourseProgram extends Component {
         </ProgramButton>
 
         {this.state.isProgramVisible &&
-          <ProgramContainer>
-            <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
+          <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
+            <ProgramContainer>
+
               <ProgramHeader
                 headers={this.getHeaders(program)}
                 activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
@@ -69,8 +70,10 @@ class CourseProgram extends Component {
                 mainColor={mainColor}
                 secondColor={secondColor}
               /> */}
-           </WithPadding>
-        </ProgramContainer>}
+
+            </ProgramContainer>
+          </WithPadding>
+        }
 
       </ProgramWrapper>
     );

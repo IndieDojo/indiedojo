@@ -104,6 +104,7 @@ export const Text = styled.div`
 `;
 
 export const WithPadding = styled.div`
+  width: 100%;
   padding: ${props =>
   !!props.padding
     ? props.theme.margins[props.padding]
