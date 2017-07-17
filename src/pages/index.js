@@ -5,7 +5,7 @@ import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../compone
 import { Background, WithPadding, H1 } from "../components/styled/Base";
 
 import Jumbo from "../components/home/Jumbo";
-import Topics from "../components/home/Topics";
+import Topics2 from "../components/home/Topics2";
 import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
 import Info from "../components/home/Info";
@@ -29,7 +29,7 @@ const Index = (props, { isMobile }) =>
 
     <WhatIsIt />
 
-    <Topics isMobile={isMobile}/>
+    <Topics2 isMobile={isMobile}/>
 
     {/*<Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/>*/}
 

@@ -30,6 +30,10 @@ import { Link } from "gatsby-link";
 //     bold: Boolean
 //     paddingBottom, paddingTop: (values: 0, sm, nm, md, lg, xl, xxl, xxxl)
 //
+//    Card properties
+//      padding: (values: xs, sm, nm, md, lg, xl, xxl, xxxl )
+//      color: background color from the Theme
+//
 //   Background - div to change the... background color,
 //     properties: color (any from the Theme)
 //
@@ -112,6 +116,15 @@ export const Background = styled.div`
     ? props.theme.colors[props.color]
     : props.theme.colors.transparent};
 `;
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${props => props.center ? 'center' : 'flex-start'};
+  align-items: ${props => props.center ? 'center' : 'flex-start'};
+  padding: ${props => !!props.padding ? props.theme.margins[props.padding] : props.theme.margins.lg};
+  background: ${props => !!props.color ? props.theme.colors[props.color] : props.theme.colors.transparent };
+`
 
 export const LinkTo = styled.a`
   color: ${props => props.theme.colors.link};
