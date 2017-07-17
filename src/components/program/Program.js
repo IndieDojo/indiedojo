@@ -64,12 +64,10 @@ class CourseProgram extends Component {
                 isMobile={isMobile}
                 isProgramVisible={this.state.isProgramVisible}
               />
-              {/* <ProgramDayBlock
+              <ProgramDayBlock
                 dayBlock={program[this.state.activeIndex]}
                 isMobile={isMobile}
-                mainColor={mainColor}
-                secondColor={secondColor}
-              /> */}
+              />
 
             </ProgramContainer>
           </WithPadding>

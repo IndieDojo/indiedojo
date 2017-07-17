@@ -22,6 +22,7 @@ import { Subtitle } from "../styled/Base";
 
 // If the cell is 'active' (selected) it will get `mainColor` background
 const HeaderCell = styled.div`
+  flex-grow: 1;
   box-sizing: border-box;
   text-align: center;
   background: ${props =>
@@ -33,7 +34,7 @@ const HeaderCell = styled.div`
   transition: all 0.2s ease-out;
   overflow: hidden;
   &:hover {
-    background: ${props => props.active ? 'rgba(245,105,17, 0.9)' : 'rgba(245,105,17, 0.25)' };
+    background: ${props => props.active ? 'rgba(245,105,17, 0.9)' : 'rgba(245,105,17, 0.17)' };
   }
   @media only screen and (max-width: 600px) {
     border-bottom: 2px solid ${props => props.theme.colors.brown};
