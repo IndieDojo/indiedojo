@@ -16,16 +16,7 @@ const ProgramWrapper = styled.div`
 `;
 
 const ProgramButton = BookingButton.extend`
-  display: block;
-  position: relative;
-  z-index: 10;
   margin-top: ${props => props.theme.margins.xl};
-`
-
-const ProgramContent = Cell.extend`
-  background: rgba(255,255,255,0.05);
-  margin-bottom: 250px;
-  padding-bottom: 40px;
 `
 
 class CourseProgram extends Component {
@@ -59,11 +50,11 @@ class CourseProgram extends Component {
         </ProgramButton>
 
         <Container>
-          <WithPadding padding="xxl">
+          <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
             <Row>
 
             {this.state.isProgramVisible ?
-              <ProgramContent xs={12} center>
+              <Cell xs={12} center>
                 <ProgramHeader
                   headers={this.getHeaders(program)}
                   activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
@@ -78,7 +69,7 @@ class CourseProgram extends Component {
                   mainColor={mainColor}
                   secondColor={secondColor}
                 />
-              </ProgramContent>
+              </Cell>
              : null}
             </Row>
           </WithPadding>

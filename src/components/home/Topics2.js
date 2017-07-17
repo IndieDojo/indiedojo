@@ -7,11 +7,18 @@ import { Cross } from "../styled/Patterns";
 import topicsData from "../../../data/topics.yaml";
 import Program from '../program/Program';
 
-const TopicsWrapper = styled.div`
-  background: rgba(20,13,8,1);
+const TopicWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,1);
+  margin-bottom: ${props => props.theme.margins.xl};
 `
 
-
+const TopicsIcon = styled.img`
+  width: 100px;
+`
 
 const TopicList = styled.ul`
   margin: 0;
@@ -26,71 +33,7 @@ const TopicItem = styled.li`
   text-align: center;
 `
 
-const Image = styled.div`
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 900px;
-  left: 0;
-  top: 0;
-  // clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
-  // clip-path: polygon(0% 33%, 50% 0%, 100% 33%, 100% 66%, 50% 100%, 0 66%);
-  // clip-path: polygon(0% 33%, 50% 0%, 100% 33%, 100% 100%, 0 100%);
-  // clip-path: polygon(0% 500px, 50% 0%, 100% 500px, 100% 100%, 0 100%);
-  background-color: rgba(20,13,8,1);
-  background-image: url('/yuki-yoshida-104560.jpg');
-  background-image: url('/oskar-krawczyk-172854-b.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% -30px;
-`;
-
-const ImageCover = Cross.extend`
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: linear-gradient(rgba(20,13,8,0) 50%, rgba(20,13,8,1) 90%);
-`
-
-const TopicsIcon = styled.img`
-  width: 100px;
-`
-
-const TopCover = styled.div`
-  background: #fff;
-  position: absolute;
-  width: 100%;
-  height: 300px;
-  top: -1px;
-  left: 0;
-  z-index: 10;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 2px, 0% 100%, 0% 0%);
-`
-
-
-const BottomCover = styled.div`
-  background: #fff;
-  position: absolute;
-  width: 100%;
-  height: 300px;
-  bottom: -1px;
-  left: 0;
-  z-index: 10;
-  clip-path: polygon(0% 100%, 0% 0%, 50% 100%, 100% 0%, 100% 100%);
-`
-
-const TopicWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255,255,255,1);
-  margin-bottom: ${props => props.theme.margins.xl};
-`
-
+// Topic Item - displays a single day
 const Topic = ({days, image, title, items}) =>
   <TopicWrapper>
     <Background color='veryLightGrey'>
@@ -106,17 +49,38 @@ const Topic = ({days, image, title, items}) =>
     </Card>
   </TopicWrapper>
 
+
+const TopicsWrapper = styled.div`
+  position: relative;
+  margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
+  background: linear-gradient(rgba(20,13,8,0) 0%, rgba(20,13,8,1) 25vw), url('/rest.jpg');
+  background-size: 100vw;
+  background-repeat: no-repeat;
+`
+
+const TopTriangle = styled.div`
+  width: 100%;
+  height: 20vw;
+  clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
+  background: url('/top-triangle.jpg');
+  background-size: 100vw;
+`
+
+const BottomTriangle = styled.div`
+  width: 100%;
+  height: 20vw;
+  clip-path: polygon(0% 0%, 100% 0, 50% 20vw);
+  background: rgba(20,13,8,1);
+  margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
+`
+
+// Topics - Row of Topics + Full expandable program
 const Topics = ({ isMobile }) =>
-  <TopicsWrapper>
-
-    {/* <Image>
-      <ImageCover/>
-    </Image> */}
-
-    <FluidContainer>
+  <div>
+    <TopTriangle />
+    <TopicsWrapper>
       <Container>
-        <Title color='transparentWhite' margin={isMobile ? "xl" : "xxl"} bold center>What You'll Learn</Title>
-
+        <Title size='xl' color='transparentWhite' lineHeight='2' shadow bold center>What You'll Learn</Title>
         <Row>
           {topicsData.map((topic, index) => (
             <Cell key={index} xs={12} sm={6} md={3}>
@@ -126,15 +90,9 @@ const Topics = ({ isMobile }) =>
         </Row>
 
         <Program/>
-
       </Container>
-
-    </FluidContainer>
-
-    <TopCover/>
-
-    <BottomCover/>
-
-  </TopicsWrapper>
+    </TopicsWrapper>
+    <BottomTriangle />
+  </div>
 
 export default Topics
