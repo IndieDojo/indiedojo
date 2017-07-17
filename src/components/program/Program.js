@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Container, Row, Cell } from "../styled/Grid";
+import { Row, Cell } from "../styled/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
 
 import ProgramHeader from './ProgramHeader'
@@ -17,6 +17,10 @@ const ProgramWrapper = styled.div`
 
 const ProgramButton = BookingButton.extend`
   margin-top: ${props => props.theme.margins.xl};
+`
+
+const ProgramContainer = styled.div`
+  width: 100%;
 `
 
 class CourseProgram extends Component {
@@ -40,7 +44,7 @@ class CourseProgram extends Component {
   };
 
   render() {
-    const { isMobile, mainColor, secondColor } = this.props;
+    const { isMobile } = this.props;
 
     return (
       <ProgramWrapper>
@@ -49,31 +53,24 @@ class CourseProgram extends Component {
           {this.state.isProgramVisible ? "Hide Program" : "View Full Program"}
         </ProgramButton>
 
-        <Container>
-          <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
-            <Row>
-
-            {this.state.isProgramVisible ?
-              <Cell xs={12} center>
-                <ProgramHeader
-                  headers={this.getHeaders(program)}
-                  activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-                  onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
-                  isMobile={isMobile}
-                  isProgramVisible={this.state.isProgramVisible}
-                  mainColor={mainColor}
-                />
-                <ProgramDayBlock
-                  dayBlock={program[this.state.activeIndex]}
-                  isMobile={isMobile}
-                  mainColor={mainColor}
-                  secondColor={secondColor}
-                />
-              </Cell>
-             : null}
-            </Row>
-          </WithPadding>
-        </Container>
+        {this.state.isProgramVisible &&
+          <ProgramContainer>
+            <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
+              <ProgramHeader
+                headers={this.getHeaders(program)}
+                activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
+                onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
+                isMobile={isMobile}
+                isProgramVisible={this.state.isProgramVisible}
+              />
+              {/* <ProgramDayBlock
+                dayBlock={program[this.state.activeIndex]}
+                isMobile={isMobile}
+                mainColor={mainColor}
+                secondColor={secondColor}
+              /> */}
+           </WithPadding>
+        </ProgramContainer>}
 
       </ProgramWrapper>
     );

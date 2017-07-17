@@ -25,21 +25,21 @@ import WebsiteHead from '../components/home/WebsiteHead'
 const Index = (props, { isMobile }) =>
   <FluidContainer>
 
-    <Jumbo isMobile={isMobile}/>
+    {/* <Jumbo isMobile={isMobile}/> */}
 
-    <WhatIsIt />
+    {/* <WhatIsIt /> */}
 
     <Topics2 isMobile={isMobile}/>
 
     {/*<Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/>*/}
 
-    <Trainers isMobile={isMobile} />
+    {/* <Trainers isMobile={isMobile} /> */}
 
-    <BookingBlock isMobile={isMobile} />
+    {/* <BookingBlock isMobile={isMobile} /> */}
 
-    <Newsletter isMobile={isMobile}/>
+    {/* <Newsletter isMobile={isMobile}/> */}
 
-    <Faqs isMobile={isMobile} />
+    {/* <Faqs isMobile={isMobile} /> */}
 
   </FluidContainer>
 

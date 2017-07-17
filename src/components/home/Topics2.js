@@ -53,7 +53,7 @@ const Topic = ({days, image, title, items}) =>
 const TopicsWrapper = styled.div`
   position: relative;
   margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
-  background: linear-gradient(rgba(20,13,8,0) 0%, rgba(20,13,8,1) 25vw), url('/rest.jpg');
+  background: linear-gradient(rgba(20,13,8,0) 0%, ${props => props.theme.colors.brown} 25vw), url('/rest.jpg');
   background-size: 100vw;
   background-repeat: no-repeat;
 `

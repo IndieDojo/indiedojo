@@ -36,6 +36,7 @@ const colors = {
   success: '#45AD43',
   text: "rgb(76, 32, 9)",
   light: "rgba(0,0,0,0.55)",
+  brown: "rgba(20,13,8,1)",
 
   link: "#F56911",
   transparent: "rgba(255,255,255,0)",
