@@ -31,15 +31,13 @@ const Index = (props, { isMobile }) =>
 
     <Topics2 isMobile={isMobile}/>
 
-    {/* <Program isMobile={isMobile} mainColor='primary' secondColor='primaryHover'/> */}
-
     <Trainers isMobile={isMobile} />
 
     <BookingBlock isMobile={isMobile} />
 
-    <Newsletter isMobile={isMobile}/>
+    {/* <Newsletter isMobile={isMobile}/> */}
 
-    <Faqs isMobile={isMobile} />
+    {/* <Faqs isMobile={isMobile} /> */}
 
   </FluidContainer>
 

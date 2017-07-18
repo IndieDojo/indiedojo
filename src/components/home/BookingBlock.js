@@ -15,8 +15,18 @@ const VideoPlayer = styled.video`
   @media only screen and (min-width: 600px) {
     clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%); //height of the video is 720/1280 = 56.25vw
     -webkit-clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
+    clip-path: url("#video-shape");
   }
 `;
+
+const VideoPlayerSVG = () =>
+  <svg width="0" height="0">
+    <defs>
+    	<clipPath id="video-shape" clipPathUnits="objectBoundingBox">
+    	  <polygon points="0 0.2, 0.5 0, 1 0.2, 1 1, 0.5 0.8, 0 1" />
+    	</clipPath>
+    </defs>
+  </svg>
 
 const BookingContents = styled.div`
   margin-top: 10vw;
@@ -56,6 +66,7 @@ const BookingBlock = ({ isMobile, light }) =>
       >
         <source src={landingPageVideoUrl720} type="video/mp4" />
     </VideoPlayer>
+    <VideoPlayerSVG />
 
     <BookingContentWrapper>
       <BookingContents>
