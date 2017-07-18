@@ -6,12 +6,27 @@ import "../components/styled/Global";
 import Footer from "../components/home/Footer";
 import WebsiteHead from '../components/home/WebsiteHead'
 
+import script_with_id from '../../data/intercom_id_script'
+import script_intercom from '../../data/intercom_script';
+
 // Some css theme params depend on window width.
 class Layout extends Component {
   state = {
     windowWidth: 0,
     isMobile: false
   };
+
+  componentWillMount() {
+      let script1 = document.createElement("script");
+      let script2 = document.createElement("script");
+
+      script1.src = script_with_id;
+      script1.async = true;
+      script2.src = script_intercom;
+      script2.async = true;
+      document.body.appendChild(script1);
+      document.body.appendChild(script2);
+  }
 
   componentDidMount() {
     window.addEventListener("resize", this.onWindowResize);

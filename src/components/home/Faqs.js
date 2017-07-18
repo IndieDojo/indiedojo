@@ -17,7 +17,7 @@ const Faqs = ({ isMobile }) => (
     <WithPadding padding="xl">
       <Row>
         <Cell xs={12} center>
-          <Title lineHeight="2" margin='lg' bold center>
+          <Title margin='md' bold center>
             FAQs
           </Title>
         </Cell>

@@ -109,7 +109,7 @@ const Newsletter = ({isMobile}) =>
       <ContainerSmall>
         <Row>
           <Cell xs={12}>
-            <Title margin='sm' bold center>
+            <Title margin='md' bold center>
               Can't Join This Time?
             </Title>
 

@@ -103,7 +103,7 @@ const Jumbo = ({isMobile}) =>
         <LandingMessageWrapper>
           <Row>
             <Cell xs={12} center>
-              <LogoImage src="/indiedojo.png"/>
+              <LogoImage src="/indiedojo-brown.png"/>
               <MainTitle color='text' bold>A one-week bootcamp for indie hackers</MainTitle>
               <Booking/>
             </Cell>

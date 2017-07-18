@@ -70,7 +70,7 @@ const BookingBlock = () =>
     <BookingContentWrapper>
       <BookingContents>
         <Title size='xl' color='white' margin='sm' bold center shadow>
-          Join us in Kyoto
+          Join us
         </Title>
         <Booking light center shadow/>
       </BookingContents>
