@@ -35,7 +35,7 @@ const Index = (props, { isMobile }) =>
 
     <BookingBlock isMobile={isMobile} />
 
-    {/* <Newsletter isMobile={isMobile}/> */}
+    <Newsletter isMobile={isMobile}/>
 
     {/* <Faqs isMobile={isMobile} /> */}
 

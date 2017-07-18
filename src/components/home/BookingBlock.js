@@ -54,7 +54,7 @@ const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?
 const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4?s=5d365fe6ff3a4146ff42c705ebe626e4a02ad5b9&profile_id=174";
 const videoFirstFrameUrl = "/indiedojo-first-frame.jpg";
 
-const BookingBlock = ({ isMobile, light }) =>
+const BookingBlock = () =>
   <BookingWrapper>
     <VideoPlayer
         autoPlay
@@ -62,7 +62,6 @@ const BookingBlock = ({ isMobile, light }) =>
         muted
         playsInline
         poster={videoFirstFrameUrl}
-        isMobile={isMobile}
       >
         <source src={landingPageVideoUrl720} type="video/mp4" />
     </VideoPlayer>
@@ -73,7 +72,7 @@ const BookingBlock = ({ isMobile, light }) =>
         <Title size='xl' color='white' margin='sm' bold center shadow>
           Join us in Kyoto
         </Title>
-        <Booking light={true} center shadow/>
+        <Booking light center shadow/>
       </BookingContents>
     </BookingContentWrapper>
   </BookingWrapper>

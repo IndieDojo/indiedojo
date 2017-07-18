@@ -30,7 +30,7 @@ const Booking = ({ light, center, shadow }) => (
       >
         Book Now
       </BookingButton>
-      <Subtitle size='sm' color={light ? 'white' : 'text'} shadow={shadow}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</Subtitle>
+      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</Subtitle>
     </BookingDate>
   </DatesWrapper>
 );
