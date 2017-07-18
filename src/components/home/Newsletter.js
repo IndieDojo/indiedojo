@@ -11,8 +11,10 @@ const NewsletterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 100vh;
-  margin-top: -34vh;
+
+  background: red;
+  ${''/* margin-top: -9vw; */}
+  clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 66%, 50% 100%, 0 66%);
 `
 
 
@@ -104,7 +106,8 @@ const BookImage = styled.img`
 
 const Newsletter = ({isMobile}) =>
   <NewsletterWrapper>
-    <NewsletterPattern/>
+    {/* <NewsletterPattern/> */}
+
     <NewsletterContents>
       <Title margin='sm' bold center>
         Can't Join This Time?

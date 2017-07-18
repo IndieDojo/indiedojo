@@ -62,6 +62,7 @@ const TopTriangle = styled.div`
   width: 100%;
   height: 20vw;
   clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
+  -webkit-clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   background: url('/top-triangle.jpg');
   background-size: 100vw;
 `
@@ -70,6 +71,7 @@ const BottomTriangle = styled.div`
   width: 100%;
   height: 20vw;
   clip-path: polygon(0% 0%, 100% 0, 50% 20vw);
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 50% 20vw);
   background: rgba(20,13,8,1);
   margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
 `
