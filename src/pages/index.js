@@ -37,7 +37,7 @@ const Index = (props, { isMobile }) =>
 
     <Newsletter isMobile={isMobile}/>
 
-    {/* <Faqs isMobile={isMobile} /> */}
+    <Faqs isMobile={isMobile} />
 
   </FluidContainer>
 
