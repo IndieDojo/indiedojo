@@ -16,12 +16,20 @@ class Layout extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.onWindowResize);
+    window.intercomSettings = {
+      app_id: "xpwec2ck"
+    };
+    // window.Intercom('boot', {
+    //    app_id: 'xpwec2ck',
+    //    custom_launcher_selector: '#intercom-launcher'
+    // });
 
-    // Adds Intercom script
+    //Adds Intercom script
     let script1 = document.createElement("script");
     script1.src = intercom_script;
     script1.async = true;
     document.body.appendChild(script1);
+
 
     // Add AddThis script
     let addthis_script = document.createElement("script");
@@ -29,13 +37,7 @@ class Layout extends Component {
     addthis_script.async = true;
     document.body.appendChild(addthis_script);
 
-    window.intercomSettings = {
-      app_id: "xpwec2ck"
-    };
-    window.Intercom('boot', {
-       app_id: 'xpwec2ck',
-       custom_launcher_selector: '#intercom-launcher'
-    });
+
 
     this.setState({
       windowWidth: window.innerWidth,
