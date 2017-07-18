@@ -18,8 +18,9 @@ export const BookingButton = styled.a`
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
+  background: ${props => props.fill ? props.theme.colors.primary : 'transparent'};
   &:visited {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.light ? 'white' : props.theme.colors.primary };
   }
   &:hover {
     border-color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};

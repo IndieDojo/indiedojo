@@ -72,7 +72,7 @@ const BookingBlock = () =>
         <Title size='xl' color='white' margin='sm' bold center shadow>
           Join us
         </Title>
-        <Booking light center shadow/>
+        <Booking light fill center shadow/>
       </BookingContents>
     </BookingContentWrapper>
   </BookingWrapper>

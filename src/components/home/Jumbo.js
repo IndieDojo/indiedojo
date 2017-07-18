@@ -60,6 +60,7 @@ import Booking from './Booking'
 // `
 
 const JumboWrapper = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   min-height: 48vw; // comes from the proportion of the Image
@@ -74,8 +75,18 @@ const Image = styled.div`
   background-image: url("/dajgoji-temple.jpg");
   clip-path: polygon(0% 0%, 100% 0%, 100% 20vw, 0% 40vw);
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 20vw, 0% 40vw);
+  clip-path: url("#image-shape");
   background-size: cover;
 `
+
+const ImageSVG = () =>
+  <svg width="0" height="0">
+    <defs>
+    	<clipPath id="image-shape" clipPathUnits="objectBoundingBox">
+    	  <polygon points="0 0, 1 0, 1 0.42, 0 0.83" />
+    	</clipPath>
+    </defs>
+  </svg>
 
 const LandingMessageWrapper = styled.div`
   width: 100%;
@@ -94,6 +105,7 @@ const Jumbo = ({isMobile}) =>
   <JumboWrapper isMobile={isMobile}>
 
     <Image />
+    <ImageSVG />
 
     {/* <Image/>
 
