@@ -10,10 +10,10 @@ const BookingWrapper = styled.div`
 
 const VideoPlayer = styled.video`
   box-sizing: border-box;
-  object-fit: contain;
+  object-fit: fill;
   width: 100%;
   @media only screen and (min-width: 600px) {
-    clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%); //height of the video is 720/1280 = 56.25vw
+    clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     -webkit-clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     clip-path: url("#video-shape");
   }

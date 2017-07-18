@@ -25,7 +25,7 @@ import WebsiteHead from '../components/home/WebsiteHead'
 const Index = (props, { isMobile }) =>
   <FluidContainer>
 
-    {/* <Jumbo isMobile={isMobile}/> */}
+    <Jumbo isMobile={isMobile}/>
 
     <WhatIsIt />
 
