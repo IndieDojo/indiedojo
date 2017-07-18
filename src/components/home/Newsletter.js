@@ -5,6 +5,8 @@ import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../styled/
 import { WithPadding, H1 } from "../styled/Base";
 import { Cross } from "../styled/Patterns";
 
+
+
 const NewsletterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,8 +15,9 @@ const NewsletterWrapper = styled.div`
   position: relative;
 
   background: red;
-  ${''/* margin-top: -9vw; */}
+  margin-top: -9vw;
   clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 66%, 50% 100%, 0 66%);
+  z-index: 10000;
 `
 
 

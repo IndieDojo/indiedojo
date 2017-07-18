@@ -63,23 +63,46 @@ const TopTriangle = styled.div`
   height: 20vw;
   clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   -webkit-clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
+  clip-path: url("#top-shape");
   background: url('/top-triangle.jpg');
   background-size: 100vw;
 `
+
+const TopTriangleSVG = () =>
+  <svg width="0" height="0">
+    <defs>
+    	<clipPath id="top-shape" clipPathUnits="objectBoundingBox">
+    	  <polygon points="0.5 0, 1 1, 0 1" />
+    	</clipPath>
+    </defs>
+  </svg>
 
 const BottomTriangle = styled.div`
   width: 100%;
   height: 20vw;
   clip-path: polygon(0% 0%, 100% 0, 50% 20vw);
   -webkit-clip-path: polygon(0% 0%, 100% 0, 50% 20vw);
+  clip-path: url("#bottom-shape");
   background: rgba(20,13,8,1);
   margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
 `
 
+const BottomTriangleSVG = () =>
+  <svg width="0" height="0">
+    <defs>
+    	<clipPath id="bottom-shape" clipPathUnits="objectBoundingBox">
+    	  <polygon points="0 0, 1 0, 0.5 1" />
+    	</clipPath>
+    </defs>
+  </svg>
+
 // Topics - Row of Topics + Full expandable program
+// TopTriangleSVG is a clip-path fix for Firefox
 const Topics = ({ isMobile }) =>
   <div>
+    <TopTriangleSVG />
     <TopTriangle />
+
     <TopicsWrapper>
       <Container>
         <Title size='xl' color='transparentWhite' lineHeight='2' shadow bold center>What You'll Learn</Title>
@@ -95,6 +118,7 @@ const Topics = ({ isMobile }) =>
       </Container>
     </TopicsWrapper>
     <BottomTriangle />
+    <BottomTriangleSVG />
   </div>
 
 export default Topics
