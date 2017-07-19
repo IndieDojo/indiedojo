@@ -85,8 +85,8 @@ Any course materials will be available to the participants. All participants wil
 Welcome and farewell party: We will have a small welcome party the day before the course starts and a farewell party after it ends. Drinks, snacks are covered by the Organiser, but attendance is optional.
 
 ### Cancellations:
-Regrettably, once the Bootcamp has been booked and paid for, the Organiser cannot offer any refunds.
-The Organiser reserves the right to cancel the Bootcamp and refund your Fees in full without further liability in the event that not later than 30 days before the Bootcamp starts, there are less than 12 people booked on the Bootcamp.
+The Organiser will give you a full refund up until two months (13th September 2017) before the start of the Bootcamp. The Organiser will refund 50% of the fee up until one month (13th of October 2017) before the start of the Bootcamp.
+Regrettably, after 13th of October 2017 the Organiser cannot offer any refunds.
 
 #### You are responsible for the following:
 1. Arranging your own accommodation and travel to and from the Bootcamp from wherever you live.
