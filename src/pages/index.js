@@ -1,50 +1,23 @@
-import React, { Component } from "react";
-import { injectGlobal, ThemeProvider } from "styled-components";
-
-import { FluidContainer, Container, ContainerSmall, Row, Cell } from "../components/styled/Grid";
-import { Background, WithPadding, H1 } from "../components/styled/Base";
-
+import React from "react";
+import { FluidContainer } from "../components/styled/Grid";
 import Jumbo from "../components/home/Jumbo";
-import Topics2 from "../components/home/Topics2";
-import Newsletter from "../components/home/Newsletter";
 import WhatIsIt from "../components/home/WhatIsIt";
-import Info from "../components/home/Info";
-import Program from "../components/program/Program";
-
-import Trainers from "../components/home/Trainers";
-import Faqs from "../components/home/Faqs";
-import Subscribe from "../components/home/Subscribe";
-import Booking from "../components/home/Booking";
+import WhatYouWillLearn from "../components/home/WhatYouWillLearn";
+import Instructors from "../components/home/Instructors";
 import BookingBlock from "../components/home/BookingBlock";
-import Footer from "../components/home/Footer";
-import PropTypes from "prop-types";
-import WebsiteHead from '../components/home/WebsiteHead'
+import Newsletter from "../components/home/Newsletter";
+import Faqs from "../components/home/Faqs";
 
-
-// Some css theme params depend on window width.
-const Index = (props, { isMobile }) =>
+const Index = () => (
   <FluidContainer>
-
-    <Jumbo isMobile={isMobile}/>
-
+    <Jumbo />
     <WhatIsIt />
-
-    <Topics2 isMobile={isMobile}/>
-
-    <Trainers isMobile={isMobile} />
-
-    <BookingBlock isMobile={isMobile} />
-
-    <Newsletter isMobile={isMobile}/>
-
-    <Faqs isMobile={isMobile} />
-
+    <WhatYouWillLearn />
+    <Instructors />
+    <BookingBlock />
+    <Newsletter />
+    <Faqs />
   </FluidContainer>
-
-
-Index.contextTypes = {
-  windowWidth: PropTypes.number,
-  isMobile: PropTypes.bool
-};
+);
 
 export default Index;

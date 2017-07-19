@@ -32,7 +32,7 @@ const Footer = () => (
 
           <Row>
             <Cell xs={12} center>
-              <Subtitle size='nm' margin='lg' color='transparentWhite75'>Find us on</Subtitle>
+              <Subtitle size='nm' margin='lg' color='transparentWhite50'>Find us on</Subtitle>
               <SocialThings>
                 <SocialItem><LinkTo inherit href='https://twitter.com/indiedojoco'>Twitter</LinkTo></SocialItem>
                 <SocialItem><LinkTo inherit href='https://www.facebook.com/indiedojoco'>Facebook</LinkTo></SocialItem>
@@ -45,10 +45,10 @@ const Footer = () => (
 
             <Cell xs={12} center>
               <Subtitle color='primary' size='sm' marginRight='xl' inline>
-                <Link to='/terms-and-conditions'>Terms and Conditions</Link>
+                <LinkTo inherit href='/terms-and-conditions'>Terms and Conditions</LinkTo>
               </Subtitle>
               <Subtitle color='primary' size='sm' inline>
-                <Link to='/code-of-conduct'>Code of Conduct</Link>
+                <LinkTo inherit href='/code-of-conduct'>Code of Conduct</LinkTo>
               </Subtitle>
             </Cell>
 

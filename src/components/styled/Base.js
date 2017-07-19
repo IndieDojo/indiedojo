@@ -65,9 +65,12 @@ export const MainTitle = styled.h1`
     if (props.uppercase) return 'uppercase';
     return 'none';
   }};
-  line-height: ${props => !!props.lineHeight ? props.lineHeight : '1.25'};
+  line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.75};
   text-align: ${props => props.center ? "center" : "auto"};
   text-shadow: ${props => props.shadow ? '0 0 10px rgba(0,0,0,1)' : 'none'};
+  @media (max-width: 600px) {
+    line-height: 1.25;
+  }
 `;
 
 export const Title = MainTitle.withComponent("h2");
@@ -139,7 +142,7 @@ export const LinkTo = styled.a`
     color: ${props => props.theme.colors.link};
   }
   &:hover {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.linkHover};
     text-decoration: underline;
   }
   @media only screen and (min-width: 48em ) {

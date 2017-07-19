@@ -39,6 +39,7 @@ const colors = {
   brown: "rgba(20,13,8,1)",
 
   link: "#F56911",
+  linkHover: '#bf2121',
   transparent: "rgba(255,255,255,0)",
   transparentWhite: "rgba(255,255,255, 0.9)",
   transparentWhite75: "rgba(255,255,255, 0.75)",

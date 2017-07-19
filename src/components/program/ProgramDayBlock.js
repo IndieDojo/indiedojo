@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TimeBlock from './TimeBlock';
+import TimeBlock from "./TimeBlock";
 
 // ProgramDayBlock - displays the rows below the header
 //  arguments:
@@ -17,17 +17,15 @@ import TimeBlock from './TimeBlock';
 //          {...}
 //        ]
 //      }
-//    isMobile - Boolean
 //    mainColor - String, color from the Theme, eg. 'primary'
 //    secondColor - String, color from the Theme, eg. 'primary'
 
-const ProgramDayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
+const ProgramDayBlock = ({ dayBlock, mainColor, secondColor }) => (
   <div>
     {dayBlock.timeBlocks.map((timeBlock, index) => (
       <TimeBlock
         key={index}
         timeBlock={timeBlock}
-        isMobile={isMobile}
         mainColor={mainColor}
         secondColor={secondColor}
       />
