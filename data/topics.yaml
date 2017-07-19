@@ -1,27 +1,27 @@
 - title: Idea
   days: Day 1
-  image: "/if_idea_2213480.svg"
+  image: "/icons/if_idea_2213480.svg"
   items: 
     - Find a need
     - Define your MVP
     - Validate your idea
 - title: Design
   days: Days 2-3
-  image: "/if_tools_2170943.svg"
+  image: "/icons/if_tools_2170943.svg"
   items: 
     - Logos & branding
     - Landing pages
     - Onboarding
 - title: Marketing
   days: Days 4-5
-  image: "/if_advertisement_2181656.svg"
+  image: "/icons/if_advertisement_2181656.svg"
   items: 
     - Content marketing
     - Pricing
     - User acquisition
 - title: Launch
   days: Day 6
-  image: "/if_flag_2206027.svg"
+  image: "/icons/if_flag_2206027.svg"
   items: 
     - Launch checklist
     - Case studies
