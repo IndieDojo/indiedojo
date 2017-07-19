@@ -53,7 +53,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const ProgramHeader = (
-  { headers, activeIndex, isProgramVisible, onClick, isMobile, mainColor }
+  { headers, activeIndex, isProgramVisible, onClick, mainColor }
 ) => (
   <HeaderWrapper>
     {headers.map((header, index) => (
@@ -61,7 +61,6 @@ const ProgramHeader = (
         key={index}
         active={index === activeIndex}
         data-index={index}
-        isMobile={isMobile}
         isProgramVisible={isProgramVisible}
         onClick={onClick}
       >

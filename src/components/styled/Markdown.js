@@ -2,29 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const MarkdownWrapper= styled.div`
-  h1, h2 {
+  h1, h2, h3, h4 {
     color: ${props => props.theme.colors.text};
-    line-height: 1.65;
+    line-height: 2;
     font-weight: ${props => props.theme.weights.bold};
   }
 
   h1 {
     font-size: ${props => props.theme.fontSizes.lg };
-    margin-bottom: ${props => props.theme.margins.lg};
-  }
-
-  h2, h3, h4 {
-    margin-top: ${props => props.theme.margins.nm};
-    font-size: ${props => props.theme.fontSizes.nm};
   }
 
   h2 {
     font-size: ${props => props.theme.fontSizes.md};
   }
 
+  h3, h4 {
+    font-size: ${props => props.theme.fontSizes.nm};
+  }
+
   p {
     font-size: ${props => props.theme.fontSizes.nm};
-    line-height: 1.65;
+    line-height: 1.5;
     padding-bottom: ${props => props.theme.margins.lg};
     color: ${props => props.theme.colors.text};
     margin-top: ${props => props.theme.margins.sm};
@@ -37,60 +35,32 @@ export const MarkdownWrapper= styled.div`
     line-height: 1.5;
     color: ${props => props.theme.colors.link};
     text-decoration: none;
+    &:visited {
+      color: ${props => props.theme.colors.link};
+    }
     &:hover {
+      color: ${props => props.theme.colors.linkHover};
       text-decoration: underline;
     }
   }
 
-  ul {
+  ul, ol {
     list-style: none;
-    margin-bottom: ${props => props.theme.margins.lg}
-  }
-
-  ol {
     margin-bottom: ${props => props.theme.margins.lg}
   }
 
   ul li, ol li {
     font-size: ${props => props.theme.fontSizes.nm};
     color: ${props => props.theme.colors.text};
-    line-height: 1.65;
+    line-height: 1.5;
     padding-left: ${props => props.theme.margins.lg};
   }
   li:before {
     content: "";
   }
 
-  blockquote {
-    margin-top: ${props => props.theme.margins.lg};
-    margin-bottom: ${props => props.theme.margins.xl};
-    margin-left: ${props => props.isMobile ? '1rem' : '3rem'};
-    margin-right: ${props => props.isMobile ? '1rem' : '3rem'};
-    font-style: italic;
-    background: ${props => props.theme.colors.veryLight};
-    padding: ${props => props.theme.margins.lg};
-  }
-
-  blockquote p {
-    font-size: ${props => props.theme.fontSizes.nm};
-    font-weight: ${props => props.theme.weights.normal};
-    color: ${props => props.theme.colors.text};
-    font-style: italic;
-    padding-bottom: ${props => props.theme.margins.sm};
-    line-height: 1.55;
-    opacity: 0.65;
-  }
-
-  img {
+  img, iframe, video {
     width: 100%;
-    margin-top: ${props => props.theme.margins.lg};
-  }
-
-  iframe {
-    width: 100%;
-    margin-top: ${props => props.theme.margins.lg};
-  }
-  video {
-    width: 100%;
+    margin: ${props => props.theme.margins.lg} 0;
   }
 `

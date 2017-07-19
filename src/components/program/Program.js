@@ -44,8 +44,6 @@ class CourseProgram extends Component {
   };
 
   render() {
-    const { isMobile } = this.props;
-
     return (
       <ProgramWrapper>
 
@@ -61,12 +59,10 @@ class CourseProgram extends Component {
                 headers={this.getHeaders(program)}
                 activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
                 onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
-                isMobile={isMobile}
                 isProgramVisible={this.state.isProgramVisible}
               />
               <ProgramDayBlock
                 dayBlock={program[this.state.activeIndex]}
-                isMobile={isMobile}
               />
 
             </ProgramContainer>

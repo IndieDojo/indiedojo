@@ -21,13 +21,12 @@ import TimeBlock from './TimeBlock';
 //    mainColor - String, color from the Theme, eg. 'primary'
 //    secondColor - String, color from the Theme, eg. 'primary'
 
-const ProgramDayBlock = ({ dayBlock, isMobile, mainColor, secondColor }) => (
+const ProgramDayBlock = ({ dayBlock, mainColor, secondColor }) => (
   <div>
     {dayBlock.timeBlocks.map((timeBlock, index) => (
       <TimeBlock
         key={index}
         timeBlock={timeBlock}
-        isMobile={isMobile}
         mainColor={mainColor}
         secondColor={secondColor}
       />

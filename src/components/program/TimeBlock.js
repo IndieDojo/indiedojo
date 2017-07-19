@@ -93,7 +93,7 @@ class TimeBlock extends Component {
   }
 
   render() {
-    const { timeBlock, isMobile, mainColor, secondColor } = this.props;
+    const { timeBlock, mainColor, secondColor } = this.props;
 
     return (
       <TimeBlockWrapper
