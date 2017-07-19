@@ -4,6 +4,7 @@ import { Container, Row, Cell } from "../styled/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
 import trainersData from "../../../data/trainers.yaml";
 import Markdown from "react-remarkable";
+import { MarkdownWrapper } from '../styled/Markdown';
 
 const ProfileImage = styled.div`
   display: inline-block;
@@ -36,9 +37,9 @@ const Trainer = ({ image, name, title, bio }) => (
         <Subtitle bold>{name}</Subtitle>
         <Subtitle size="nm" margin="md" color="lightGrey">{title}</Subtitle>
       </div>
-      <Text>
+      <MarkdownWrapper>
         <Markdown>{bio}</Markdown>
-      </Text>
+      </MarkdownWrapper>
     </WithPadding>
   </Cell>
 );

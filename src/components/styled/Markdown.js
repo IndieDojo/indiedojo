@@ -45,7 +45,7 @@ export const MarkdownWrapper= styled.div`
   }
 
   ul, ol {
-    list-style: none;
+    ${''/* list-style: none; */}
     margin-bottom: ${props => props.theme.margins.lg}
   }
 
@@ -53,10 +53,9 @@ export const MarkdownWrapper= styled.div`
     font-size: ${props => props.theme.fontSizes.nm};
     color: ${props => props.theme.colors.text};
     line-height: 1.5;
-    padding-left: ${props => props.theme.margins.lg};
   }
   li:before {
-    content: "";
+    content: disc;
   }
 
   img, iframe, video {

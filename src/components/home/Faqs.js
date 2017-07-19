@@ -3,11 +3,16 @@ import { ContainerSmall, Row, Cell } from "../styled/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
 import faqs from "../../../data/faq.yaml";
 import Markdown from "react-remarkable";
+import { MarkdownWrapper } from "../styled/Markdown";
 
 const Faq = ({ q, a }) => (
   <WithPadding padding="md">
     <Subtitle bold center margin="lg">{q}</Subtitle>
-    <Text><Markdown>{a}</Markdown></Text>
+    <Text>
+      <MarkdownWrapper>
+        <Markdown>{a}</Markdown>
+      </MarkdownWrapper>
+    </Text>
   </WithPadding>
 );
 
