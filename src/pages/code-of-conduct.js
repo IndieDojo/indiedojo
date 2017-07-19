@@ -5,7 +5,6 @@ import { FluidContainer, ContainerSmall, Row, Cell } from '../components/styled/
 import { WithPadding } from '../components/styled/Base'
 import { MarkdownWrapper } from '../components/styled/Markdown'
 import { COC } from '../../data/COC'
-import Footer from "../components/home/Footer";
 import { Logo } from '../components/styled/Logo'
 
 // Some css theme params depend on window width.
@@ -28,7 +27,6 @@ class CodeOfConduct extends Component {
             </WithPadding>
           </ContainerSmall>
         </FluidContainer>
-        <Footer />
       </div>
     );
   }

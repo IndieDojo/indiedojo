@@ -41,11 +41,11 @@ const Trainers = ({isMobile}) =>
     <WithPadding padding='xxl'>
       <Row>
         <Cell xs={12} center>
-          <Title margin={isMobile ? "lg" : "xl"} bold center>
+          <Title margin='md' bold center>
             Instructors
           </Title>
         </Cell>
-        
+
         {trainersData.map((trainer, index) => <Trainer key={index} {...trainer}/>)}
 
       </Row>
