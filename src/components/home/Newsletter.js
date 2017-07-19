@@ -202,6 +202,5 @@ const Newsletter = ({isMobile}) =>
       <BottomTriangleSVG />
 
   </NewsletterContainer>
-);
 
 export default Newsletter;
