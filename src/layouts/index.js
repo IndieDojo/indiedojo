@@ -39,9 +39,6 @@ class Layout extends Component {
   }
 
   render() {
-    const component = React.cloneElement(this.props.children(), {
-      isMobile: this.state.isMobile
-    });
 
     return (
       <ThemeProvider theme={getTheme(this.state.windowWidth)}>
@@ -49,7 +46,7 @@ class Layout extends Component {
 
           <WebsiteHead />
 
-          {component}
+          {this.props.children({...this.props, ...this.state})}
 
           <Footer />
 
