@@ -98,7 +98,7 @@ const BottomTriangleSVG = () =>
 
 // Topics - Row of Topics + Full expandable program
 // TopTriangleSVG and BottomTriangleSVG is a clip-path fix for Firefox
-const Topics = ({ isMobile }) =>
+const WhatYouWillLearn = ({ isMobile }) =>
   <div>
     <TopTriangleSVG />
     <TopTriangle />
@@ -121,4 +121,4 @@ const Topics = ({ isMobile }) =>
     <BottomTriangleSVG />
   </div>
 
-export default Topics
+export default WhatYouWillLearn
