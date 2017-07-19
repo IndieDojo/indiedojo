@@ -139,7 +139,7 @@ export const LinkTo = styled.a`
     color: ${props => props.theme.colors.link};
   }
   &:hover {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.linkHover};
     text-decoration: underline;
   }
   @media only screen and (min-width: 48em ) {
