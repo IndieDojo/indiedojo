@@ -45,10 +45,10 @@ const Footer = () => (
 
             <Cell xs={12} center>
               <Subtitle color='primary' size='sm' marginRight='xl' inline>
-                <Link to='/terms-and-conditions'>Terms and Conditions</Link>
+                <LinkTo inherit href='/terms-and-conditions'>Terms and Conditions</LinkTo>
               </Subtitle>
               <Subtitle color='primary' size='sm' inline>
-                <Link to='/code-of-conduct'>Code of Conduct</Link>
+                <LinkTo inherit href='/code-of-conduct'>Code of Conduct</LinkTo>
               </Subtitle>
             </Cell>
 
