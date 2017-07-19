@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TimeBlock from './TimeBlock';
+import TimeBlock from "./TimeBlock";
 
 // ProgramDayBlock - displays the rows below the header
 //  arguments:

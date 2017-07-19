@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { WithPaddin, Title, Subtitle, Text } from '../styled/Base';
 import { FluidContainer, ContainerSmall, Row, Cell } from "../styled/Grid";
@@ -6,19 +6,19 @@ import { FluidContainer, ContainerSmall, Row, Cell } from "../styled/Grid";
 
 const NewsletterContainer = styled.div`
 
-
 `
 
 const NewsletterWrapper = styled.div`
   padding-top: 15vw;
   padding-bottom: 15vw;
 
+  ${''/* Cut the video shape only on bigger then mobile screens */}
   @media only screen and (min-width: 600px) {
 
-  //This pattern doesn't work in Firefox
+  ${''/* This pattern doesn't work in Firefox */}
   ${''/* background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2240px%22%20height%3D%2240px%22%20viewBox%3D%220%200%2040%2040%22%20enable-background%3D%22new%200%200%2040%2040%22%20xml%3Aspace%3D%22preserve%22%20stroke%3D%22#cccccc%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%221px%22%3E%0A%3Cline%20x1%3D%2226.7%22%20y1%3D%2225.6%22%20x2%3D%2223.4%22%20y2%3D%2228.3%22/%3E%0A%3Cline%20x1%3D%2229%22%20y1%3D%2228.4%22%20x2%3D%2231.2%22%20y2%3D%2224.7%22/%3E%0A%3Cline%20x1%3D%2215.9%22%20y1%3D%2224.7%22%20x2%3D%2219.5%22%20y2%3D%2227%22/%3E%0A%3Cline%20x1%3D%2217.4%22%20y1%3D%2217.9%22%20x2%3D%2216.4%22%20y2%3D%2222.1%22/%3E%0A%3Cline%20x1%3D%2225.9%22%20y1%3D%2229.7%22%20x2%3D%2227.6%22%20y2%3D%2233.6%22/%3E%0A%3Cline%20x1%3D%2234.4%22%20y1%3D%2225.4%22%20x2%3D%2237.7%22%20y2%3D%2228.1%22/%3E%0A%3Cline%20x1%3D%2234.5%22%20y1%3D%2229.9%22%20x2%3D%2230.6%22%20y2%3D%2232.2%22/%3E%0A%3Cline%20x1%3D%2236.6%22%20y1%3D%2221.1%22%20x2%3D%2232.5%22%20y2%3D%2222%22/%3E%0A%3Cline%20x1%3D%2220.1%22%20y1%3D%2221.3%22%20x2%3D%2222.9%22%20y2%3D%2224.5%22/%3E%0A%3Cline%20x1%3D%2223.2%22%20y1%3D%2231.6%22%20x2%3D%2221.5%22%20y2%3D%2235.4%22/%3E%0A%3Cline%20x1%3D%2218.3%22%20y1%3D%2237.9%22%20x2%3D%2216.2%22%20y2%3D%2233.5%22/%3E%0A%3Cline%20x1%3D%2229.3%22%20y1%3D%2235.5%22%20x2%3D%2226%22%20y2%3D%2238.2%22/%3E%0A%3Cline%20x1%3D%2234.9%22%20y1%3D%2235.5%22%20x2%3D%2237.3%22%20y2%3D%2232%22/%3E%0A%3Cline%20x1%3D%2220.7%22%20y1%3D%2217.7%22%20x2%3D%2223.8%22%20y2%3D%2214.7%22/%3E%0A%3Cline%20x1%3D%2227.6%22%20y1%3D%225.7%22%20x2%3D%2226.3%22%20y2%3D%229.8%22/%3E%0A%3Cline%20x1%3D%2233.1%22%20y1%3D%225.7%22%20x2%3D%2233%22%20y2%3D%221.5%22/%3E%0A%3Cline%20x1%3D%2220.3%22%20y1%3D%228%22%20x2%3D%2223.9%22%20y2%3D%2211.8%22/%3E%0A%3Cline%20x1%3D%2216.4%22%20y1%3D%2214.7%22%20x2%3D%2220.3%22%20y2%3D%2212.8%22/%3E%0A%3Cline%20x1%3D%2215.8%22%20y1%3D%226.5%22%20x2%3D%2217.1%22%20y2%3D%2210.6%22/%3E%0A%3Cline%20x1%3D%2229.4%22%20y1%3D%229.1%22%20x2%3D%2233%22%20y2%3D%2211.5%22/%3E%0A%3Cline%20x1%3D%2235.4%22%20y1%3D%22-1.4%22%20x2%3D%2238%22%20y2%3D%222%22/%3E%0A%3Cline%20x1%3D%2237.3%22%20y1%3D%224.9%22%20x2%3D%2235.3%22%20y2%3D%229%22/%3E%0A%3Cline%20x1%3D%2231.8%22%20y1%3D%22-3.2%22%20x2%3D%2230.6%22%20y2%3D%221%22/%3E%0A%3Cline%20x1%3D%2219.8%22%20y1%3D%225.1%22%20x2%3D%2224.6%22%20y2%3D%226.2%22/%3E%0A%3Cline%20x1%3D%2228.3%22%20y1%3D%2213%22%20x2%3D%2228.9%22%20y2%3D%2217.2%22/%3E%0A%3Cline%20x1%3D%2228.6%22%20y1%3D%2221.7%22%20x2%3D%2225.4%22%20y2%3D%2218.8%22/%3E%0A%3Cline%20x1%3D%2233.6%22%20y1%3D%2215.1%22%20x2%3D%2232.3%22%20y2%3D%2219.1%22/%3E%0A%3Cline%20x1%3D%2237.7%22%20y1%3D%2217.8%22%20x2%3D%2236.8%22%20y2%3D%2213.6%22/%3E%0A%3Cline%20x1%3D%222.3%22%20y1%3D%2231.9%22%20x2%3D%22-1.1%22%20y2%3D%2234.5%22/%3E%0A%3Cline%20x1%3D%224%22%20y1%3D%2234.5%22%20x2%3D%226.3%22%20y2%3D%2230.9%22/%3E%0A%3Cline%20x1%3D%221.3%22%20y1%3D%2237.5%22%20x2%3D%222.9%22%20y2%3D%2241.5%22/%3E%0A%3Cline%20x1%3D%229.5%22%20y1%3D%2231.6%22%20x2%3D%2212.7%22%20y2%3D%2234.4%22/%3E%0A%3Cline%20x1%3D%229.8%22%20y1%3D%2236.7%22%20x2%3D%225.6%22%20y2%3D%2237.9%22/%3E%0A%3Cline%20x1%3D%2210.6%22%20y1%3D%2224.6%22%20x2%3D%2211.1%22%20y2%3D%2228.9%22/%3E%0A%3Cline%20x1%3D%224.6%22%20y1%3D%2214.8%22%20x2%3D%221.3%22%20y2%3D%2217.6%22/%3E%0A%3Cline%20x1%3D%226%22%20y1%3D%2218.4%22%20x2%3D%228.2%22%20y2%3D%2214.7%22/%3E%0A%3Cline%20x1%3D%227.8%22%20y1%3D%221.7%22%20x2%3D%228.7%22%20y2%3D%226.2%22/%3E%0A%3Cline%20x1%3D%223.3%22%20y1%3D%2219.5%22%20x2%3D%225%22%20y2%3D%2223.4%22/%3E%0A%3Cline%20x1%3D%2211%22%20y1%3D%2215.2%22%20x2%3D%2214.3%22%20y2%3D%2217.9%22/%3E%0A%3Cline%20x1%3D%2211.5%22%20y1%3D%2220.2%22%20x2%3D%227.7%22%20y2%3D%2222.1%22/%3E%0A%3Cline%20x1%3D%2213.7%22%20y1%3D%2212.8%22%20x2%3D%229.6%22%20y2%3D%2211.4%22/%3E%0A%3Cline%20x1%3D%22-1.6%22%20y1%3D%2210.6%22%20x2%3D%221.4%22%20y2%3D%2213.6%22/%3E%0A%3Cline%20x1%3D%221.1%22%20y1%3D%2221.9%22%20x2%3D%22-0.6%22%20y2%3D%2225.7%22/%3E%0A%3Cline%20x1%3D%226.7%22%20y1%3D%2225.7%22%20x2%3D%223.3%22%20y2%3D%2228.4%22/%3E%0A%3Cline%20x1%3D%221.3%22%20y1%3D%224.6%22%20x2%3D%226%22%20y2%3D%226.7%22/%3E%0A%3Cline%20x1%3D%226.6%22%20y1%3D%229.2%22%20x2%3D%222.5%22%20y2%3D%2210.4%22/%3E%0A%3Cline%20x1%3D%2213.2%22%20y1%3D%224.6%22%20x2%3D%2211.9%22%20y2%3D%228.7%22/%3E%0A%3Cline%20x1%3D%2218.6%22%20y1%3D%2229.4%22%20x2%3D%2214.5%22%20y2%3D%2230.8%22/%3E%0A%3Cline%20x1%3D%2226%22%20y1%3D%222.6%22%20x2%3D%2222.8%22%20y2%3D%22-1.5%22/%3E%0A%3Cline%20x1%3D%2235.4%22%20y1%3D%2238.6%22%20x2%3D%2238%22%20y2%3D%2242%22/%3E%0A%3Cline%20x1%3D%2231.8%22%20y1%3D%2236.9%22%20x2%3D%2230.6%22%20y2%3D%2241%22/%3E%0A%3Cline%20x1%3D%2212.3%22%20y1%3D%2241.3%22%20x2%3D%2213.6%22%20y2%3D%2237.3%22/%3E%0A%3Cline%20x1%3D%2226%22%20y1%3D%2242.6%22%20x2%3D%2222.8%22%20y2%3D%2238.5%22/%3E%0A%3Cline%20x1%3D%221.3%22%20y1%3D%22-2.5%22%20x2%3D%222.9%22%20y2%3D%221.5%22/%3E%0A%3Cline%20x1%3D%2212.3%22%20y1%3D%221.3%22%20x2%3D%2213.6%22%20y2%3D%22-2.7%22/%3E%0A%3Cline%20x1%3D%2220.2%22%20y1%3D%223.2%22%20x2%3D%2216.6%22%20y2%3D%220.6%22/%3E%0A%3Cline%20x1%3D%2242.3%22%20y1%3D%2231.9%22%20x2%3D%2238.9%22%20y2%3D%2234.5%22/%3E%0A%3Cline%20x1%3D%2238.4%22%20y1%3D%2210.6%22%20x2%3D%2241.4%22%20y2%3D%2213.6%22/%3E%0A%3Cline%20x1%3D%2241.1%22%20y1%3D%2221.9%22%20x2%3D%2239.4%22%20y2%3D%2225.7%22/%3E%0A%3C/svg%3E"); */}
-  background-color: #fff3eb;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23ffd4b9' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-color: #fdf7f4;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%23f7ccb6' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
     clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% calc(100%-10vw), 50% 100%, 0 calc(100%-10vw));
     -webkit-clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 80%, 50% 100%, 0 80%);
     clip-path: url("#newsletter-shape");
@@ -95,7 +95,6 @@ const Book = styled.div`
 `
 
 const BookContents = styled.div`
-
 `
 
 const BookImage = styled.img`
@@ -110,7 +109,7 @@ const Newsletter = () =>
         <ContainerSmall>
           <Row>
             <Cell xs={12}>
-              <Title margin='md' bold center>
+              <Title size='xl' bold center>
                 Can't Join This Time?
               </Title>
 
@@ -145,8 +144,8 @@ const Newsletter = () =>
             </div>
 
             <BookContents>
-              <Subtitle size='nm' margin='sm' uppercase>Your Free eBook</Subtitle>
-              <Subtitle size='md' margin='md' bold>Color Theory for Startups</Subtitle>
+              <Subtitle size='nm' uppercase>Your Free eBook</Subtitle>
+              <Subtitle size='md' bold>Color Theory for Startups</Subtitle>
               <Text>
                 Through nine short case studies, learn how leading companies
                 use color to establish their brand and reinforce their messaging.

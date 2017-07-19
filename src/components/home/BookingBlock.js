@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import Booking from "./Booking";
 import { WithPadding, Background, Title } from "../styled/Base";
-import { ContainerSmall } from "../styled/Grid";
+
 
 const BookingWrapper = styled.div`
   position: relative;
@@ -29,7 +29,7 @@ const VideoPlayerSVG = () =>
   </svg>
 
 const BookingContents = styled.div`
-  margin-top: 10vw;
+  margin-top: 8vw;
   @media only screen and (max-width: 600px) {
     margin-top: 0;
   }
@@ -69,7 +69,7 @@ const BookingBlock = () =>
 
     <BookingContentWrapper>
       <BookingContents>
-        <Title size='xl' color='white' margin='sm' bold center shadow>
+        <Title size='xl' color='white' bold center shadow>
           Join us
         </Title>
         <Booking light fill center shadow/>

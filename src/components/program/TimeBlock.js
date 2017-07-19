@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Row, Cell } from '../styled/Grid'
-import { Subtitle, Text } from '../styled/Base'
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Row, Cell } from "../styled/Grid";
+import { Subtitle, Text } from "../styled/Base";
 
 //  TimeBlock - displays one row in a Program
 //    arguments:
@@ -21,35 +21,34 @@ import { Subtitle, Text } from '../styled/Base'
 //    state
 //      active - Boolean, if true displays timeBlock.description
 
-
 // Wraps TimeBlock adding borders depending on the timeBlock.type
 const TimeBlockWrapper = styled.div`
   border-left: 7px solid ${props => {
-    switch (props.type) {
-      case "lecture":
-        return props.theme.colors[props.mainColor];
-      case "workshop":
-        return props.theme.colors[props.secondColor];
-      case "break":
-        return props.theme.colors.veryLightGrey;
-      default:
-        return props.theme.colors.light;
-    }
-  }};
+  switch (props.type) {
+    case "lecture":
+      return props.theme.colors[props.mainColor];
+    case "workshop":
+      return props.theme.colors[props.secondColor];
+    case "break":
+      return props.theme.colors.veryLightGrey;
+    default:
+      return props.theme.colors.light;
+  }
+}};
   border-right: 7px solid ${props => {
-    switch (props.type) {
-      case "lecture":
-        return props.theme.colors[props.mainColor];
-      case "workshop":
-        return props.theme.colors[props.secondColor];
-      case "break":
-        return props.theme.colors.veryLightGrey;
-      default:
-        return props.theme.colors.light;
-    }
-  }};
+  switch (props.type) {
+    case "lecture":
+      return props.theme.colors[props.mainColor];
+    case "workshop":
+      return props.theme.colors[props.secondColor];
+    case "break":
+      return props.theme.colors.veryLightGrey;
+    default:
+      return props.theme.colors.light;
+  }
+}};
   background: ${props =>
-    props.active ? props.theme.colors.veryLight : "transparent"};
+  props.active ? props.theme.colors.veryLight : "transparent"};
   color: ${props => props.theme.colors.text};
 `;
 
@@ -122,7 +121,9 @@ class TimeBlock extends Component {
               </Cell>
               <Cell xs={12}>
                 <DescriptionWrapper>
-                  <Text fontSize="sm" color="transparentWhite50">{timeBlock.description}</Text>
+                  <Text fontSize="sm" color="transparentWhite50">
+                    {timeBlock.description}
+                  </Text>
                 </DescriptionWrapper>
               </Cell>
             </Row>

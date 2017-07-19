@@ -18,7 +18,7 @@ const WhatIsIt = () => (
   <AboutWrapper>
     <AboutContents>
       <WithPadding padding="xxl">
-        <Title bold center>
+        <Title size='xl'  bold center>
           What is Indie Dojo?
         </Title>
         <Text fontSize="md" inlineBlock>

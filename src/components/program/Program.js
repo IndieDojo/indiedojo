@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Row, Cell } from "../styled/Grid";
 import { WithPadding, Title, Subtitle, Text } from "../styled/Base";
 
-import ProgramHeader from './ProgramHeader'
-import ProgramDayBlock from './ProgramDayBlock'
+import ProgramHeader from "./ProgramHeader";
+import ProgramDayBlock from "./ProgramDayBlock";
 import { program } from "../../../data/detailedProgram";
 import { BookingButton } from "../styled/Buttons";
 
@@ -17,11 +17,11 @@ const ProgramWrapper = styled.div`
 
 const ProgramButton = BookingButton.extend`
   margin-top: ${props => props.theme.margins.xl};
-`
+`;
 
 const ProgramContainer = styled.div`
   width: 100%;
-`
+`;
 
 class CourseProgram extends Component {
   state = {
@@ -52,22 +52,27 @@ class CourseProgram extends Component {
         </ProgramButton>
 
         {this.state.isProgramVisible &&
-          <WithPadding padding={this.state.isProgramVisible ? "xxl" : 'md'}>
+          <WithPadding padding={this.state.isProgramVisible ? "xxl" : "md"}>
             <ProgramContainer>
 
               <ProgramHeader
                 headers={this.getHeaders(program)}
-                activeIndex={this.state.isProgramVisible ? this.state.activeIndex : undefined}
-                onClick={this.state.isProgramVisible ? this.onHeaderTabClick : this.onProgramButtonClick}
+                activeIndex={
+                  this.state.isProgramVisible
+                    ? this.state.activeIndex
+                    : undefined
+                }
+                onClick={
+                  this.state.isProgramVisible
+                    ? this.onHeaderTabClick
+                    : this.onProgramButtonClick
+                }
                 isProgramVisible={this.state.isProgramVisible}
               />
-              <ProgramDayBlock
-                dayBlock={program[this.state.activeIndex]}
-              />
+              <ProgramDayBlock dayBlock={program[this.state.activeIndex]} />
 
             </ProgramContainer>
-          </WithPadding>
-        }
+          </WithPadding>}
 
       </ProgramWrapper>
     );
