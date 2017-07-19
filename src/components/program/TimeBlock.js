@@ -14,7 +14,6 @@ import { Subtitle, Text } from "../styled/Base";
 //          time: '9:30-10:15'
 //        }
 //
-//      isMobile - Boolean
 //      mainColor - String, color from the Theme, eg. "primary"
 //      secondColor - String, color from the Theme, eg. "accent"
 //

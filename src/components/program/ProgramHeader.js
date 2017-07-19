@@ -15,7 +15,6 @@ import { Subtitle } from "../styled/Base";
 //       ]
 //     activeIndex: Number, indecates a position of active header
 //     isProgramVisible: Boolean, if set to false, header will be displayed in light grey indicating inactive header,
-//     isMobile: Boolean, for styling purposes,
 //     mainColor: String, one of the colors from Theme.js, eg. "primary". Used for background of active Header cell,
 //     onClick: Function, pass if you want to change the activity status of the program,
 
@@ -39,7 +38,6 @@ const HeaderCell = styled.div`
   }
 `;
 
-// If isMobile displays program header as column; if not as row
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;

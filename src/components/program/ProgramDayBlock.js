@@ -17,7 +17,6 @@ import TimeBlock from "./TimeBlock";
 //          {...}
 //        ]
 //      }
-//    isMobile - Boolean
 //    mainColor - String, color from the Theme, eg. 'primary'
 //    secondColor - String, color from the Theme, eg. 'primary'
 

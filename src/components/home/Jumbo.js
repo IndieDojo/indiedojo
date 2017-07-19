@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FluidContainer, Container, Row, Cell } from '../styled/Grid'
 import { WithPadding, MainTitle, Subtitle } from '../styled/Base';
-import { Logo } from '../styled/Logo'
+import Logo from '../styled/Logo'
 import Booking from './Booking'
 // const mobileImageUrl = "/indiedojo-first-frame-mobile.jpg";
 // const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
@@ -97,10 +97,7 @@ const LandingMessageWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const LogoImage = styled.img`
-  width: 15vw;
-  min-width: 80px;
-`
+
 const Jumbo = () =>
   <JumboWrapper>
 
@@ -115,7 +112,7 @@ const Jumbo = () =>
         <LandingMessageWrapper>
           <Row>
             <Cell xs={12} center>
-              <LogoImage src="/indiedojo-brown.png"/>
+              <Logo src="/indiedojo-brown.png"/>
               <MainTitle color='text' bold>A one-week bootcamp for indie hackers</MainTitle>
               <Booking/>
             </Cell>

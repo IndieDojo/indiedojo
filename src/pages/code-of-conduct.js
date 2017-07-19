@@ -5,7 +5,7 @@ import { FluidContainer, ContainerSmall, Row, Cell } from '../components/styled/
 import { WithPadding } from '../components/styled/Base'
 import { MarkdownWrapper } from '../components/styled/Markdown'
 import { COC } from '../../data/COC'
-import { Logo } from '../components/styled/Logo'
+import Logo from '../components/styled/Logo'
 
 // Some css theme params depend on window width.
 class CodeOfConduct extends Component {
@@ -18,10 +18,10 @@ class CodeOfConduct extends Component {
             <WithPadding padding='xxxl'>
               <Row>
                 <Cell xs={12} center>
-                  <Logo margin='xxl' isMobile={this.props.isMobile}/>
+                  <Logo src="/indiedojo-brown.png"/>
                 </Cell>
               </Row>
-              <MarkdownWrapper isMobile={this.props.isMobile}>
+              <MarkdownWrapper>
                 <Markdown source={COC}/>
               </MarkdownWrapper>
             </WithPadding>
