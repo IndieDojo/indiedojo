@@ -14,6 +14,9 @@ const TopicWrapper = styled.div`
 
 const TopicsIcon = styled.img`
   width: 100px;
+  @media (max-width: 600px) {
+    margin-bottom: ${props => props.theme.margins.lg};
+  }
 `;
 
 const TopicList = styled.ul`
