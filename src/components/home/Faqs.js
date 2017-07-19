@@ -11,7 +11,7 @@ const Faq = ({q, a}) =>
     <Text><Markdown>{a}</Markdown></Text>
   </WithPadding>
 
-const Faqs = ({ isMobile }) => (
+const Faqs = () => (
   <ContainerSmall>
     <div id='included'></div>
     <WithPadding padding="xl">

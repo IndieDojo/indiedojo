@@ -101,8 +101,8 @@ export const LogoImage = styled.img`
   width: 15vw;
   min-width: 80px;
 `
-const Jumbo = ({isMobile}) =>
-  <JumboWrapper isMobile={isMobile}>
+const Jumbo = () =>
+  <JumboWrapper>
 
     <Image />
     <ImageSVG />

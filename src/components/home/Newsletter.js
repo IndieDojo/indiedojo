@@ -102,7 +102,7 @@ const BookImage = styled.img`
   width: 120px;
 `
 
-const Newsletter = ({isMobile}) =>
+const Newsletter = () =>
   <NewsletterContainer>
     <div id='intercom-launcher'></div>
     <NewsletterWrapper>

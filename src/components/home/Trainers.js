@@ -34,7 +34,7 @@ const Trainer = ({image, name, title, bio}) =>
     <Text><Markdown>{bio}</Markdown></Text>
   </Cell>
 
-const Trainers = ({isMobile}) =>
+const Trainers = () =>
 <div>
   <div id='trainers'></div>
   <Container>
