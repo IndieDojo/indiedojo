@@ -112,7 +112,7 @@ const BottomTriangleSVG = () =>
     </defs>
   </svg>
 
-const Newsletter = ({isMobile}) =>
+const Newsletter = () =>
   <NewsletterContainer>
     <NewsletterWrapper>
       <FluidContainer>
@@ -173,7 +173,12 @@ const Newsletter = ({isMobile}) =>
               id="mc-embedded-subscribe"
             />
           </NewsletterForm>
-
+          ReactGA.event({
+  category: 'Promotion',
+  action: 'Displayed Promotional Widget',
+  label: 'Homepage Thing',
+  nonInteraction: true
+});
           <Book>
 
             <div>

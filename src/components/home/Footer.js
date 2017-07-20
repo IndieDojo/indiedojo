@@ -59,7 +59,7 @@ const Footer = () => (
                 Built by Sacha Greif and Maciej Nowakowski with <LinkTo inherit href='https://www.gatsbyjs.org/'>Gatsby</LinkTo>.
               </Subtitle>
               <Subtitle size='xs' color='transparentWhite50'>
-                {`© 2017 Level Eleven Web Solutions Ltd.`}
+                {`© 2017 Level Eleven Web Solutions Ltd`}
               </Subtitle>
             </Cell>
           </Row>
