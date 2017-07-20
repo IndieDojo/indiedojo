@@ -39,7 +39,7 @@ const LandingMessageWrapper = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     position: absolute;
-    padding-left: 50px;
+    padding-left: 30px;
   }
  
 `;

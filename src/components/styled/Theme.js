@@ -65,18 +65,49 @@ const margins = {
 };
 
 const getFontSizes = (windowWidth) => {
-   
-    return {
-      xxxl: '3.5rem',
-      xxl: '2.8rem',
-      xl: '2.25rem',
-      lg: '1.8rem',
-      md: "1.45rem",
-      nm: '1.15rem',
-      sm: "0.94rem",
-      xs: "0.71rem"
-    }
- 
+
+  const onePointTwo = { // multiplier 1.2
+    xxxl: '2.5rem',
+    xxl: '2.1rem',
+    xl: '1.75rem',
+    lg: '1.45rem',
+    md: "1.2rem",
+    nm: '1rem',
+    sm: "0.94rem",
+    xs: "0.71rem"
+  }
+
+  const onePointTwentyFive = { // multiplier 1.25
+    xxxl: '3.5rem',
+    xxl: '2.8rem',
+    xl: '2.25rem',
+    lg: '1.8rem',
+    md: "1.45rem",
+    nm: '1.15rem',
+    sm: "0.94rem",
+    xs: "0.71rem"
+  }
+
+  const onePointThirtyThree = { // 1.33 multiplier
+    xxxl: '5.2rem',
+    xxl: '3.9rem',
+    xl: '2.9rem',
+    lg: '2.2rem',
+    md: "1.66rem",
+    nm: '1.25rem',
+    sm: "1rem",
+    xs: "0.71rem"
+  }
+
+  return onePointTwentyFive
+
+  // if (windowWidth < breakPoints.sm*16) {
+  //   return onePointTwo
+  // } else if ( windowWidth >= breakPoints.sm*16 && windowWidth < breakPoints.md*16) {
+  //   return onePointTwentyFive
+  // } else {
+  //   return onePointThirtyThree
+  // }
 };
 
 const radius = {
