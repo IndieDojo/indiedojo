@@ -2,43 +2,49 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Subtitle, LinkTo } from "../styled/Base";
 
-const DatesWrapper = styled.div`
-`;
 
-const BookingDate = styled.div`
+const BookingWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.centered ? 'center' : 'flex-start'};
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (min-width: 601px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const BookingSubtitle = Subtitle.extend`
   color: ${props => props.theme.colors.text};
-  font-size: 1.8vw;
+  font-size: ${props => props.theme.fontSizes.lg};
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+  }
 `
 
 const BookingPrice = styled.div`
   color: ${props => props.theme.colors.text};
-  font-size: 1.75vw;
+  font-size: ${props => props.theme.fontSizes.md};
   a{
     color: ${props => props.light ? 'white' : 'inherit'};
   }
-
-  @media (min-width: 600px) {
-    font-size: 1.5vw;
+  @media only screen and (max-width: 600px) {
+    text-align: center;
   }
 `;
 
 const BookingButton = styled.a`
-  display: inline-block;
-  margin-top: 1.5vw;
-  margin-bottom: 1.5vw;
-  padding: 1vw 2vw;
+  padding: 10px 30px;
+  margin: 20px 0;
+  display: block;
   box-sizing: border-box;
   border: 3px solid;
   border-color: ${props => props.light ? 'white' : props.theme.colors.accent};
   color: ${props => props.light ? 'white' : props.theme.colors.primary};
-  font-size: 2vw;
   font-weight: ${props => props.theme.weights.bold};
+  font-size: ${props => props.theme.fontSizes.lg};
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
@@ -52,18 +58,16 @@ const BookingButton = styled.a`
   }
 `
 
-const BookingScalable = ({ light, centered, isMobile }) => (
-  <DatesWrapper className='dates-wrapper'>
-    <BookingDate centered={centered} isMobile={isMobile}>
-      <BookingSubtitle light={light}>Kyoto, Japan, November 13-18 2017</BookingSubtitle>
-      <BookingButton light={light}
-        href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
-      >
-        Book Now
-      </BookingButton>
-      <BookingPrice>Early Registration Price: <br/> <strong>$1,990</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
-    </BookingDate>
-  </DatesWrapper>
-);
+const BookingScalable = ({ light, centered, isMobile }) =>
+  <BookingWrapper centered={centered} isMobile={isMobile}>
+    <BookingSubtitle light={light}>Kyoto, Japan, November 13-18 2017</BookingSubtitle>
+    <BookingButton light={light}
+      href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
+    >
+      Book Now
+    </BookingButton>
+    <BookingPrice>Early Registration Price: <br/> <strong>$1,990</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
+  </BookingWrapper>
+
 
 export default BookingScalable;

@@ -65,22 +65,7 @@ const margins = {
 };
 
 const getFontSizes = (windowWidth) => {
-  if (windowWidth < breakPoints.sm*16) {
-    // multiplier 1.2
-    return {
-      xxxl: '2.5rem',
-      xxl: '2.1rem',
-      xl: '1.75rem',
-      lg: '1.45rem',
-      md: "1.2rem",
-      nm: '1rem',
-      sm: "0.94rem",
-      xs: "0.71rem"
-    }
-  }
-
-  if ( windowWidth >= breakPoints.sm*16 && windowWidth < breakPoints.md*16) {
-    // multiplier 1.25
+   
     return {
       xxxl: '3.5rem',
       xxl: '2.8rem',
@@ -91,19 +76,7 @@ const getFontSizes = (windowWidth) => {
       sm: "0.94rem",
       xs: "0.71rem"
     }
-  } else {
-    // 1.33 multiplier
-    return {
-      xxxl: '5.2rem',
-      xxl: '3.9rem',
-      xl: '2.9rem',
-      lg: '2.2rem',
-      md: "1.66rem",
-      nm: '1.25rem',
-      sm: "1rem",
-      xs: "0.71rem"
-    }
-  }
+ 
 };
 
 const radius = {

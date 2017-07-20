@@ -32,11 +32,15 @@ const TopicItem = styled.li`
   text-align: center;
 `;
 
+const TopicsHeading = Subtitle.extend`
+  padding: 10px 0;
+`;
+
 // Topic Item - displays a single day
 const Topic = ({ days, image, title, items }) => (
   <TopicWrapper>
     <Background color="veryLightGrey">
-      <Subtitle lineHeight="2" bold center>{days}</Subtitle>
+      <TopicsHeading lineHeight="2" bold center>{days}</TopicsHeading>
     </Background>
 
     <Card padding="lg" backgroun="white" center>
