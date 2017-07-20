@@ -18,7 +18,7 @@ const BookingWrapper = styled.div`
 
 const BookingSubtitle = Subtitle.extend`
   color: ${props => props.theme.colors.text};
-  font-size: ${props => props.theme.fontSizes.lg};
+  font-size: ${props => props.theme.fontSizes.md};
   @media only screen and (max-width: 600px) {
     text-align: center;
   }
@@ -26,7 +26,7 @@ const BookingSubtitle = Subtitle.extend`
 
 const BookingPrice = styled.div`
   color: ${props => props.theme.colors.text};
-  font-size: ${props => props.theme.fontSizes.md};
+  font-size: ${props => props.theme.fontSizes.nm};
   a{
     color: ${props => props.light ? 'white' : 'inherit'};
   }
@@ -44,7 +44,7 @@ const BookingButton = styled.a`
   border-color: ${props => props.light ? 'white' : props.theme.colors.accent};
   color: ${props => props.light ? 'white' : props.theme.colors.primary};
   font-weight: ${props => props.theme.weights.bold};
-  font-size: ${props => props.theme.fontSizes.lg};
+  font-size: ${props => props.theme.fontSizes.md};
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;

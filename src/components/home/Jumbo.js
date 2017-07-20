@@ -33,6 +33,7 @@ const LandingMessageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin: -20vw 0 20px 0;
+    padding: 0 1rem;
   }
   @media only screen and (min-width: 601px) {
     justify-content: flex-start;
@@ -96,8 +97,8 @@ const Cover = styled.svg`
 `
 const Statement = styled.h1`
   color: ${props => props.theme.colors.text};
-  font-size: ${props => props.theme.fontSizes.xl};
-  margin-bottom: 20px;
+  font-size: ${props => props.theme.fontSizes.lg};
+  margin-bottom: 10px;
   @media only screen and (max-width: 600px) {
     text-align: center;
   }
