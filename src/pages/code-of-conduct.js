@@ -13,6 +13,7 @@ class CodeOfConduct extends Component {
 
   componentDidMount() {
     ReactGA.pageview(window.location.pathname);
+    window.scrollTo(0, 0);
   }
 
   render() {
