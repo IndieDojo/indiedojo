@@ -156,11 +156,6 @@ const Newsletter = () =>
               id="mce-EMAIL"
             />
             <NewsletterButton
-              onClick={() =>
-                ReactGA.event({
-                  category: "Subscribe",
-                  action: `Subscribe button pressed`
-                })}
               className="button"
               type="submit"
               value="Get eBook"

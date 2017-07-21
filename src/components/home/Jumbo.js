@@ -41,7 +41,7 @@ const LandingMessageWrapper = styled.div`
     position: absolute;
     padding-left: 30px;
   }
- 
+
 `;
 
 const Image = styled.div`
@@ -69,6 +69,7 @@ const Image1 = Image.extend`
 
   @media only screen and (min-width: 601px) {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
   }
 `;
 
@@ -79,11 +80,13 @@ const Image2 = Image.extend`
     background-position: center 100%;
     height: 50vw;
     clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
   }
-  
+
   @media only screen and (min-width: 601px) {
     top: 50%;
     clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+    -webkit-clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
   }
 
 `;
