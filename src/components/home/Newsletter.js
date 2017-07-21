@@ -90,6 +90,7 @@ const BookContents = styled.div`
 
 const BookImage = styled.img`
   width: 120px;
+  margin-right: 20px;
 `;
 
 const BottomTriangle = styled.div`
@@ -167,7 +168,7 @@ const Newsletter = () =>
           <Book>
 
             <div>
-              <BookImage src="/images/color-theory-for-startups.png"/>
+              <BookImage src="/images/color-theory-for-startups-small.png"/>
             </div>
 
             <BookContents>
