@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ReactGA from 'react-ga';
 import { BookingButton } from "../styled/Buttons";
 import { Subtitle, LinkTo } from "../styled/Base";
 
@@ -27,6 +28,7 @@ const Booking = ({ light, center, shadow, fill }) => (
       <Subtitle color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton light={light} fill={fill}
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
+        onClick={() => ReactGA.event({ category: 'Booking', action: `Booking button clicked` })}
       >
         Book Now
       </BookingButton>

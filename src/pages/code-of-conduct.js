@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Markdown from 'react-remarkable';
-import ReactGA from 'react-ga';
 
 import { FluidContainer, ContainerSmall, Row, Cell } from '../components/styled/Grid';
 import { WithPadding } from '../components/styled/Base'
@@ -12,7 +11,6 @@ import Logo from '../components/styled/Logo'
 class CodeOfConduct extends Component {
 
   componentDidMount() {
-    // ReactGA.pageview(window.location.pathname);
     window.scrollTo(0, 0);
   }
 
