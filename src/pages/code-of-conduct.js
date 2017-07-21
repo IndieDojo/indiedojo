@@ -12,7 +12,7 @@ import Logo from '../components/styled/Logo'
 class CodeOfConduct extends Component {
 
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname);
+    // ReactGA.pageview(window.location.pathname);
     window.scrollTo(0, 0);
   }
 

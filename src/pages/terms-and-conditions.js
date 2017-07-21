@@ -11,7 +11,7 @@ import Logo from '../components/styled/Logo'
 // Some css theme params depend on window width.
 class Tac extends Component {
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname);
+    // ReactGA.pageview(window.location.pathname);
     window.scrollTo(0, 0);
   }
 
