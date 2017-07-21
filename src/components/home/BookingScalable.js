@@ -35,6 +35,10 @@ const BookingPrice = styled.div`
   }
 `;
 
+const Regular = BookingPrice.extend`
+  text-decoration: line-through;
+`
+
 const BookingButton = styled.a`
   padding: 10px 30px;
   margin: 20px 0;
@@ -66,7 +70,9 @@ const BookingScalable = ({ light, centered, isMobile }) =>
     >
       Book Now
     </BookingButton>
-    <BookingPrice>Early Registration Price: <br/> <strong>$1,990</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</BookingPrice>
+    <BookingPrice>Early Bird Price: <strong>$1,990</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)
+      <Regular><br/>Regular Price: $2190</Regular>
+    </BookingPrice>
   </BookingWrapper>
 
 

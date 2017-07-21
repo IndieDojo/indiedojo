@@ -124,13 +124,8 @@ const Newsletter = () =>
               </Title>
 
               <Text paddingBottom="md" inlineBlock>
-                You can still be part of Indie Dojo!
-                Sign up for our newsletter to know about
-                {" "}
-                <b>upcoming bootcamps</b>
-                ,
-                be notified of <b>live streams and hangouts</b>,
-                and get access to an <b>exclusive eBook</b>.
+                You can still be part of Indie Dojo! Sign up for our newsletter to learn about <b>upcoming bootcamps</b>, get invitations to  <b>live
+                  streams and hangouts</b>, and gain access to our <b>exclusive eBook</b>.
               </Text>
 
             </Cell>
@@ -164,7 +159,7 @@ const Newsletter = () =>
               onClick={() =>
                 ReactGA.event({
                   category: "Subscribe",
-                  action: `${section} subscribe`
+                  action: `Subscribe button pressed`
                 })}
               className="button"
               type="submit"
@@ -173,12 +168,7 @@ const Newsletter = () =>
               id="mc-embedded-subscribe"
             />
           </NewsletterForm>
-          ReactGA.event({
-  category: 'Promotion',
-  action: 'Displayed Promotional Widget',
-  label: 'Homepage Thing',
-  nonInteraction: true
-});
+
           <Book>
 
             <div>
