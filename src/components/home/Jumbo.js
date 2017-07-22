@@ -6,13 +6,10 @@ import { Logo } from '../styled/Logo'
 import Booking from './Booking'
 import BookingScalable from './BookingScalable'
 
-// this breaks SSR: height: ${props => props.isMobile ? `100vh` : `${window && window.innerWidth * 0.5625}px`};
-
 // 1.125 is a ratio of height/width of the cover photo
 const JumboWrapper = styled.div`
   position: relative;
   min-width: 100%;
-  // margin-bottom: 33.33vw; //( 50% * 2/3 * window width)
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +57,7 @@ const Image = styled.div`
 `;
 
 const Image1 = Image.extend`
-  background-image: url('/photos/talk.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/talk.jpg');
 
   @media only screen and (max-width: 600px) {
     display: none;
@@ -74,7 +71,7 @@ const Image1 = Image.extend`
 `;
 
 const Image2 = Image.extend`
-  background-image: url('/photos/pawel-nolbert-310974.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tori-gate.jpg');
 
   @media only screen and (max-width: 600px) {
     background-position: center 100%;
