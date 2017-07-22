@@ -71,6 +71,7 @@ export const MainTitle = styled.h1`
   @media (max-width: 600px) {
     line-height: 1.25;
   }
+  text-decoration: ${props => props.lineThrough ? 'line-through' : 'none'};
 `;
 
 export const Title = MainTitle.withComponent("h2");

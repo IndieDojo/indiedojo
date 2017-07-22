@@ -40,9 +40,9 @@ const Regular = BookingPrice.extend`
 `
 
 const BookingButton = styled.a`
-  padding: 10px 30px;
+  padding: 10px 20px;
   margin: 20px 0;
-  display: block;
+  display: inline-block;
   box-sizing: border-box;
   border: 3px solid;
   border-color: ${props => props.light ? 'white' : props.theme.colors.accent};
@@ -50,6 +50,7 @@ const BookingButton = styled.a`
   font-weight: ${props => props.theme.weights.bold};
   font-size: ${props => props.theme.fontSizes.md};
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in;
   &:visited {
@@ -65,13 +66,14 @@ const BookingButton = styled.a`
 const BookingScalable = ({ light, centered, isMobile }) =>
   <BookingWrapper centered={centered} isMobile={isMobile}>
     <BookingSubtitle light={light}>Kyoto, Japan, November 13-18 2017</BookingSubtitle>
+    <Subtitle size='nm' lineThrough>Regular Price: <b>$2190</b> incl. accom.</Subtitle>
+    <BookingPrice>Early Bird: <strong>$1,490</strong> + $490 accom.<br/> (<LinkTo inherit href="#included">What's included?</LinkTo>)<br/>
     <BookingButton light={light}
       href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
     >
       Book Now
     </BookingButton>
-    <BookingPrice>Early Bird Price: <strong>$1,990</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)
-      <Regular><br/>Regular Price: $2190</Regular>
+
     </BookingPrice>
   </BookingWrapper>
 

@@ -116,7 +116,7 @@ const WhatYouWillLearn = () => (
 
     <TopicsWrapper>
       <Container>
-        <Title size='xl' margin="lg" color="transparentWhite" shadow bold center>
+        <Title size='xl' margin="lg" color="white" shadow bold center>
           What You'll Learn
         </Title>
         <Row>
