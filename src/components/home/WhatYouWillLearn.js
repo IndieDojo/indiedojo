@@ -70,7 +70,7 @@ const TopTriangle = styled.div`
   clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   -webkit-clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   clip-path: url("#top-shape");
-  background: url('/top-triangle2.jpg');
+  background: url('/top-triangle.jpg');
   background-size: 100vw;
 `;
 
