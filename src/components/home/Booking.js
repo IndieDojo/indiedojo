@@ -32,7 +32,7 @@ const Booking = ({ light, center, shadow, fill }) => (
       >
         Book Now
       </BookingButton>
-      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Registration Price: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle>
+      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Bird: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle>
     </BookingDate>
   </DatesWrapper>
 );
