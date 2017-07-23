@@ -52,7 +52,7 @@ const BookingContentWrapper = styled.div`
 const mobileImageUrl = "/photos/indiedojo-first-frame-mobile.jpg";
 const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
 const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4?s=5d365fe6ff3a4146ff42c705ebe626e4a02ad5b9&profile_id=174";
-const videoFirstFrameUrl = "/photos/indiedojo-first-frame2.jpg";
+const videoFirstFrameUrl = "https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/indiedojo-first-frame.jpg";
 
 
 class BookingBlock extends Component {

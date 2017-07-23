@@ -181,7 +181,7 @@ const Newsletter = () =>
           <Book>
 
             <div>
-              <BookImage src="/images/color-theory-for-startups-small.png"/>
+              <BookImage src="https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/color-theory-for-startups-small.png"/>
             </div>
 
             <BookContents>

@@ -1,5 +1,5 @@
 - name: Sacha Greif
-  image: /images/sacha.jpg
+  image: https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/sacha.jpg
   title: Developer, designer and entrepreneur
   bio: >
     Sacha is a developer, designer and entrepreneur who has worked with companies such as Hipmunk, Intercom and Le Mond. Originally from Paris, France, Sacha now lives in Osaka, Japan. He is the author of
@@ -7,7 +7,7 @@
     co-author of the [Discover Meteor](https://www.discovermeteor.com/) book and creator of the biggest survey on the [State of Javascript](http://stateofjs.com/).
 
 - name: Maciej Nowakowski
-  image: /images/maciej.jpg
+  image: https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/maciej.jpg
   title: Developer and entrepreneur
   bio: >
     Maciej is a developer and entrepreneur. He was born in Poland but now lives in London. Maciej organises [Codecamps in Flip Flops](https://www.codecamps.com/)

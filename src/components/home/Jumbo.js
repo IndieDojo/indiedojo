@@ -57,7 +57,7 @@ const Image = styled.div`
 `;
 
 const Image1 = Image.extend`
-  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/talk.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/talk.jpg');
 
   @media only screen and (max-width: 700px) {
     display: none;
@@ -71,7 +71,7 @@ const Image1 = Image.extend`
 `;
 
 const Image2 = Image.extend`
-  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tori-gate.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/tori-gate.jpg');
 
   @media only screen and (max-width: 700px) {
     background-position: center 100%;
