@@ -7,10 +7,9 @@ import { MarkdownWrapper } from '../components/styled/Markdown'
 import { TAC } from '../../data/TAC'
 import Logo from '../components/styled/Logo'
 
-// Some css theme params depend on window width.
 class Tac extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+
   }
 
   render() {

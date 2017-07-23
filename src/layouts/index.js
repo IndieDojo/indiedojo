@@ -7,14 +7,6 @@ import "../components/styled/Global";
 import WebsiteHead from "../components/home/WebsiteHead";
 import Footer from "../components/home/Footer";
 
-ReactGA.initialize("UA-8858797-9");
-
-function logPageView() {
-  ReactGA.set({ page: window.location.pathname + window.location.search });
-  ReactGA.pageview(window.location.pathname + window.location.search);
-}
-
-// Some css theme params depend on window width.
 class Layout extends Component {
 
   componentDidMount() {
@@ -36,7 +28,8 @@ class Layout extends Component {
   }
 
   render() {
-    // ReactGA.initialize( "UA-8858797-9" );
+    ReactGA.initialize( "UA-8858797-9" );
+    
     return (
       <ThemeProvider theme={idTheme}>
         <div>

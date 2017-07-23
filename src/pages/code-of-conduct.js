@@ -7,11 +7,10 @@ import { MarkdownWrapper } from '../components/styled/Markdown'
 import { COC } from '../../data/COC'
 import Logo from '../components/styled/Logo'
 
-// Some css theme params depend on window width.
 class CodeOfConduct extends Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+
   }
 
   render() {
