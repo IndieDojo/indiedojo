@@ -12,7 +12,7 @@ const VideoPlayer = styled.video`
   box-sizing: border-box;
   object-fit: fill;
   width: 100%;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 700px) {
     clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     -webkit-clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     clip-path: url("#video-shape");
@@ -30,7 +30,7 @@ const VideoPlayerSVG = () =>
 
 const BookingContents = styled.div`
   margin-top: 8vw;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     margin-top: 0;
   }
 `
@@ -44,7 +44,7 @@ const BookingContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 700px) {
     margin-top: -10vw
   }
 `

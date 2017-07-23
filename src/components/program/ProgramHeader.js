@@ -33,7 +33,7 @@ const HeaderCell = styled.div`
     background: ${props =>
   props.active ? "rgba(245,105,17, 0.9)" : "rgba(245,105,17, 0.17)"};
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     border-bottom: 2px solid ${props => props.theme.colors.brown};
   }
 `;
@@ -42,7 +42,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   background: ${props => props.theme.colors.transparent};
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `;

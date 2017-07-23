@@ -9,25 +9,49 @@ export const MarkdownWrapper= styled.div`
   }
 
   h1 {
-    font-size: ${props => props.theme.fontSizes.lg };
+    font-size: ${props => props.theme.fontSizes.regular.lg };
+    @media only screen and (max-width: 900px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.medium[props.size] : props.theme.fontSizes.medium.lg};
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.mobile[props.size] : props.theme.fontSizes.mobile.lg};
+    }
   }
 
   h2 {
-    font-size: ${props => props.theme.fontSizes.md};
+    font-size: ${props => props.theme.fontSizes.regular.md};
+    @media only screen and (max-width: 900px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.medium[props.size] : props.theme.fontSizes.medium.md};
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.mobile[props.size] : props.theme.fontSizes.mobile.md};
+    }
   }
 
   h3, h4 {
-    font-size: ${props => props.theme.fontSizes.nm};
+    font-size: ${props => props.theme.fontSizes.regular.nm};
+    @media only screen and (max-width: 900px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.medium[props.size] : props.theme.fontSizes.medium.nm};
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: ${props => !!props.size ? props.theme.fontSizes.mobile[props.size] : props.theme.fontSizes.mobile.nm};
+    }
   }
 
   p {
-    font-size: ${props => props.theme.fontSizes.nm};
+    font-size: ${props => props.theme.fontSizes.regular.nm};
     line-height: 1.5;
     padding-bottom: ${props => props.theme.margins.lg};
     color: ${props => props.theme.colors.text};
     margin-top: ${props => props.theme.margins.sm};
     &:last-of-type {
       padding-bottom: 0;
+    }
+    @media only screen and (max-width: 900px) {
+      font-size: ${props => props.theme.fontSizes.medium.nm};
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: ${props => props.theme.fontSizes.mobile.nm};
     }
   }
 
@@ -53,6 +77,12 @@ export const MarkdownWrapper= styled.div`
     font-size: ${props => props.theme.fontSizes.nm};
     color: ${props => props.theme.colors.text};
     line-height: 1.5;
+    @media only screen and (max-width: 900px) {
+      font-size: ${props => props.theme.fontSizes.medium.nm};
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: ${props => props.theme.fontSizes.mobile.nm};
+    }
   }
   li:before {
     content: disc;

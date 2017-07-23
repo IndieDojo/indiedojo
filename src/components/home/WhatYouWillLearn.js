@@ -14,7 +14,7 @@ const TopicWrapper = styled.div`
 
 const TopicsIcon = styled.img`
   width: 100px;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     margin-bottom: ${props => props.theme.margins.lg};
   }
 `;

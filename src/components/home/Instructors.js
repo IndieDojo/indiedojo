@@ -16,7 +16,7 @@ const ProfileImage = styled.div`
   background-position: 50% 50%;
   border-radius: 50%;
   border: 10px solid ${props => props.theme.colors.white};
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 50vw;
     height: 50vw;
   }

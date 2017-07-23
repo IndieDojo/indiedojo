@@ -29,7 +29,7 @@ const NewsletterForm = styled.form`
   display: flex;
   flex-direction: row;
   margin-bottom: ${props => props.theme.margins.nm};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     flex-direction: column;
     align-items: center;
   }
@@ -47,7 +47,7 @@ const NewsletterField = styled.input`
   &:focus {
     border: 3px solid ${props => props.theme.colors.primary};
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     width:100%;
     margin-bottom: ${props => props.theme.margins.sm};
     &:nth-child(2) {
@@ -73,7 +73,7 @@ const NewsletterButton = styled.input`
     color: ${props => props.theme.colors.primaryHover};
     border: 3px solid ${props => props.theme.colors.primaryHover};
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     width: 100%;
   }
 `;
