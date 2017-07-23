@@ -8,12 +8,12 @@ const WebsiteHead = () =>
     <link rel="canonical" href="http://indiedojo.co" />
     <link rel="shortcut icon" href="/favicon.png" />
 
-    <html itemscope itemtype="http://schema.org/Event"/>
+    {/* <html itemscope itemtype="http://schema.org/Event"/> */}
 
     {/* Schema.org markup for Google+ */}
-    <meta itemprop="name" content="Indie Dojo - a one-week bootcamp for indie hackers"/>
+    {/* <meta itemprop="name" content="Indie Dojo - a one-week bootcamp for indie hackers"/>
     <meta itemprop="description" content="Indie Dojo is a one-week bootcamp that will give you a step-by-step blueprint for moving from a blank page to a launch-ready web product"/>
-    <meta itemprop="image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg"/>
+    <meta itemprop="image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg"/> */}
 
     {/* Twitter Card data */}
     <meta name="twitter:card" content="summary_large_image"/>
@@ -24,15 +24,14 @@ const WebsiteHead = () =>
     <meta name="twitter:image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg"/>
 
     {/* Open Graph data */}
-    <meta property="og:title" content="Indie Dojo - a one-week bootcamp for indie hackers" />
+    {/* <meta property="og:title" content="Indie Dojo - a one-week bootcamp for indie hackers" />
     <meta property="og:type" content="event" />
     <meta property="og:url" content="http://indiedojo.co/" />
     <meta property="og:image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg" />
     <meta property="og:description" content="Indie Dojo is a one-week bootcamp that will give you a step-by-step blueprint for moving from a blank page to a launch-ready web product" />
     <meta property="og:site_name" content="Indie Dojo" />
-    <meta property="fb:admins" content="1483954624984668" />
+    <meta property="fb:admins" content="1483954624984668" /> */}
 
-    <meta property="og:type" content="event" />
   </Helmet>
 
 export default WebsiteHead;
