@@ -30,15 +30,15 @@ class Layout extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={idTheme}>
-        <div>
-          <WebsiteHead />
-
-          {this.props.children({...this.props, ...this.state})}
-
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <div>
+        <WebsiteHead />
+        <ThemeProvider theme={idTheme}>
+          <div>
+            {this.props.children({...this.props, ...this.state})}
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </div>
     );
   }
 }
