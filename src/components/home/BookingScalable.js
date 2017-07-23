@@ -82,7 +82,7 @@ const HeadSubtitle = Subtitle.extend`
 const BookingScalable = ({ light, centered, isMobile }) =>
   <BookingWrapper centered={centered} isMobile={isMobile}>
     <BookingSubtitle size='nm' margin='md' light={light} bold>Kyoto, Japan, November 13-18 2017</BookingSubtitle>
-    <HeadSubtitle size='nm' lineThrough opacity='0.5'>Price: <b>$1,790</b> + $490 accom.</HeadSubtitle>
+    <HeadSubtitle size='nm' lineThrough opacity='0.5'>Price: <b>$1,690</b> + $490 accom.</HeadSubtitle>
     <HeadSubtitle size='nm'>
       Early Bird: <strong>$1,490</strong> + $490 accom.<br/>
       (<LinkTo inherit href="#included">What's included?</LinkTo>)<br/>
