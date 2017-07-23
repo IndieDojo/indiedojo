@@ -10,6 +10,7 @@ import Footer from "../components/home/Footer";
 class Layout extends Component {
 
   componentDidMount() {
+    ReactGA.initialize( "UA-8858797-9" );
     ReactGA.pageview(location.pathname);
 
     // Intercom script
@@ -28,8 +29,6 @@ class Layout extends Component {
   }
 
   render() {
-    ReactGA.initialize( "UA-8858797-9" );
-    
     return (
       <ThemeProvider theme={idTheme}>
         <div>
