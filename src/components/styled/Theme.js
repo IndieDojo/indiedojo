@@ -118,7 +118,7 @@ const idTheme = {
   margins,
   radius,
   weights,
-  fontSizes: fontSizes
+  fontSizes
 }
 
 export default idTheme;

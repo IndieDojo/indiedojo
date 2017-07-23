@@ -40,14 +40,18 @@ const NewsletterField = styled.input`
   border: 3px solid ${props => props.theme.colors.veryLightGrey};
   margin-right: 3px;
   padding: 0 10px;
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: ${props => props.theme.fontSizes.regular.nm};
   height: 50px;
   flex-grow: 1;
   outline: none;
   &:focus {
     border: 3px solid ${props => props.theme.colors.primary};
   }
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => props.theme.fontSizes.medium.nm};
+  }
   @media only screen and (max-width: 700px) {
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
     width:100%;
     margin-bottom: ${props => props.theme.margins.sm};
     &:nth-child(2) {
@@ -61,7 +65,7 @@ const NewsletterButton = styled.input`
   height: 50px;
   flex-grow: 1;
   text-align: center;
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: ${props => props.theme.fontSizes.regular.nm};
   font-weight: ${props => props.theme.weights.bold};
   color: ${props => props.theme.colors.primary};
   background: none;
@@ -73,8 +77,17 @@ const NewsletterButton = styled.input`
     color: ${props => props.theme.colors.primaryHover};
     border: 3px solid ${props => props.theme.colors.primaryHover};
   }
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => props.theme.fontSizes.medium.nm};
+  }
   @media only screen and (max-width: 700px) {
     width: 100%;
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
+    width:100%;
+    margin-bottom: ${props => props.theme.margins.sm};
+    &:nth-child(2) {
+      margin-bottom: ${props => props.theme.margins.md};
+    }
   }
 `;
 

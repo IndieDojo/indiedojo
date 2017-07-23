@@ -55,7 +55,6 @@ const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4
 const videoFirstFrameUrl = "/photos/indiedojo-first-frame2.jpg";
 
 
-
 class BookingBlock extends Component {
   componentDidMount() {
     setTimeout( () =>
@@ -68,7 +67,6 @@ class BookingBlock extends Component {
     return <BookingWrapper>
       <VideoPlayer
           id='video-kyoto'
-
           loop
           muted
           playsInline

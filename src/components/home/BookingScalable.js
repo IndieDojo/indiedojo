@@ -62,10 +62,10 @@ const BookingButton = styled.a`
     text-decoration: none;
   }
   @media only screen and (max-width: 900px) {
-    font-size: ${props => props.theme.fontSizes.medium.md};
+    font-size: ${props => props.theme.fontSizes.medium.nm};
   }
   @media only screen and (max-width: 700px) {
-    font-size: ${props => props.theme.fontSizes.mobile.md};
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
     align-self: center;
   }
 `

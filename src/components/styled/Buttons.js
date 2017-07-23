@@ -13,7 +13,7 @@ export const BookingButton = styled.a`
   border: 3px solid;
   border-color: ${props => props.light ? 'white' : props.theme.colors.accent};
   color: ${props => props.light ? 'white' : props.theme.colors.primary};
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: ${props => props.theme.fontSizes.regular.nm};
   font-weight: ${props => props.theme.weights.bold};
   text-decoration: none;
   cursor: pointer;
@@ -26,5 +26,13 @@ export const BookingButton = styled.a`
     border-color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};
     color: ${props => props.variant === 'jumbo' ? props.theme.colors.transparentWhite : props.theme.colors.accentHover};
     text-decoration: none;
+  }
+  @media (max-width: 900px) {
+    font-size: ${props => props.theme.fontSizes.medium.nm}; and 
+  }
+  @media (max-width: 700px) {
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
+    margin-top: ${props => props.theme.margins.sm };
+    margin-bottom: ${props => props.theme.margins.sm };
   }
 `
