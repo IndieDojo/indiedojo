@@ -23,12 +23,12 @@ const WebsiteHead = () =>
     <meta name="twitter:description" content="Indie Dojo is a one-week bootcamp that will give you a step-by-step blueprint for moving from a blank page to a launch-ready web product"/>
     <meta name="twitter:image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg"/> */}
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@indiedojoco">
-    <meta name="twitter:creator" content="@indiedojoco">
-    <meta name="twitter:title" content="Indie Dojo - a one-week bootcamp for indie hackers">
-    <meta name="twitter:description" content="Indie Dojo is a one-week bootcamp that will give you a step-by-step blueprint for moving from a blank page to a launch-ready web product">
-    <meta name="twitter:image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@indiedojoco" />
+    <meta name="twitter:creator" content="@indiedojoco" />
+    <meta name="twitter:title" content="Indie Dojo - a one-week bootcamp for indie hackers" />
+    <meta name="twitter:description" content="Indie Dojo is a one-week bootcamp that will give you a step-by-step blueprint for moving from a blank page to a launch-ready web product" />
+    <meta name="twitter:image" content="http://indiedojo.co/tiny/indie-dojo-social.jpg" />
 
     {/* Open Graph data */}
     {/* <meta property="og:title" content="Indie Dojo - a one-week bootcamp for indie hackers" />
