@@ -8,19 +8,16 @@ import { TAC } from '../../data/TAC'
 import Logo from '../components/styled/Logo'
 
 class Tac extends Component {
-  componentDidMount() {
-
-  }
 
   render() {
     return (
       <div>
         <FluidContainer>
           <ContainerSmall>
-            <WithPadding padding='xxxl'>
+            <WithPadding padding='xxl'>
               <Row>
                 <Cell xs={12} center>
-                  <Logo src="/indiedojo-brown.png"/>
+                  <Logo src="/tiny/indiedojo-brown.png"/>
                 </Cell>
               </Row>
               <MarkdownWrapper >
