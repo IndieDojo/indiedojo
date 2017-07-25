@@ -30,7 +30,7 @@ const Booking = ({ light, center, shadow, fill }) => (
         href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
         onClick={() => ReactGA.event({ category: 'Booking', action: `Booking button clicked` })}
       >
-        Book Now
+        Apply Now
       </BookingButton>
       <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Bird: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle>
     </BookingDate>

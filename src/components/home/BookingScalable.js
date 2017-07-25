@@ -90,7 +90,7 @@ const BookingScalable = ({ light, centered, isMobile }) =>
     <BookingButton light={light}
       href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
     >
-      Book Now
+      Apply Now
     </BookingButton>
 
 
