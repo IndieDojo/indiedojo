@@ -35,7 +35,7 @@ const LandingMessageWrapper = styled.div`
   @media only screen and (min-width: 701px) {
     justify-content: flex-start;
     align-items: flex-start;
-    position: absolute;
+    ${''/* position: absolute; */}  // breaks design in Safari
     padding-left: 30px;
   }
 
