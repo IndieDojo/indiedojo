@@ -89,6 +89,10 @@ const BookingScalable = ({ light, centered, isMobile }) =>
     </HeadSubtitle>
     <BookingButton light={light}
       href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/apply"
+      onClick={() => {
+        ReactGA.event({ category: 'Apply', action: `Apply button clicked` });
+        fbq('track', 'Lead')}
+      }
     >
       Apply Now
     </BookingButton>

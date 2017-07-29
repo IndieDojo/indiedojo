@@ -175,6 +175,10 @@ const Newsletter = () =>
               value="Get eBook"
               name="subscribe"
               id="mc-embedded-subscribe"
+              onClick={()=> {
+                ReactGA.event({ category: 'Subscribe', action: `Subscribe button clicked` });
+                fbq('track', 'CompleteRegistration');
+              }}
             />
           </NewsletterForm>
 
