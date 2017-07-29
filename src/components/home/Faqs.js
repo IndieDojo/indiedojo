@@ -7,6 +7,9 @@ import { MarkdownWrapper } from "../styled/Markdown";
 
 const Faq = ({ q, a }) => (
   <WithPadding padding="md">
+    { q.includes('include') &&
+      <div id="included" />
+    }
     <Subtitle bold center margin="lg">{q}</Subtitle>
     <Text>
       <MarkdownWrapper>
@@ -18,7 +21,6 @@ const Faq = ({ q, a }) => (
 
 const Faqs = () => (
   <ContainerSmall>
-    <div id="included" />
     <WithPadding padding="xl">
       <Row>
         <Cell xs={12} center>
