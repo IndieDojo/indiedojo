@@ -1,4 +1,4 @@
-export const TAC = `# Bootcamp Terms of Business
+export const TAC = `# Bootcamp Terms and Conditions
 
 
 **Dear fellow indie hacker,**
@@ -70,11 +70,11 @@ This agreement and any non-contractual obligations arising in connection with it
 # Appendix- Bootcamp Rules and Details
 ## Bootcamp details:
 
-**Where:**
+**Where:** Kyoto, Japan
 
 **Start:** 13 November 2017, 9:00 at the coworking space.
 
-**End:** 18 March 2017, 19:00
+**End:** 18 March 2017, 17:00
 
 The Bootcamp will be run by 2 experienced trainers as detailed on our website at [http://indiedojo.co](http://indiedojo.co). The detailed program of the Bootcamp is as set out on our website at [http://indiedojo.co](http://indiedojo.co).
 
