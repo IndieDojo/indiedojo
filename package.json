@@ -9,7 +9,7 @@
   "author": "Maciej Nowakowski & Sacha Greif",
   "license": "ISC",
   "dependencies": {
-    "gatsby": "^1.0.7",
+    "gatsby": "^1.5.0",
     "gatsby-link": "^1.0.9",
     "gatsby-plugin-react-helmet": "^1.0.1",
     "gatsby-plugin-styled-components": "^1.0.1",
