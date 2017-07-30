@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
 import Booking from "./Booking";
 import { WithPadding, Background, Title } from "../styled/Base";
@@ -12,7 +12,7 @@ const VideoPlayer = styled.video`
   box-sizing: border-box;
   object-fit: fill;
   width: 100%;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 700px) {
     clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     -webkit-clip-path: polygon(0% 10vw, 50% 0%, 100% 10vw, 100% 100%, 50% 46.25vw, 0 100%);
     clip-path: url("#video-shape");
@@ -30,7 +30,7 @@ const VideoPlayerSVG = () =>
 
 const BookingContents = styled.div`
   margin-top: 8vw;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     margin-top: 0;
   }
 `
@@ -44,7 +44,7 @@ const BookingContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 700px) {
     margin-top: -10vw
   }
 `
@@ -52,29 +52,40 @@ const BookingContentWrapper = styled.div`
 const mobileImageUrl = "/photos/indiedojo-first-frame-mobile.jpg";
 const landingPageVideoUrl = "https://player.vimeo.com/external/225555019.sd.mp4?s=c847916f5aeabe291a49a322d0d5abe7e632deb3&profile_id=164";
 const landingPageVideoUrl720="https://player.vimeo.com/external/225555019.hd.mp4?s=5d365fe6ff3a4146ff42c705ebe626e4a02ad5b9&profile_id=174";
-const videoFirstFrameUrl = "/photos/indiedojo-first-frame.jpg";
+const videoFirstFrameUrl = "https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/indiedojo-first-frame.jpg";
 
-const BookingBlock = () =>
-  <BookingWrapper>
-    <VideoPlayer
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster={videoFirstFrameUrl}
-      >
-        <source src={landingPageVideoUrl720} type="video/mp4" />
-    </VideoPlayer>
-    <VideoPlayerSVG />
 
-    <BookingContentWrapper>
-      <BookingContents>
-        <Title size='xl' color='white' bold center shadow>
-          Join us
-        </Title>
-        <Booking light fill center shadow/>
-      </BookingContents>
-    </BookingContentWrapper>
-  </BookingWrapper>
+class BookingBlock extends Component {
+  componentDidMount() {
+    setTimeout( () =>
+      document.getElementById('video-kyoto').play(),
+      5000
+    );
+  }
+
+  render() {
+    return <BookingWrapper>
+      <VideoPlayer
+          id='video-kyoto'
+          loop
+          muted
+          playsInline
+          poster={videoFirstFrameUrl}
+        >
+          <source src={landingPageVideoUrl720} type="video/mp4" />
+      </VideoPlayer>
+      <VideoPlayerSVG />
+
+      <BookingContentWrapper>
+        <BookingContents>
+          <Title size='xl' color='white' bold center shadow>
+            Join us
+          </Title>
+          <Booking light fill center shadow/>
+        </BookingContents>
+      </BookingContentWrapper>
+    </BookingWrapper>
+  }
+}
 
 export default BookingBlock;

@@ -28,7 +28,7 @@ export let program = [
       },
       {
         title: "Work on Product",
-        description: "Put in practice what you learned today.",
+        description: "Put into practice what you learned today.",
         type: 'workshop',
         time: '15:00-18:00'
       }
@@ -63,7 +63,7 @@ export let program = [
       },
       {
         title: "Work on Product",
-        description: "Put in practice what you learned today",
+        description: "Put into practice what you learned today",
         type: 'workshop',
         time: '15:00-18:00'
       }
@@ -98,7 +98,7 @@ export let program = [
       },
       {
         title: "Work on Product",
-        description: "Put in practice what you learned today.",
+        description: "Put into practice what you learned today.",
         type: 'workshop',
         time: '15:00-18:00'
       }
@@ -133,7 +133,7 @@ export let program = [
       },
       {
         title: "Work on Product",
-        description: "Put in practice what you learned today",
+        description: "Put into practice what you learned today",
         type: 'workshop',
         time: '15:00-18:00'
       }

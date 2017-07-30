@@ -2,79 +2,57 @@ import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 import ReactGA from 'react-ga';
 
-import { getTheme } from "../components/styled/Theme";
+import idTheme from "../components/styled/Theme";
 import "../components/styled/Global";
 import WebsiteHead from "../components/home/WebsiteHead";
 import Footer from "../components/home/Footer";
 
-// Some css theme params depend on window width.
 class Layout extends Component {
-  constructor( props ) {
-    super( props );
-    this.logPageView = this.logPageView.bind( this );
-    this.changeRoute = this.changeRoute.bind( this );
-  }
-
-  state = { windowWidth: 0 };
-
-  changeRoute() {
-    this.logPageView();
-  }
-
-  logPageView() {
-    ReactGA.set({ page: window.location.pathname + window.location.search });
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
-
 
   componentDidMount() {
+    ReactGA.initialize( "UA-8858797-9" );
+    ReactGA.pageview(location.pathname);
 
-    ReactGA.initialize( 'UA-8858797-9' );
-
+    // Intercom script
     const intercom_script = (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xpwec2ck';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
 
-    window.addEventListener("resize", this.onWindowResize);
+    const pixel_script = !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '108652079807277'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
 
-    //Intercom app index
+    // Intercom app index
     window.intercomSettings = {
       app_id: "xpwec2ck"
     };
 
-    //Adds Intercom script
+    // Add Intercom script
     let script1 = document.createElement("script");
     script1.src = intercom_script;
     script1.async = true;
     document.body.appendChild(script1);
 
-    // Add AddThis script
-    // let addthis_script = document.createElement("script");
-    // addthis_script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-596e2fe819e85d88";
-    // addthis_script.async = true;
-    // document.body.appendChild(addthis_script);
-
-    this.setState({ windowWidth: window.innerWidth });
+    //Add Pixel 
+    let script2 = document.createElement("script");
+    script2.src = pixel_script;
+    script2.async = true;
+    document.body.appendChild(script2);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.onWindowResize);
-  }
-
-  onWindowResize = () => {
-    this.setState({ windowWidth: window.innerWidth });
-  };
 
   render() {
-
     return (
-      <ThemeProvider theme={getTheme(this.state.windowWidth)}>
-        <div>
-          <WebsiteHead />
-
-          {this.props.children({...this.props, ...this.state})}
-
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <div>
+        <WebsiteHead />
+        <ThemeProvider theme={idTheme}>
+          <div>
+            {this.props.children({...this.props, ...this.state})}
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </div>
     );
   }
 }

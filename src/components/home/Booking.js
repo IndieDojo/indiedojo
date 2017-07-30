@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ReactGA from 'react-ga';
 import { BookingButton } from "../styled/Buttons";
 import { Subtitle, LinkTo } from "../styled/Base";
 
@@ -24,13 +25,17 @@ const BookingPrice = styled.div`
 const Booking = ({ light, center, shadow, fill }) => (
   <DatesWrapper className='dates-wrapper'>
     <BookingDate center>
-      <Subtitle color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
+      <Subtitle size='md' color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton light={light} fill={fill}
-        href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/booking"
+        href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/apply"
+        onClick={() => {
+          ReactGA.event({ category: 'Apply', action: `Apply button clicked` });
+          fbq('track', 'Lead');
+        }}
       >
-        Book Now
+        Apply Now
       </BookingButton>
-      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow}>Early Registration Price: <br/> <strong>$1,950</strong> (<LinkTo inherit href="#included">What's included?</LinkTo>)</Subtitle>
+      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Bird: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle>
     </BookingDate>
   </DatesWrapper>
 );

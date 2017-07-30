@@ -59,17 +59,24 @@ export const MainTitle = styled.h1`
     if (props.bold) return props.theme.weights.bold;
     return props.theme.weights.normal;
   }};
-  font-size: ${props => !!props.size ? props.theme.fontSizes[props.size] : props.theme.fontSizes.lg};
+  font-size: ${props => !!props.size ? props.theme.fontSizes.regular[props.size] : props.theme.fontSizes.regular.lg};
   text-transform: ${ props => {
     if (props.capitalize) return 'capitalize';
     if (props.uppercase) return 'uppercase';
     return 'none';
   }};
-  line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.75};
+  line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.25};
   text-align: ${props => props.center ? "center" : "auto"};
   text-shadow: ${props => props.shadow ? '0 0 10px rgba(0,0,0,1)' : 'none'};
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     line-height: 1.25;
+  }
+  text-decoration: ${props => props.lineThrough ? 'line-through' : 'none'};
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => !!props.size ? props.theme.fontSizes.medium[props.size] : props.theme.fontSizes.medium.lg};
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: ${props => !!props.size ? props.theme.fontSizes.mobile[props.size] : props.theme.fontSizes.mobile.lg};
   }
 `;
 
@@ -84,8 +91,8 @@ export const Text = styled.div`
   line-height: ${props => !!props.lineHeight ? props.lineHeight : 1.5};
   font-size: ${props =>
   !!props.fontSize
-    ? props.theme.fontSizes[props.fontSize]
-    : props.theme.fontSizes.nm};
+    ? props.theme.fontSizes.regular[props.fontSize]
+    : props.theme.fontSizes.regular.nm};
   font-weight: ${props =>
   props.bold ? props.theme.weights.bold : props.theme.weights.normal};
   color: ${props =>
@@ -103,6 +110,12 @@ export const Text = styled.div`
     &:last-child{
       margin-bottom: 0;
     }
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => !!props.size ? props.theme.fontSizes.medium[props.size] : props.theme.fontSizes.medium.nm};
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: ${props => !!props.size ? props.theme.fontSizes.mobile[props.size] : props.theme.fontSizes.mobile.nm};
   }
 `;
 

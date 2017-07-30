@@ -7,7 +7,6 @@ import { MarkdownWrapper } from '../components/styled/Markdown'
 import { TAC } from '../../data/TAC'
 import Logo from '../components/styled/Logo'
 
-// Some css theme params depend on window width.
 class Tac extends Component {
 
   render() {
@@ -15,10 +14,10 @@ class Tac extends Component {
       <div>
         <FluidContainer>
           <ContainerSmall>
-            <WithPadding padding='xxxl'>
+            <WithPadding padding='xxl'>
               <Row>
                 <Cell xs={12} center>
-                  <Logo src="/indiedojo-brown.png"/>
+                  <Logo src="/tiny/indiedojo-brown.png"/>
                 </Cell>
               </Row>
               <MarkdownWrapper >

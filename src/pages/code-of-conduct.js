@@ -7,18 +7,18 @@ import { MarkdownWrapper } from '../components/styled/Markdown'
 import { COC } from '../../data/COC'
 import Logo from '../components/styled/Logo'
 
-// Some css theme params depend on window width.
 class CodeOfConduct extends Component {
 
   render() {
     return (
-      <div>
+      <div className='top'>
+        <div id='top'></div>
         <FluidContainer>
           <ContainerSmall>
-            <WithPadding padding='xxxl'>
+            <WithPadding padding='xxl'>
               <Row>
                 <Cell xs={12} center>
-                  <Logo src="/indiedojo-brown.png"/>
+                  <Logo src="tiny/indiedojo-brown.png"/>
                 </Cell>
               </Row>
               <MarkdownWrapper>

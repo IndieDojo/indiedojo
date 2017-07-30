@@ -14,7 +14,7 @@ const TopicWrapper = styled.div`
 
 const TopicsIcon = styled.img`
   width: 100px;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     margin-bottom: ${props => props.theme.margins.lg};
   }
 `;
@@ -59,7 +59,7 @@ const TopicsWrapper = styled.div`
   position: relative;
   margin-top: -1px; // because of the roundings css creates sometimes a 1px gap between triangle and the 'rest' picture; this guarantees gap is never visible;
   background: linear-gradient(rgba(20,13,8,0) 0%, ${props =>
-  props.theme.colors.brown} 25vw), url('/rest.jpg');
+  props.theme.colors.brown} 25vw), url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/rest.jpg');
   background-size: 100vw;
   background-repeat: no-repeat;
 `;
@@ -70,7 +70,7 @@ const TopTriangle = styled.div`
   clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   -webkit-clip-path: polygon(50% 0%, 100% 20vw, 0% 20vw);
   clip-path: url("#top-shape");
-  background: url('/top-triangle.jpg');
+  background: url('https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/top-triangle.jpg');
   background-size: 100vw;
 `;
 
@@ -116,7 +116,7 @@ const WhatYouWillLearn = () => (
 
     <TopicsWrapper>
       <Container>
-        <Title size='xl' margin="lg" color="transparentWhite" shadow bold center>
+        <Title size='xl' margin="lg" color="white" shadow bold center>
           What You'll Learn
         </Title>
         <Row>

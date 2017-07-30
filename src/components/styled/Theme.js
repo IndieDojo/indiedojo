@@ -64,9 +64,8 @@ const margins = {
   0: '0'
 };
 
-const getFontSizes = (windowWidth) => {
-
-  const onePointTwo = { // multiplier 1.2
+const fontSizes = {
+  mobile: {
     xxxl: '2.5rem',
     xxl: '2.1rem',
     xl: '1.75rem',
@@ -75,9 +74,8 @@ const getFontSizes = (windowWidth) => {
     nm: '1rem',
     sm: "0.94rem",
     xs: "0.71rem"
-  }
-
-  const onePointTwentyFive = { // multiplier 1.25
+  },
+  medium: {
     xxxl: '3.5rem',
     xxl: '2.8rem',
     xl: '2.25rem',
@@ -86,9 +84,8 @@ const getFontSizes = (windowWidth) => {
     nm: '1.15rem',
     sm: "0.94rem",
     xs: "0.71rem"
-  }
-
-  const onePointThirtyThree = { // 1.33 multiplier
+  },
+  regular: {
     xxxl: '5.2rem',
     xxl: '3.9rem',
     xl: '2.9rem',
@@ -98,17 +95,7 @@ const getFontSizes = (windowWidth) => {
     sm: "1rem",
     xs: "0.71rem"
   }
-
-  return onePointTwentyFive
-
-  // if (windowWidth < breakPoints.sm*16) {
-  //   return onePointTwo
-  // } else if ( windowWidth >= breakPoints.sm*16 && windowWidth < breakPoints.md*16) {
-  //   return onePointTwentyFive
-  // } else {
-  //   return onePointThirtyThree
-  // }
-};
+}
 
 const radius = {
   sm: "3px",
@@ -119,7 +106,7 @@ const radius = {
   round: "50%"
 };
 
-export const getTheme = (windowWidth) => ({
+const idTheme = {
   gutterWidth: `${gutterWidth}rem`,
   outerMargin: `${outerMargin}rem`,
   gutterCompensation: `${(gutterWidth) / 2 * -1}rem`,
@@ -131,8 +118,7 @@ export const getTheme = (windowWidth) => ({
   margins,
   radius,
   weights,
-  fontSizes: getFontSizes(windowWidth),
-  header: {
-    height: windowWidth <= screenSizes.sm ? "50px" : "80px",
-  }
-})
+  fontSizes
+}
+
+export default idTheme;

@@ -29,7 +29,7 @@ const NewsletterForm = styled.form`
   display: flex;
   flex-direction: row;
   margin-bottom: ${props => props.theme.margins.nm};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     flex-direction: column;
     align-items: center;
   }
@@ -40,14 +40,18 @@ const NewsletterField = styled.input`
   border: 3px solid ${props => props.theme.colors.veryLightGrey};
   margin-right: 3px;
   padding: 0 10px;
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: ${props => props.theme.fontSizes.regular.nm};
   height: 50px;
   flex-grow: 1;
   outline: none;
   &:focus {
     border: 3px solid ${props => props.theme.colors.primary};
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => props.theme.fontSizes.medium.nm};
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
     width:100%;
     margin-bottom: ${props => props.theme.margins.sm};
     &:nth-child(2) {
@@ -61,7 +65,7 @@ const NewsletterButton = styled.input`
   height: 50px;
   flex-grow: 1;
   text-align: center;
-  font-size: ${props => props.theme.fontSizes.nm};
+  font-size: ${props => props.theme.fontSizes.regular.nm};
   font-weight: ${props => props.theme.weights.bold};
   color: ${props => props.theme.colors.primary};
   background: none;
@@ -73,8 +77,17 @@ const NewsletterButton = styled.input`
     color: ${props => props.theme.colors.primaryHover};
     border: 3px solid ${props => props.theme.colors.primaryHover};
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
+    font-size: ${props => props.theme.fontSizes.medium.nm};
+  }
+  @media only screen and (max-width: 700px) {
     width: 100%;
+    font-size: ${props => props.theme.fontSizes.mobile.nm};
+    width:100%;
+    margin-bottom: ${props => props.theme.margins.sm};
+    &:nth-child(2) {
+      margin-bottom: ${props => props.theme.margins.md};
+    }
   }
 `;
 
@@ -90,6 +103,7 @@ const BookContents = styled.div`
 
 const BookImage = styled.img`
   width: 120px;
+  margin-right: 20px;
 `;
 
 const BottomTriangle = styled.div`
@@ -124,13 +138,8 @@ const Newsletter = () =>
               </Title>
 
               <Text paddingBottom="md" inlineBlock>
-                You can still be part of Indie Dojo!
-                Sign up for our newsletter to know about
-                {" "}
-                <b>upcoming bootcamps</b>
-                ,
-                be notified of <b>live streams and hangouts</b>,
-                and get access to an <b>exclusive eBook</b>.
+                You can still be part of Indie Dojo! Sign up for our newsletter to learn about <b>upcoming bootcamps</b>, get invitations to  <b>live
+                  streams and hangouts</b>, and gain access to our <b>exclusive eBook</b>.
               </Text>
 
             </Cell>
@@ -161,22 +170,22 @@ const Newsletter = () =>
               id="mce-EMAIL"
             />
             <NewsletterButton
-              onClick={() =>
-                ReactGA.event({
-                  category: "Subscribe",
-                  action: `${section} subscribe`
-                })}
               className="button"
               type="submit"
               value="Get eBook"
               name="subscribe"
               id="mc-embedded-subscribe"
+              onClick={()=> {
+                ReactGA.event({ category: 'Subscribe', action: `Subscribe button clicked` });
+                fbq('track', 'CompleteRegistration');
+              }}
             />
           </NewsletterForm>
+
           <Book>
 
             <div>
-              <BookImage src="/images/color-theory-for-startups.png"/>
+              <BookImage src="https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/color-theory-for-startups-small.png"/>
             </div>
 
             <BookContents>
