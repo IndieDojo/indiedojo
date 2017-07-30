@@ -74,7 +74,7 @@ export const MarkdownWrapper= styled.div`
   }
 
   ul li, ol li {
-    font-size: ${props => props.theme.fontSizes.nm};
+    font-size: ${props => props.theme.fontSizes.regular.nm};
     color: ${props => props.theme.colors.text};
     line-height: 1.5;
     @media only screen and (max-width: 900px) {
