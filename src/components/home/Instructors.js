@@ -44,8 +44,12 @@ const Trainer = ({ image, name, title, bio }) => (
   </Cell>
 );
 
+const InstructorsWrapper = styled.div`
+  padding-bottom: ${props => props.theme.margins.xxxl};
+`
+
 const Instructors = () => (
-  <div>
+  <InstructorsWrapper>
     <div id="trainers" />
     <Container>
       <WithPadding padding="xxl">
@@ -63,7 +67,7 @@ const Instructors = () => (
         </Row>
       </WithPadding>
     </Container>
-  </div>
+  </InstructorsWrapper>
 );
 
 export default Instructors;
