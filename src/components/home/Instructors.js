@@ -45,7 +45,7 @@ const Trainer = ({ image, name, title, bio }) => (
 );
 
 const InstructorsWrapper = styled.div`
-  padding-bottom: ${props => props.theme.margins.xxxl};
+  padding-bottom: 10vw;
 `
 
 const Instructors = () => (
