@@ -88,7 +88,7 @@ const BookingScalable = ({ light, centered, isMobile }) =>
       (<LinkTo inherit href="#included">What's included?</LinkTo>)<br/>
     </HeadSubtitle>
     <BookingButton light={light}
-      href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/apply"
+      href="https://www.codecamps.com/courses/indie-dojo/apply"
       onClick={() => {
         ReactGA.event({ category: 'Apply', action: `Apply button clicked` });
         fbq('track', 'Lead')}

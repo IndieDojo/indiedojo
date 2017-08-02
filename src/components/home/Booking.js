@@ -27,7 +27,7 @@ const Booking = ({ light, center, shadow, fill }) => (
     <BookingDate center>
       <Subtitle size='md' color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
       <BookingButton light={light} fill={fill}
-        href="https://www.codecamps.com/courses/na54tKhtccrr9GhEF/apply"
+        href="https://www.codecamps.com/courses/indie-dojo/apply"
         onClick={() => {
           ReactGA.event({ category: 'Apply', action: `Apply button clicked` });
           fbq('track', 'Lead');
