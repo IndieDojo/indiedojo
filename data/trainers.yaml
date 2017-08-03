@@ -6,8 +6,15 @@
     [VulcanJS](http://vulcanjs.org/) full-stack app framework,
     co-author of the [Discover Meteor](https://www.discovermeteor.com/) book and creator of the biggest survey on the [State of Javascript](http://stateofjs.com/).
 
+- name: Justin Jackson
+  image: /photos/justin.jpg
+  title: Entrepreneur, consultant and author
+  bio: >
+    Justin Jackson is a Canadian entrepreneur, [author](https://justinjackson.ca/jolt/), [podcaster](http://podcast.megamaker.co/), [public speaker](https://www.youtube.com/watch?v=JGBAyzw0dG8&t=25s), and [YouTuber](https://www.youtube.com/justinjackson). He advises software and SaaS companies on growth, marketing, JTBD, and product development.
+    He was the Product Manager at [Sprintly](https://sprint.ly/) and [Mailout](https://mailout.com/), and have consulted on marketing & growth for startups in London, San Francisco, Boulder, and Portland.
+
 - name: Maciej Nowakowski
-  image: https://s3-eu-west-1.amazonaws.com/codecamps/courses/IndieDojo/tiny/maciej.jpg
+  image: /photos/maciej.jpg
   title: Developer and entrepreneur
   bio: >
     Maciej is a developer and entrepreneur. He was born in Poland but now lives in London. Maciej organises [Codecamps in Flip Flops](https://www.codecamps.com/)
