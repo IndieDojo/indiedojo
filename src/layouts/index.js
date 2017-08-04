@@ -21,7 +21,7 @@ class Layout extends Component {
       n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
       t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
       document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '108652079807277'); // Insert your pixel ID here.
+      fbq('init', '355243404895316'); // Insert your pixel ID here.
       fbq('track', 'PageView');
 
     // Intercom app index
@@ -35,7 +35,7 @@ class Layout extends Component {
     script1.async = true;
     document.body.appendChild(script1);
 
-    //Add Pixel 
+    //Add Pixel
     let script2 = document.createElement("script");
     script2.src = pixel_script;
     script2.async = true;
