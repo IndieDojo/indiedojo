@@ -5,13 +5,13 @@
     Sacha is a developer, designer and entrepreneur who has worked with companies such as Hipmunk, Intercom and Le Monde. Originally from Paris, France, Sacha now lives in Osaka, Japan. He is the author of
     [VulcanJS](http://vulcanjs.org/) full-stack app framework,
     co-author of the [Discover Meteor](https://www.discovermeteor.com/) book and creator of the biggest survey on the [State of Javascript](http://stateofjs.com/).
-
-- name: Justin Jackson
-  image: /photos/justin.jpg
-  title: Entrepreneur, consultant and author
-  bio: >
-    Justin Jackson is a Canadian entrepreneur, [author](https://justinjackson.ca/jolt/), [podcaster](http://podcast.megamaker.co/), [public speaker](https://www.youtube.com/watch?v=JGBAyzw0dG8&t=25s), and [YouTuber](https://www.youtube.com/justinjackson). He advises software and SaaS companies on growth, marketing, JTBD, and product development.
-    He was Product Manager at [Sprintly](https://sprint.ly/) and [Mailout](https://mailout.com/), and has consulted on marketing & growth for startups in London, San Francisco, Boulder, and Portland.
+# 
+# - name: Justin Jackson
+#   image: /photos/justin.jpg
+#   title: Entrepreneur, consultant and author
+#   bio: >
+#     Justin Jackson is a Canadian entrepreneur, [author](https://justinjackson.ca/jolt/), [podcaster](http://podcast.megamaker.co/), [public speaker](https://www.youtube.com/watch?v=JGBAyzw0dG8&t=25s), and [YouTuber](https://www.youtube.com/justinjackson). He advises software and SaaS companies on growth, marketing, JTBD, and product development.
+#     He was Product Manager at [Sprintly](https://sprint.ly/) and [Mailout](https://mailout.com/), and has consulted on marketing & growth for startups in London, San Francisco, Boulder, and Portland.
 
 - name: Maciej Nowakowski
   image: /photos/maciej.jpg

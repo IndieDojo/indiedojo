@@ -44,9 +44,9 @@ const Footer = () => (
             <Divider />
 
             <Cell xs={12} center>
-              <Subtitle color='primary' size='sm' marginRight='xl' inline>
+              {/* <Subtitle color='primary' size='sm' marginRight='xl' inline>
                 <LinkTo inherit href='/terms-and-conditions'>Terms and Conditions</LinkTo>
-              </Subtitle>
+              </Subtitle> */}
               <Subtitle color='primary' size='sm' inline>
                 <LinkTo inherit href='/code-of-conduct'>Code of Conduct</LinkTo>
               </Subtitle>

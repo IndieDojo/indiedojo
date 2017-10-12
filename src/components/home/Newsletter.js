@@ -127,18 +127,20 @@ const BottomTriangleSVG = () =>
   </svg>
 
 const Newsletter = () =>
-  <NewsletterContainer>
+  <NewsletterContainer id='subscribe'>
     <NewsletterWrapper>
       <FluidContainer>
         <ContainerSmall>
           <Row>
             <Cell xs={12}>
               <Title size="xl" bold center>
-                Can't Join This Time?
+                {/* Can't Join This Time? */}
+                When The Camp Is Coming?
               </Title>
 
               <Text paddingBottom="md" inlineBlock>
-                You can still be part of Indie Dojo! Sign up for our newsletter to learn about <b>upcoming bootcamps</b>, get invitations to  <b>live
+                {/* You can still be part of Indie Dojo!  */}
+                  Become a part of Indie Dojo! Sign up for our newsletter to learn about <b>upcoming bootcamps</b>, get invitations to  <b>live
                   streams and hangouts</b>, and gain access to our <b>exclusive eBook</b>.
               </Text>
 

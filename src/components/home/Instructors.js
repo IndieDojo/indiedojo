@@ -30,7 +30,7 @@ const Bio = styled.div`
 `;
 
 const Trainer = ({ image, name, title, bio }) => (
-  <Cell xs={12} sm={4} center>
+  <Cell xs={12} md={6} center>
     <WithPadding padding="lg">
       <ProfileImage imgUrl={image} />
       <div>

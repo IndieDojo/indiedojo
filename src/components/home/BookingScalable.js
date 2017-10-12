@@ -39,7 +39,7 @@ const Regular = BookingPrice.extend`
   text-decoration: line-through;
 `
 
-const BookingButton = styled.a`
+export const BookingButton = styled.a`
   padding: 10px 20px;
   margin: 20px 0;
   display: inline-block;

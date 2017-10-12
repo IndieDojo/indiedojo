@@ -5,6 +5,7 @@ import { WithPadding, MainTitle, Subtitle } from '../styled/Base';
 import { Logo } from '../styled/Logo'
 import Booking from './Booking'
 import BookingScalable from './BookingScalable'
+import { BookingButton } from './BookingScalable'
 
 // 1.125 is a ratio of height/width of the cover photo
 const JumboWrapper = styled.div`
@@ -112,10 +113,12 @@ export const LogoImage = styled.img`
 
 export const PageTitle = Subtitle.extend`
   text-align: left;
+  padding-bottom: ${props => props.theme.margins.nm};
   @media only screen and (max-width: 700px) {
     text-align: center;
   }
 `
+
 
 const Jumbo = ({isMobile}) =>
   <JumboWrapper isMobile={isMobile}>
@@ -126,8 +129,15 @@ const Jumbo = ({isMobile}) =>
     <LandingMessageWrapper>
       <LogoImage src="/images/indiedojo.png"/>
       <PageTitle size='lg' bold>A one-week bootcamp<br/>for indie hackers</PageTitle>
-      <BookingScalable/>
+
+
+      {/* Switch on when opening new camp */}
+      {/* <BookingScalable/>  */}
+      <BookingButton href='/#subscribe'>
+        Comming Soon
+      </BookingButton>
     </LandingMessageWrapper>
+
 
 
   </JumboWrapper>

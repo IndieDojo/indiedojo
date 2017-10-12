@@ -25,17 +25,18 @@ const BookingPrice = styled.div`
 const Booking = ({ light, center, shadow, fill }) => (
   <DatesWrapper className='dates-wrapper'>
     <BookingDate center>
-      <Subtitle size='md' color={light ? 'white' : 'text'} shadow={shadow}>Kyoto, Japan, November 13-18 2017</Subtitle>
+      <Subtitle size='md' color={light ? 'white' : 'text'} shadow={shadow}>Location and dates to be announced shortly</Subtitle>
       <BookingButton light={light} fill={fill}
-        href="https://www.codecamps.com/courses/indie-dojo/apply"
+        href='/#subscribe'
         onClick={() => {
           ReactGA.event({ category: 'Apply', action: `Apply button clicked` });
           fbq('track', 'Lead');
         }}
       >
-        Apply Now
+        {/* Apply Now */}
+        Comming Soon
       </BookingButton>
-      <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Bird: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle>
+      {/* <Subtitle size='nm' color={light ? 'white' : 'text'} shadow={shadow} center>Early Bird: <br/> <strong>$1,490</strong> + $490 accom.</Subtitle> */}
     </BookingDate>
   </DatesWrapper>
 );
